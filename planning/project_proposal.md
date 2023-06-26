@@ -15,6 +15,9 @@ What is the main purpose of your project? What are the key features your site ha
 Add a list of your groups's brainstormed features list
 
 IDEA 1: Travel App
+~Provides travel packages based on budget
+~Input destination, app would provide best flights, hotels and sight-seeing options/hidden gems
+~Users can interact with other users by comments in a forum (share their thoughts, reviews, etc.)
 ~
 
 IDEA 2: Education App
