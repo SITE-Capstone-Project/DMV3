@@ -8,7 +8,7 @@ Cohort: **Course Hero**
 
 Team Member Names: **Emanda, Dina, Abbas**
 
-Mentors Names: **Insert Professional Mentor Names**
+Mentors Names: **Wonman Lee, Saurabh Sood**
 
 Project Code Repository Links
 
