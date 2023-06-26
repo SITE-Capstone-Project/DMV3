@@ -6,7 +6,7 @@ SITE Course Year: **2023**
 
 Cohort: **Course Hero**
 
-Team Member Names:**Emanda, Dina, Abbas**
+Team Member Names: **Emanda, Dina, Abbas**
 
 Mentors Names: **Insert Professional Mentor Names**
 
