@@ -20,13 +20,6 @@ IDEA 1: Travel App
 ~Users can interact with other users by comments in a forum (share their thoughts, reviews, etc.)
 ~
 
-IDEA 2: Education App
-~Combines videos, quizzes, study guide, etc. to display course information
-~Pomodoro Timer + Flora like feature (incentive to study and not go on phone)
-~Study Sessions (Stretch Feature?)
-~Progess Manager
-~
-
 ## Related Work
 
 What similar apps and websites? How will your project stand out from these other websites?
