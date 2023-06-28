@@ -29,6 +29,13 @@ Travel App
 
 What similar apps and websites? How will your project stand out from these other websites?
 
+1. Hotel Trivago
+2. Airbnb
+
+Our app will stand out because it’ll be more consolidated information and easier access to booking information
+
 ## Open Questions
 
 What questions do you still have? What topics do you need to research more for your project?
+
+There’s a lot more information that we need to look up in regards to the APIs we’ll need to fetch data from.
