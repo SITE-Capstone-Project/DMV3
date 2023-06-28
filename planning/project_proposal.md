@@ -19,10 +19,11 @@ For our project, we aim to create an application that addresses the challenges m
 Add a list of your groups's brainstormed features list
 
 Travel App
-~Provides travel packages based on budget
-~Input destination, app would provide best flights, hotels and sight-seeing options/hidden gems
-~Users can interact with other users by comments in a forum (share their thoughts, reviews, etc.)
-~
+1. Home page provides a random assortment of areas, all with their own respective possible budgets, places, etc…
+2. Provides travel packages based on budget 
+3. Input destination, app would provide best flights, hotels and sight-seeing options/hidden gems 
+4. Users can interact with other users by comments in a forum (share their thoughts, reviews, etc.)
+
 
 ## Related Work
 
