@@ -12,8 +12,8 @@ Traveler: a user who is seeking help planning budget-friendly trips/vacations
 
 ## User Personas
 
-a. Parent: Aisha is a 32-year-old mother with 3 kids living in suburban Fairfax, Virginia. She is a pediatric surgeon at the local hospital and barely has time for herself and her family, but wants to go on a family vacation so that they can spend more time together. She needs help planning and arranging the details of this trip. Aisha also wants to plan this trip quickly.
-b. College Student: Milos is a 20-year-old college junior who lives in rural Grand Forks, North Dakota. He is desperately looking to get out of the area with his friends to get away for Spring Break. Milos and his friends are on a strict budget, which is making it hard to find good deals in the locations they are considering. 
+1. Parent: Aisha is a 32-year-old mother with 3 kids living in suburban Fairfax, Virginia. She is a pediatric surgeon at the local hospital and barely has time for herself and her family, but wants to go on a family vacation so that they can spend more time together. She needs help planning and arranging the details of this trip. Aisha also wants to plan this trip quickly.
+2. College Student: Milos is a 20-year-old college junior who lives in rural Grand Forks, North Dakota. He is desperately looking to get out of the area with his friends to get away for Spring Break. Milos and his friends are on a strict budget, which is making it hard to find good deals in the locations they are considering. 
 
 ## User Stories
 
