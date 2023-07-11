@@ -1,19 +1,17 @@
-import * as React from 'react'
-import "./Hero.css"
+import "./Home.css"
+import React from "react"
+import Hero from "../Hero/Hero";
+// import Footer from "../Footer/Footer";
 
-export default function Hero() {
-  return (
-    <div className = "hero">
-        <div className = "content">
-            <div className = "intro">
-                <h1>Welcome! </h1>
-                <h2>Find your Merch!</h2>
-                <p>"We have all kinds of goodies. Click on any of the items to start filling up your shopping cart. Checkout whenever you're ready."</p>
-            </div> 
-            <div className = "media">
-                <img src = "https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg" alt= "hero"/>
+export default function Home() {
+    return (
+        <div>
+            <div className="media">
+                <img src="https://image.cnbcfm.com/api/v1/image/107178919-1673854215895-gettyimages-669463000-shutterstock_621020393.jpeg?v=1674003106" alt="front" />
+            </div>
+            <div className="topPage">
+                <Hero />
             </div>
         </div>
-    </div>
-  )
+    );
 }
