@@ -1,6 +1,6 @@
 .navbar {
     padding-top: 20px;
-    background-color: rgb(172, 208, 242);
+    background-color: transparent;
     overflow: hidden;
     display: flex;
     flex-direction: row;
