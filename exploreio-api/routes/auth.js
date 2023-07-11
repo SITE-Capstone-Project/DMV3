@@ -1,13 +1,14 @@
 const express = require("express")
 const auth = express.Router()
 
+// Add authentication middleware
 auth.get("/me", async (req, res, next) => {
     res.status(200).json({message: "Successfully connected"})
 })
 
-auth.post("/login", async (req, res, next) => {  
+auth.post("/login", async (req, res, next) => {
     try {
-        // Continue on user authentication after working with API.
+        // Continue on user authentication later.
 
         //let user = await User.login(req.body)
         //const token = await User.generateAuthToken(user)
@@ -19,6 +20,8 @@ auth.post("/login", async (req, res, next) => {
 
 auth.post("/register", async (req, res, next) => {
     try {
+        // Continue on user authentication later.
+
         // let response = await User.register(req.body)
         // res.status(201).json(response)
     } catch(error) {

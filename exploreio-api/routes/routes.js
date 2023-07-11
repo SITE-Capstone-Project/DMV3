@@ -12,31 +12,47 @@ const router = express.Router()
     and rating.
 */
 router.get("/destinations", async (req, res, next) => {
-
+    try {
+        
+    } catch (error) {
+        next(error);
+    }
 })
 
 /*
-    /destination/:id returns the destination with the id mentioned in the parameter.
+    /destination/:id returns the information of the destination with id mentioned in the parameter.
 
     Destination will have the following: Title, description, categories (region, etc...), image URL, image background URL,
     and rating. Moreover, will return the ChatGPT and Google Maps information.
 */
 router.get("/destination/:id", async (req, res, next) => {
-
+    try {
+        
+    } catch (error) {
+        next(error);
+    }
 })
 
 /*
     /flights will return a maximum of 5 flights matching parameters given in the body.
 */
 router.post("/flights", async (req, res, next) => {
-
+    try {
+        
+    } catch (error) {
+        next(error);
+    }
 })
 
 /*
     /hotels will return a maximum of 5 hotels matching parameters given in the body.
 */
 router.post("/hotels", async (req, res, next) => {
-    
+    try {
+        
+    } catch (error) {
+        next(error);
+    }
 })
 
 /* /favorites implemented later */
