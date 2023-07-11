@@ -10,9 +10,9 @@ auth.post("/login", async (req, res, next) => {
     try {
         // Continue on user authentication later.
 
-        //let user = await User.login(req.body)
-        //const token = await User.generateAuthToken(user)
-        //res.status(200).json({user, token})
+        // let user = await User.login(req.body)
+        // const token = await User.generateAuthToken(user)
+        // res.status(200).json({user, token})
     } catch(error) {
         next(error)
     }
