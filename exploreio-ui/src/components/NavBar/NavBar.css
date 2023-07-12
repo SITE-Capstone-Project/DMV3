@@ -1,7 +1,7 @@
 .navbar {
-    padding-top: 10px;
+    padding-top: 2px;
     /* background-image: linear-gradient(rgba(147, 209, 218, 0.13), rgb(81, 134, 184)); */
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.493);
     overflow: hidden;
     display: flex;
     flex-direction: row;
