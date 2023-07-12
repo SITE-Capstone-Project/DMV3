@@ -1,12 +1,12 @@
 import "./NavBar.css"
 import React from "react"
 import { Link } from "react-router-dom"
-import logo from "../../assets/earthLogo2.png"
+import logo from "../../assets/logo.png"
 
 export default function NavBar({isLoggedIn}){
     return(
         <nav className = "navbar">
-            {/* <img src = {logo}/> */}
+            <img src = {logo}/>
 
             <div className ="other">
                 {isLoggedIn?(
