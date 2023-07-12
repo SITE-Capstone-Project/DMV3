@@ -6,7 +6,7 @@ import logo from "../../assets/earthLogo.png"
 export default function NavBar({isLoggedIn}){
     return(
         <nav className = "navbar">
-            <img src = {logo}/>
+            {/* <img src = {logo}/> */}
 
             <div className ="other">
                 {isLoggedIn?(
