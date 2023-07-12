@@ -1,44 +1,47 @@
 .navbar {
-    padding-top: 20px;
+    padding-top: 10px;
+    /* background-image: linear-gradient(rgba(147, 209, 218, 0.13), rgb(81, 134, 184)); */
     background-color: transparent;
     overflow: hidden;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 20px;
+    height: 80px;
     /* margin-left: 20%; */
 }
-  
+
   /* Style the links inside the navigation bar */
 .navbar .link {
     float: left;
-    color: #0d3761;
+    color: #ffffff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 20px;
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
+    float: right;
 }
-  
+
   /* Change the color of links on hover */
 .navbar .link:hover {
-    background-color: #F8FAFC;
+    /* background-color: #F8FAFC; */
     color: rgb(77, 79, 186);
 }
-  
+
   /* Add a color to the active/current link */
 .navbar .link.active {
     background-color: #04AA6D;
     color: white;
 }
-  
+
 .link .signIn{
     border: 1px solid currentColor;
     border-radius: 0.375rem;
-    color: #00A3C4;
+    color: #ffffffd3;
     background: transparent;
-    margin-left: 30px;
+    margin-left: 0px;
     font-size: 20px;
     font-weight: 500;
     padding-inline-start: 1rem;
@@ -47,13 +50,13 @@
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
 }
-  
+
 .link .register{
     border: 1px solid transparent;
     border-radius: 0.375rem;
     color: black;
-    background: #0BC5EA;
-    margin-left: 30px;
+    background: #eceff048;
+    margin-left: 0px;
     font-size: 20px;
     font-weight: 500;
     padding-inline-start: 1rem;
@@ -64,9 +67,17 @@
 }
 
 .navbar img{
-    width: 10%;
-    height: 10%;
-    margin-left: 3%;
-    margin-right: 30%;
-    margin-bottom: 10px;
+    width: 75px;
+    height: 75px;
+    margin-left: 14px;
+}
+
+.other {
+    width: 100%;
+    padding-right: 18px;
+    float:right;
+}
+
+.adjust {
+    margin-top: 8px;
 }

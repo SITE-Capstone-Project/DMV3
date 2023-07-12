@@ -8,7 +8,7 @@ export default function Hero() {
             <div className = "intro">
                 <h1>Exploreio</h1>
                 <h2>Explore the World!</h2>
-                <p>"Description of Travel App."</p>
+                <p>(Description of Travel App)</p>
             </div> 
         </div>
     </div>
