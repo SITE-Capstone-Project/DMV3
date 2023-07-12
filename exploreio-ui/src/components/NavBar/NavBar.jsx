@@ -1,7 +1,7 @@
 import "./NavBar.css"
 import React from "react"
 import { Link } from "react-router-dom"
-import logo from "../../assets/earthLogo.png"
+import logo from "../../assets/earthLogo2.png"
 
 export default function NavBar({isLoggedIn}){
     return(
