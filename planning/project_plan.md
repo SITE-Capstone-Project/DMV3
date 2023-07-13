@@ -56,7 +56,7 @@ GET:  READ /destinations: Grabbing every single destination in the database
 
 GET:  READ /destination: Grabbing a destination in the database by its ID/name (Includes ChatGPT, Google)
 
-POST:  UPDATE /flight: Sending the form over to the API to grab the appropriate flights and such.
+POST: UPDATE /flight: Sending the form over to the API to grab the appropriate flights and such.
 
 POST: UPDATE /hotel: Sending the form over to the API to grab the appropriate hotels and such.
 
