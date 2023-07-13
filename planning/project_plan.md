@@ -40,8 +40,6 @@ List all the pages and screens in the app. Include wireframes for at least 3 of 
 
 <img width="905" alt="Screenshot 2023-07-13 at 1 14 17 PM" src="https://github.com/SITE-Capstone-Project/DMV3/assets/125905415/5405cf1c-0962-49c5-8dd2-e28d6548eca8">
 
-<img width="888" alt="Screenshot 2023-07-13 at 1 14 28 PM" src="https://github.com/SITE-Capstone-Project/DMV3/assets/125905415/fbc83393-7803-473f-b39c-09ad5b9da51e">
-
 ## Data Model
 
 Describe your app's data model using diagrams or tables
