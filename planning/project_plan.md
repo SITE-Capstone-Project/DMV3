@@ -46,10 +46,24 @@ Describe your app's data model using diagrams or tables
 
 <img width="1466" alt="Screenshot 2023-07-13 at 1 17 01 PM" src="https://github.com/SITE-Capstone-Project/DMV3/assets/125905415/d7e32949-9c8e-446c-a981-7bff30a04041">
 
+<img width="1426" alt="Screenshot 2023-07-13 at 1 17 15 PM" src="https://github.com/SITE-Capstone-Project/DMV3/assets/125905415/4d1d01f6-589f-43c6-a457-65d570bec88a">
+
 ## Endpoints
 
 List the API endpoints you will need to implement.
 
-<img width="1426" alt="Screenshot 2023-07-13 at 1 17 15 PM" src="https://github.com/SITE-Capstone-Project/DMV3/assets/125905415/4d1d01f6-589f-43c6-a457-65d570bec88a">
+GET:  READ /destinations: Grabbing every single destination in the database
+
+GET:  READ /destination: Grabbing a destination in the database by its ID/name (Includes ChatGPT, Google)
+
+POST:  UPDATE /flight: Sending the form over to the API to grab the appropriate flights and such.
+
+POST: UPDATE /hotel: Sending the form over to the API to grab the appropriate hotels and such.
+
+POST: CREATE /register: Info for registering.
+
+POST: UPDATE /login: Info for logging in.
+
+POST: CREATE /favorites: Adding to favorites.
 
 ***Don't forget to set up your Issues, Milestones, and Project Board!***
