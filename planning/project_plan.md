@@ -67,3 +67,5 @@ POST: UPDATE /login: Info for logging in.
 POST: CREATE /favorites: Adding to favorites.
 
 ***Don't forget to set up your Issues, Milestones, and Project Board!***
+
+<img width="1469" alt="Screenshot 2023-07-13 at 1 35 28 PM" src="https://github.com/SITE-Capstone-Project/DMV3/assets/125905415/294a5773-4f1b-4020-b1c5-5e11f3f63fbc">
