@@ -36,12 +36,36 @@ List the current user stories you will implement.
 
 List all the pages and screens in the app. Include wireframes for at least 3 of them.
 
+<img width="959" alt="Screenshot 2023-07-13 at 1 11 07 PM" src="https://github.com/SITE-Capstone-Project/DMV3/assets/125905415/f485e7ff-ac35-4ff6-bf3a-d39fb7e67538">
+
+<img width="905" alt="Screenshot 2023-07-13 at 1 14 17 PM" src="https://github.com/SITE-Capstone-Project/DMV3/assets/125905415/5405cf1c-0962-49c5-8dd2-e28d6548eca8">
+
 ## Data Model
 
 Describe your app's data model using diagrams or tables
+
+<img width="1466" alt="Screenshot 2023-07-13 at 1 17 01 PM" src="https://github.com/SITE-Capstone-Project/DMV3/assets/125905415/d7e32949-9c8e-446c-a981-7bff30a04041">
+
+<img width="1426" alt="Screenshot 2023-07-13 at 1 17 15 PM" src="https://github.com/SITE-Capstone-Project/DMV3/assets/125905415/4d1d01f6-589f-43c6-a457-65d570bec88a">
 
 ## Endpoints
 
 List the API endpoints you will need to implement.
 
+GET:  READ /destinations: Grabbing every single destination in the database
+
+GET:  READ /destination: Grabbing a destination in the database by its ID/name (Includes ChatGPT, Google)
+
+POST:  UPDATE /flight: Sending the form over to the API to grab the appropriate flights and such.
+
+POST: UPDATE /hotel: Sending the form over to the API to grab the appropriate hotels and such.
+
+POST: CREATE /register: Info for registering.
+
+POST: UPDATE /login: Info for logging in.
+
+POST: CREATE /favorites: Adding to favorites.
+
 ***Don't forget to set up your Issues, Milestones, and Project Board!***
+
+<img width="1469" alt="Screenshot 2023-07-13 at 1 35 28 PM" src="https://github.com/SITE-Capstone-Project/DMV3/assets/125905415/294a5773-4f1b-4020-b1c5-5e11f3f63fbc">
