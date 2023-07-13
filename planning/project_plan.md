@@ -52,20 +52,6 @@ Describe your app's data model using diagrams or tables
 
 List the API endpoints you will need to implement.
 
-GET:  READ /destinations: Grabbing every single destination in the database
-
-GET:  READ /destination: Grabbing a destination in the database by its ID/name (Includes ChatGPT, Google)
-
-POST: UPDATE /flight: Sending the form over to the API to grab the appropriate flights and such.
-
-POST: UPDATE /hotel: Sending the form over to the API to grab the appropriate hotels and such.
-
-POST: CREATE /register: Info for registering.
-
-POST: UPDATE /login: Info for logging in.
-
-POST: CREATE /favorites: Adding to favorites.
-
 ***Don't forget to set up your Issues, Milestones, and Project Board!***
 
 <img width="1469" alt="Screenshot 2023-07-13 at 1 35 28 PM" src="https://github.com/SITE-Capstone-Project/DMV3/assets/125905415/294a5773-4f1b-4020-b1c5-5e11f3f63fbc">
