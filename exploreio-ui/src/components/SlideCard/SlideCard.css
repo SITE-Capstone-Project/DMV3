@@ -2,6 +2,13 @@
     margin: 0 auto;
 }
 
+.sliding-card {
+    margin-top: 160px;
+    background-color: white;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
 .slidingContainer{
     display: flex;
     flex-direction: row;

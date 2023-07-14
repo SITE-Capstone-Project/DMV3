@@ -2,6 +2,7 @@
 #background-image {
   position: absolute;
   object-fit: cover;
+  object-position: 0px -63px;
   opacity: 1;
   background-color: black;
   width: 100%;
