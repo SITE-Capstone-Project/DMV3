@@ -2,7 +2,7 @@ import "./Home.css"
 import React from "react"
 import Hero from "../Hero/Hero";
 import SlideCard from "../SlideCard/SlideCard";
-// import Footer from "../Footer/Footer"; 
+import Footer from "../Footer/Footer"; 
 
 export default function Home() {
     return (
@@ -14,10 +14,15 @@ export default function Home() {
                 <div className="topPage">
                     <Hero />
                 </div>
-                <br/>
-                <div>
-                <SlideCard/>
+
+                <div className="midPage">
+                    <SlideCard />
                 </div>
+      
+                <div className="bottomPage">
+                    <Footer />
+                </div>
+ 
             </div>
         </div>
     );

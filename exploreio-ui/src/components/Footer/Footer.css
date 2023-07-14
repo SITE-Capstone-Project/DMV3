@@ -1,0 +1,31 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.about-us,
+.contact-us {
+    flex: 1;
+    padding: 0px;
+    align-items: center;
+    font-size: 120%;
+}
+
+.about-us {
+    margin-right: 50px;
+}
+
+.contact-us {
+    margin-left: 50px;
+}
