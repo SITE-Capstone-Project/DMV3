@@ -22,7 +22,7 @@ export default function Home() {
                 <div className="bottomPage">
                     <Footer />
                 </div>
- 
+                
             </div>
         </div>
     );
