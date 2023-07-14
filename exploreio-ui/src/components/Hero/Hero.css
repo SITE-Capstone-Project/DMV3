@@ -21,11 +21,12 @@
     /* Limit the content width */
     margin: 0 auto;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
 }
 
 .title {
     flex: 1;
-    font-size: 30px;
+    font-size: 40px;
     align-items: center;
 }
 
