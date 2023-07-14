@@ -1,34 +1,40 @@
-.slidecardpage{
-    margin: 0 auto;
+.slidecardpage {
+  margin: 0 auto;
 }
 
-.slidingContainer{
-    display: flex;
-    flex-direction: row;
-    margin-top: 15%;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items:flex-start;
+.slidingContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15%;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .slidecard {
-    height: 350px;
-    width: 250px;
-    background: var(--pure-white);
-    display: flex;
-    flex-direction: column;
-    border: solid 1px var(--border-color);
-    align-items: center;
+  height: 350px;
+  width: 250px;
+  background: var(--pure-white);
+  display: flex;
+  flex-direction: column;
+  border: solid 1px var(--border-color);
+  align-items: center;
 }
 
 .slidecard img {
-    height: 250px;
-    width: 248px;
-    background-color: black;
-    border-radius: 10px;
+  height: 250px;
+  width: 248px;
+  background-color: black;
+  border-radius: 10px;
 }
 
-.titleRating{
-    font-size: 15px;
-    font-weight: 600;
+.titleRating {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.carouselslide{
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }

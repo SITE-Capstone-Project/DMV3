@@ -7,7 +7,7 @@ import SlideCard from "../SlideCard/SlideCard";
 export default function Home() {
     return (
         <div>
-            <div className="media">
+            <div className="home">
                 <img id = "background-image" src=
                 "https://images.pexels.com/photos/16922741/pexels-photo-16922741/free-photo-of-a-travel-boat-in-prague.jpeg" 
                 alt="front" />     
