@@ -1,5 +1,7 @@
 const express = require("express")
 const router = express.Router()
+const Destinations = require("../models/destinations")
+const { ExpressError, NotFoundError, BadRequestError, UnauthorizedError } = require("../utils/errors")
 
 /*
     Routes for Exploreio.
@@ -13,7 +15,7 @@ const router = express.Router()
 */
 router.get("/destinations", async (req, res, next) => {
     try {
-        
+
     } catch (error) {
         next(error);
     }
@@ -27,7 +29,7 @@ router.get("/destinations", async (req, res, next) => {
 */
 router.get("/destination/:id", async (req, res, next) => {
     try {
-        
+    
     } catch (error) {
         next(error);
     }
