@@ -42,13 +42,13 @@ class Destinations {
         let normalized = responseString.substring(2, responseString.length)
 
         /* Do more string manipulation to retrieve and format into a list */
-        let stuff = normalized.split("\n");
+        let finalInfo = normalized.split("\n");
 
-        stuff.forEach((element, index) => {
-            stuff[index] = element.substring(3, element.length);
+        finalInfo.forEach((element, index) => {
+            finalInfo[index] = element.substring(3, element.length);
         })
 
-        return stuff
+        return finalInfo
     }
 
     static async getCachedInfo(id) {

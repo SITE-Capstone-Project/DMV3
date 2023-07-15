@@ -11,8 +11,8 @@ const { ExpressError, NotFoundError, BadRequestError, UnauthorizedError } = requ
 /*
     /destinations should return all of the destinations currently in the database.
 
-    Each destination will have the following: Title, description, categories (region, etc...), image URL, image background URL,
-    and rating.
+    Each destination will have the following: Title, description, categories (region, etc...), 
+    image URL, image background URL, and rating.
 */
 router.get("/destinations", async (req, res, next) => {
     try {
@@ -26,20 +26,21 @@ router.get("/destinations", async (req, res, next) => {
 /*
     /destination/:id returns the information of the destination with id mentioned in the parameter.
 
-    Destination will have the following: Title, description, categories (region, etc...), image URL, image background URL,
-    and rating. Moreover, will return the ChatGPT information.
+    Destination will have the following: Title, description, categories (region, etc...), 
+    image URL, image background URL, and rating. Moreover, will return the ChatGPT information.
 */
 router.get("/destinations/:id", async (req, res, next) => {
     try {
         const id = req.params.id
-        const fullResponse = {destinationInfo: [], destinationActivities: [], hotels: []}
+        const fullResponse = {destinationInfo: [], 
+            destinationActivities: [], hotels: []}
 
         if (!id) {
             throw new BadRequestError("ID not provided")
         }
 
-        /* Should initially call the already preoccupied table to see if the destination
-        information already exists. */
+        /* Should initially call the already preoccupied 
+        table to see if the destination information already exists. */
         const cached = await Destinations.getCachedInfo(id)
 
         if (cached) {
@@ -58,6 +59,8 @@ router.get("/destinations/:id", async (req, res, next) => {
 
             /* Now, add into cache */
             Destinations.addIntoCache(fullResponse)
+            
+            /* Send response back */
             res.status(200).json(fullResponse)
         }
     } catch (error) {
@@ -81,7 +84,7 @@ router.post("/flights", async (req, res, next) => {
 */
 router.post("/hotels", async (req, res, next) => {
     try {
-        
+
     } catch (error) {
         next(error);
     }
