@@ -9,6 +9,7 @@
     "dev": "NODE_ENV=dev nodemon --ignore 'db/*' server.js"
   },
   "dependencies": {
+    "@duffel/api": "^2.3.0",
     "axios": "^1.4.0",
     "bcrypt": "^5.0.1",
     "colors": "^1.4.0",

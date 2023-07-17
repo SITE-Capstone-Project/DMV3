@@ -6,6 +6,7 @@ const SECRET_KEY = process.env.SECRET_KEY || "SECRET_KEY_GOES_HERE"
 const BCRYPT_WORK_FACTOR = process.env.WORK_FACTOR || 10
 const GPT_API_KEY = process.env.GPT_API_KEY
 const TRAV_ADVISOR_KEY = process.env.TRAV_ADVISOR_KEY
+const DUFFEL_API_KEY = process.env.DUFFEL_API_KEY
 
 // Grabbing data to use as the connection-string for the client.
 function getDatabaseURI() {
@@ -24,5 +25,6 @@ module.exports = {
     SECRET_KEY,
     BCRYPT_WORK_FACTOR,
     GPT_API_KEY,
-    TRAV_ADVISOR_KEY
+    TRAV_ADVISOR_KEY,
+    DUFFEL_API_KEY
 }

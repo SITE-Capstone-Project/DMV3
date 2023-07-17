@@ -16,7 +16,8 @@ CREATE TABLE destinations (
     image_url TEXT NOT NULL,
     back_url TEXT NOT NULL,
     region VARCHAR(2) NOT NULL,
-    country VARCHAR(50) NOT NULL
+    country VARCHAR(50) NOT NULL,
+    airlines VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE destination_info (
