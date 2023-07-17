@@ -1,4 +1,8 @@
-.slidecardpage {
+.carousel-row {
+    display: flex;
+    flex-direction: row;
+}
+/* .slidecardpage {
   margin: 0 auto;
 }
 
@@ -31,4 +35,4 @@
 .titleRating {
   font-size: 15px;
   font-weight: 600;
-}
+} */
