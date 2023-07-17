@@ -1,7 +1,8 @@
 import "./Home.css"
 import React from "react"
 import Hero from "../Hero/Hero";
-import SlideCard, {Carousel} from "../SlideCard/SlideCard";
+import SlideCard from "../SlideCard/SlideCard";
+// {Carousel} from
 // import Footer from "../Footer/Footer"; 
 
 export default function Home() {
@@ -13,9 +14,9 @@ export default function Home() {
                 alt="front" />     
                 <div className="topPage">
                     <Hero />
-                    <SlideCard/>
                 </div>
                 {/* <Carousel/> */}
+                <SlideCard/>
             </div>
         </div>
     );
