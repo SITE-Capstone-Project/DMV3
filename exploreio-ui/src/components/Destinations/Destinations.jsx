@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchBox from "../SearchBox/SearchBox";
+import DestinationContainer from "../DestinationContainer/DestinationContainer";
 
 export default function Destinations() {
     const [filteredData, setFilteredData] = useState([]);
@@ -17,6 +18,8 @@ export default function Destinations() {
             {filteredData.map((item) => (
                 <div key={item.id}>{item.name}</div>
             ))}
+
+            <DestinationContainer/>
         </div>
     );
 }
