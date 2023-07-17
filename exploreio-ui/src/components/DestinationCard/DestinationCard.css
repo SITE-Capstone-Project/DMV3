@@ -1,17 +1,4 @@
-.slidecardpage {
-  margin: 0 auto;
-}
-
-.slidingContainer {
-  display: flex;
-  flex-direction: row;
-  margin-top: 15%;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-
-.slidecard {
+.destinationCard {
   height: 350px;
   width: 250px;
   background: var(--pure-white);
@@ -21,7 +8,7 @@
   align-items: center;
 }
 
-.slidecard img {
+.destinationCard img {
   height: 250px;
   width: 248px;
   background-color: black;
