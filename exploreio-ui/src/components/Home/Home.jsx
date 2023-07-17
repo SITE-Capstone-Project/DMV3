@@ -14,15 +14,15 @@ export default function Home() {
                 <div className="topPage">
                     <Hero />
                 </div>
-
+      
                 <div className="midPage">
-                    <SlideCard />
+                    {/* <SlideCard /> */}
                 </div>
       
                 <div className="bottomPage">
                     <Footer />
                 </div>
-                
+      
             </div>
         </div>
     );
