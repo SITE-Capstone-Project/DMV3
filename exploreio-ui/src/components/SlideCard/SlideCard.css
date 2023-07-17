@@ -1,41 +1,44 @@
-.slidecardpage{
-    margin: 0 auto;
-}
-
-.sliding-card {
-    margin-top: 160px;
-    background-color: white;
-    margin-left: 70px;
-    margin-right: 70px;
-}
-
-.slidingContainer{
+.slide-card-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-container {
     display: flex;
-    flex-direction: row;
-    margin-top: 15%;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items:flex-start;
-}
-
-.slidecard {
-    height: 350px;
-    width: 250px;
-    background: var(--pure-white);
-    display: flex;
-    flex-direction: column;
-    border: solid 1px var(--border-color);
     align-items: center;
-}
-
-.slidecard img {
-    height: 250px;
-    width: 248px;
-    background-color: black;
-    border-radius: 10px;
-}
-
-.titleRating{
-    font-size: 15px;
-    font-weight: 600;
-}
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .slides img {
+    width: 100%; /* This ensures all images have the same width */
+    height: auto; /* This maintains the aspect ratio of the images */
+  }
+  
+  /* Optional: Add some styles for the navigation buttons */
+  .prev-btn,
+  .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  

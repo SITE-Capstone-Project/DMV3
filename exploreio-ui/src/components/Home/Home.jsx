@@ -16,7 +16,7 @@ export default function Home() {
                 </div>
 
                 <div className="midPage">
-                    <SlideCard />
+                    {/* <SlideCard /> */}
                 </div>
       
                 <div className="bottomPage">
