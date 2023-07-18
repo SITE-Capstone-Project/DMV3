@@ -3,14 +3,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
-export default function DestinationCard() {
+export default function DestinationCard({id, name, rating, image}) {
   return (
-    <div className="destinationCard">
-      <img src={logo} />
-      <div className="titleRating">
-        <h2>Los Angeles</h2>
-        <p>Rating: 3/5</p>
+    <Link to = {`/destinations/${id}`}>
+      <div className="destinationCard">
+        <img src={image} />
+        <div className="titleRating">
+          <h2>{name}</h2>
+          <p>{rating}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }

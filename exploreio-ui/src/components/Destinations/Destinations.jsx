@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import DestinationContainer from "../DestinationContainer/DestinationContainer";
 
-export default function Destinations() {
+export default function Destinations({destinations}) {
     const [filteredData, setFilteredData] = useState([]);
 
     const handleFilter = (searchTerm) => {
@@ -19,7 +19,7 @@ export default function Destinations() {
                 <div key={item.id}>{item.name}</div>
             ))}
 
-            <DestinationContainer/>
+            <DestinationContainer destinations={destinations}/>
         </div>
     );
 }
