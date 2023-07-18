@@ -17,11 +17,14 @@ export default function DestinationContainer({destinations}) {
             rating = {element.rating} 
             image = {element.image_url}/>
           })}
-
         </div>
-        <div className="container2">
-
-        </div>
+        {/* <div className="container2">
+          <DestinationCard />
+          <DestinationCard />
+          <DestinationCard />
+          <DestinationCard />
+          <DestinationCard />
+        </div> */}
       <div className="showMoreButton">
         <button onClick={() => setShowMore(!showMore)}>Show More</button>
       </div>
