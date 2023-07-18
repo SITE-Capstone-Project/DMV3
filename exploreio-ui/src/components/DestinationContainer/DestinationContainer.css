@@ -10,12 +10,12 @@
     flex-wrap: wrap;
 }
 
-.container2{
+/* .container2{s
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: center;
-}
+} */
 
 .showMoreButton{
     display: flex;
