@@ -1,0 +1,13 @@
+.flight-form {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 2px solid gray;
+    height: 600px;
+    width: 475px;
+    margin-right: 50px;
+}
+
+.flights-title {
+    padding-left: 20px;
+    padding-top: 20px;
+}

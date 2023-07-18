@@ -1,10 +1,13 @@
 .infocard {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   display: block;
   background-color: rgba(231, 231, 231, 0.795);
   width: 90%;
   height: 1200px;
   margin: 0 auto;
-  min-width: 1100px;
+  min-width: 1250px;
 }
 
 .intro-info {
@@ -57,6 +60,7 @@
 }
 
 .full-container {
+  position: relative;
   display: flex;
   color: rgb(0, 0, 0);
   height: 700px;
@@ -65,21 +69,46 @@
 .infoAndActivities {
   position: relative;
   display: block;
-  width: 70%;
+  width: 50%;
   padding-left: 50px;
   padding-top: 50px;
 }
 
 .flightsAndHotels {
+  padding-top: 50px;
+  padding-left: 20px;
+  display: flex;
   position: relative;
-  width: 30%;
+  right: 0px;
+  gap: 20px;
+  width: 70%;
 }
 
 .flights {
-  height: 250px;
-  padding-top: 50px;
+  width: 50%;
 }
 
 .hotels {
-  height: 250px;
+  width: 40%;
+}
+
+.activities-title {
+  font-size: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+#cityname {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }

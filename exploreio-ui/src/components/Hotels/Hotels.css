@@ -1,0 +1,13 @@
+.hotels-list{
+    position: relative;
+    width: 350px;
+    height: 600px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid gray;
+    border-radius: 20px;
+}
+
+.hotels-title {
+    padding-left: 20px;
+    padding-top: 20px;
+}
