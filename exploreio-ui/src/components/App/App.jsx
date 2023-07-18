@@ -17,6 +17,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/destinations" element={<Destinations />} />
+                    <Route path="/test" element = {<InfoCard/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
