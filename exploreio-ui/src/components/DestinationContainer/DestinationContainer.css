@@ -7,6 +7,7 @@
     flex-direction: row;
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .container2{
