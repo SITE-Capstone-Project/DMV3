@@ -9,7 +9,7 @@ export default function SearchBox({ data, onFilter }) {
   };
 
   return (
-    <div>
+    <div className='search'>
       <input
         type="text"
         placeholder="Search..."
