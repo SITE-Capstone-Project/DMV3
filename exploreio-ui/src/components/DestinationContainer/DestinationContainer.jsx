@@ -23,13 +23,13 @@ export default function DestinationContainer({destinations}) {
           <DestinationCard />
           <DestinationCard /> */}
         </div>
-        <div className="container2">
+        {/* <div className="container2">
           <DestinationCard />
           <DestinationCard />
           <DestinationCard />
           <DestinationCard />
           <DestinationCard />
-        </div>
+        </div> */}
       <div className="showMoreButton">
         <button onClick={() => setShowMore(!showMore)}>Show More</button>
       </div>

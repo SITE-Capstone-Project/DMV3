@@ -28,19 +28,24 @@
   bottom: 15px;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.25);
   color: white;
   padding: 5px;
   text-align: center;
   font-size: 14px;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(100%); /* This inverts the colors, making the icons black */
+.carousel-indicators {
+  bottom: 0; /* Position the indicators at the bottom of the carousel */
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-  filter: invert(100%); /* This inverts the colors, making the icons black */
+  color: black; /* Change the color of the carousel controls */
+  background-color: transparent; /* Add a semi-transparent background to the carousel controls for better visibility */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%); /* Reset the invert filter to revert the icon colors to their original state */
 }

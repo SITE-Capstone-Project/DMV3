@@ -1,5 +1,4 @@
 import "./SlideCard.css"
-// components/SlideCard.jsx
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Images from '../Images';

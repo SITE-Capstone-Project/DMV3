@@ -1,5 +1,4 @@
 import "./SlideCard.css"
-// components/SlideCard.jsx
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Images from '../Images';
@@ -9,16 +8,16 @@ function SlideCard2() {
     const itemsPerSlide = 5;
 
     const cities = [
-        { name: 'Vancouver', imageUrl: 'https://lp-cms-production.imgix.net/2021-04/GettyRF_1124659884.jpg' },
-        { name: 'Madrid', imageUrl: 'https://media.cntraveler.com/photos/5b2d15c98b842c3b35c5d3c7/16:9/w_2560%2Cc_limit/Madrid-Beaches_GettyImages-731843465.jpg' },
-        { name: 'Dublin', imageUrl: 'https://thumbs.dreamstime.com/b/dublin-ireland-27598568.jpg' },
-        { name: 'Tokyo', imageUrl: 'https://a.cdn-hotels.com/gdcs/production172/d1381/8efd3f69-63bb-4398-a595-095cea25fc37.jpg' },
-        { name: 'Bangkok', imageUrl: 'https://fullsuitcase.com/wp-content/uploads/2022/06/Best-areas-to-stay-in-Bangkok-neighborhood-guide.jpg.webp' },
-        { name: 'Helsinki', imageUrl: 'https://a.cdn-hotels.com/gdcs/production0/d1589/6d9eed40-c31d-11e8-9739-0242ac110006.jpg' },
-        { name: 'Shanghai', imageUrl: 'https://www.chinadiscovery.com/assets/images/shanghai/things-to-do/lujiazui-skyline-day.jpg' },
-        { name: 'Marrakech', imageUrl: 'https://www.groovymashedpotatoes.com/content/images/2023/01/5-Days-in-Morocco.jpg' },
-        { name: 'Athens', imageUrl: 'https://cdn.britannica.com/61/179661-138-6F13E02A/Overview-Athens.jpg?w=800&h=450&c=crop' },
-        { name: 'Cape Town', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg/1200px-Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg' },
+        { name: 'Boston', imageUrl: 'https://www.travelandleisure.com/thmb/_aMbik8KZYsUKc_6_XNeAOzPi84=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/boston-massachusetts-BOSTONTG0221-719aef2eeb1c4929b6c839715e34a69e.jpg' },
+        { name: 'Atlanta', imageUrl: 'https://a.cdn-hotels.com/gdcs/production114/d1629/63a8dbe5-e678-4fe4-957a-ad367913a3fa.jpg' },
+        { name: 'San Francisco', imageUrl: 'https://www.visittheusa.com/sites/default/files/styles/hero_l/public/images/hero_media_image/2016-10/Getty_591648687_Brand_City_SanFrancisco_Hero_FinalCrop.jpg?h=dd3c63f2&itok=UyHVZ5xx' },
+        { name: 'Amsterdam', imageUrl: 'https://s3.amazonaws.com/com.vertoe.blog/blog/wp-content/uploads/2021/06/16032935/pexels-chait-goli-2031706.jpg' },
+        { name: 'Prague', imageUrl: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/e1/1b/2c.jpg' },
+        { name: 'Edinburgh', imageUrl: 'https://s7g10.scene7.com/is/image/stena/20180706_edinburgh_calton_hill:16-9?ts=1646191089536&dpr=off' },
+        { name: 'Seoul', imageUrl: 'https://content.r9cdn.net/rimg/dimg/30/0c/6318617a-city-35982-163ff913019.jpg?width=1366&height=768&xhint=2421&yhint=1876&crop=true' },
+        { name: 'Dubai', imageUrl: 'https://lp-cms-production.imgix.net/features/2017/09/dubai-marina-skyline-2c8f1708f2a1.jpg?auto=format&w=1440&h=810&fit=crop&q=75' },
+        { name: 'Zanzibar City', imageUrl: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/70/80/ba.jpg' },
+        { name: 'Brussels', imageUrl: 'https://www.visit.brussels/en/visitors/_jcr_content/root/container/content_1226746056_c/multicolumn/teaser_2005755142.coreimg.jpeg/1686904852589/grand-place-4212---visit-brussels---jean-michel-byl.jpeg' },
     ];
 
     const handleSelect = (selectedIndex) => setIndex(selectedIndex);
