@@ -1,34 +1,51 @@
-.slidecardpage {
-  margin: 0 auto;
-}
-
-.slidingContainer {
+.carousel-row {
   display: flex;
   flex-direction: row;
-  margin-top: 15%;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  justify-content: space-between;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.slidecard {
-  height: 350px;
-  width: 250px;
-  background: var(--pure-white);
-  display: flex;
-  flex-direction: column;
-  border: solid 1px var(--border-color);
-  align-items: center;
+.sliding {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.slidecard img {
-  height: 250px;
-  width: 248px;
-  background-color: black;
-  border-radius: 10px;
+.image-container {
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  height: 200px; /* Set a fixed height for the image containers */
+  flex: 1; /* Allow each image-container to take equal space */
 }
 
-.titleRating {
-  font-size: 15px;
-  font-weight: 600;
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: white;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.carousel-indicators {
+  bottom: 0; /* Position the indicators at the bottom of the carousel */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  color: black; /* Change the color of the carousel controls */
+  background-color: transparent; /* Add a semi-transparent background to the carousel controls for better visibility */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%); /* Reset the invert filter to revert the icon colors to their original state */
 }
