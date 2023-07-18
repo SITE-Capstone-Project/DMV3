@@ -43,10 +43,6 @@ function SlideCard3() {
                                 />
                             ))}
                     </div>
-                    {/* <Carousel.Caption>
-                        <h3>Row {slideIndex + 1}</h3>
-                        <p>Multiple images in a row</p>
-                    </Carousel.Caption> */}
                 </Carousel.Item>
             ))}
         </Carousel>

@@ -1,4 +1,4 @@
-import "./SlideCard.css"
+import "./SlideCard.css";
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Images from './Images';
@@ -43,10 +43,6 @@ function SlideCard() {
                                 />
                             ))}
                     </div>
-                    {/* <Carousel.Caption>
-                        <h3>Row {slideIndex + 1}</h3>
-                        <p>Multiple images in a row</p>
-                    </Carousel.Caption> */}
                 </Carousel.Item>
             ))}
         </Carousel>
