@@ -17,11 +17,6 @@ export default function DestinationContainer({destinations}) {
             rating = {element.rating} 
             image = {element.image_url}/>
           })}
-          {/* <DestinationCard id = {}/>
-          <DestinationCard />
-          <DestinationCard />
-          <DestinationCard />
-          <DestinationCard /> */}
         </div>
         {/* <div className="container2">
           <DestinationCard />

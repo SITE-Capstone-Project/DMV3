@@ -4,19 +4,44 @@
   background: var(--pure-white);
   display: flex;
   flex-direction: column;
-  border: solid 1px var(--border-color);
   align-items: center;
 }
 
-.destinationCard img {
+#destimage {
   height: 250px;
   width: 248px;
   background-color: black;
   border-radius: 10px;
   object-fit: cover;
+  
 }
 
-.titleRating {
-  font-size: 15px;
-  font-weight: 600;
+.destinationCard img:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all .25s ease-in-out;
+}
+
+.titleRating{
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+
+.titleRating:hover{
+  color: pink;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+h3{
+  margin-top: 5px;
+}
+
+.rating{
+  margin-left: 30px;
+  margin-top: 10px;
 }
