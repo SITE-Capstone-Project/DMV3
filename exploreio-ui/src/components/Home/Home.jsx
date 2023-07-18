@@ -2,6 +2,8 @@ import "./Home.css"
 import React from "react"
 import Hero from "../Hero/Hero";
 import SlideCard from "../SlideCard/SlideCard";
+import SlideCard2 from "../SlideCard/SlideCard2";
+import SlideCard3 from "../SlideCard/SlideCard3";
 import Footer from "../Footer/Footer"; 
 
 export default function Home() {
@@ -16,7 +18,13 @@ export default function Home() {
                 </div>
       
                 <div className="midPage">
-                    {/* <SlideCard /> */}
+                    <SlideCard />
+                    <br></br>
+                    <br></br>
+                    <SlideCard2 />
+                    <br></br>
+                    <br></br>
+                    <SlideCard3 />
                 </div>
       
                 <div className="bottomPage">
