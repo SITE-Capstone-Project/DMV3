@@ -5,6 +5,7 @@ import NavBar from "../NavBar/NavBar";
 import Home from "../Home/Home";
 import Destinations from "../Destinations/Destinations";
 import SearchBox from "../SearchBox/SearchBox";
+import InfoCard from "../InfoCard/InfoCard";
 
 export default function App() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -16,6 +17,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/destinations" element={<Destinations />} />
+                    <Route path="/test" element = {<InfoCard/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
