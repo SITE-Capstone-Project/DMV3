@@ -24,4 +24,4 @@ Our instructors provided us with information on how to use a Jira board, which h
 
 * Which features and user stories would you consider “at risk”? How will you change your plan if those items remain “at risk”?
 
-The ability to search for prices- with all the varying components being implemented on the website, this feature is somewhat at risk.
+The ability to search for prices- with all the varying components being implemented on the website, this feature is somewhat at risk. (We're trying to find different ways to implement this feature).
