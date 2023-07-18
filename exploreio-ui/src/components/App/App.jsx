@@ -5,6 +5,7 @@ import NavBar from "../NavBar/NavBar";
 import Home from "../Home/Home";
 import Destinations from "../Destinations/Destinations";
 import SearchBox from "../SearchBox/SearchBox";
+import InfoCard from "../InfoCard/InfoCard";
 
 export default function App() {
     const [loggedIn, setLoggedIn] = useState(false);
