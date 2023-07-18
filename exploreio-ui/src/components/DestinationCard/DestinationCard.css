@@ -13,6 +13,7 @@
   width: 248px;
   background-color: black;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .titleRating {
