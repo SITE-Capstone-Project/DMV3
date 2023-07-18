@@ -1,7 +1,7 @@
 import "./SlideCard.css"
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import Images from '../Images';
+import Images from './Images';
 
 function SlideCard3() {
     const [index, setIndex] = useState(0);
