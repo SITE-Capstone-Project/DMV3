@@ -1,26 +1,85 @@
-.infoAndActivities {
+.infocard {
+  display: block;
+  background-color: rgba(231, 231, 231, 0.795);
+  width: 90%;
+  height: 1200px;
+  margin: 0 auto;
+  min-width: 1100px;
+}
+
+.intro-info {
+  position: relative;
   display: flex;
-  flex-direction: column;
+}
+
+.map {
+  width: 30%;
+}
+
+.dest-info {
+  width: 70%;
+  color: white;
+}
+
+.loc-info {
+  padding-left: 55px;
+  padding-right: 150px;
+  position: relative;
+  display: block;
+  font-size: 17px;
+  min-width: 500px;
+}
+
+.title {
+  font-size: 60px;
+  padding-left: 50px;
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+}
+
+#background {
+  position: absolute;
+  object-fit: cover;
+  width: 90%;
+  min-width: 1100px;
+  height: 500px;
+  filter: brightness(55%);
+}
+
+.map {
+  height: 500px;
+  width: 550px;
+}
+
+.full-container {
+  display: flex;
+  color: rgb(0, 0, 0);
+  height: 700px;
+}
+
+.infoAndActivities {
+  position: relative;
+  display: block;
+  width: 70%;
+  padding-left: 50px;
+  padding-top: 50px;
 }
 
 .flightsAndHotels {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  width: 30%;
 }
 
-.infocard {
-  height: 350px;
-  width: 250px;
-  background: var(--pure-white);
-  display: flex;
-  flex-direction: column;
-  border: solid 1px var(--border-color);
-  align-items: center;
-}
-
-.destinationCard img {
+.flights {
   height: 250px;
-  width: 248px;
-  background-color: black;
-  border-radius: 10px;
+  padding-top: 50px;
+}
+
+.hotels {
+  height: 250px;
 }

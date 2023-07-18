@@ -1,14 +1,12 @@
 .navbar {
-    padding-top: 2px;
-    /* background-image: linear-gradient(rgba(147, 209, 218, 0.13), rgb(81, 134, 184)); */
+    display: flex;
+    padding-top: 0px;
     background-color: rgba(0, 0, 0, 0.493);
     overflow: hidden;
-    display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
-    height: 80px;
-    /* margin-left: 20%; */
+    height: 88px;
+    padding-left: 3px;
 }
 
   /* Style the links inside the navigation bar */
@@ -67,17 +65,16 @@
 }
 
 .navbar img{
-    width: 75px;
-    height: 75px;
-    margin-left: 14px;
+    width: 85px;
+    height: 85px;
 }
 
 .other {
-    width: 75%;
-    padding-right: 18px;
+    padding-top: 5px;
+    width: 85%;
     float:right;
 }
 
 .adjust {
-    margin-top: 8px;
+    margin-top: 5.5px;
 }

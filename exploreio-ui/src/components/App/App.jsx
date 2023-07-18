@@ -17,11 +17,6 @@ export default function App() {
                 const response = await fetch("http://localhost:3001/exploreio/destinations");
                 const responseJson = await response.json();
                 setDestinations([...responseJson]);
-                console.log(responseJson);
-                console.log(typeof(responseJson));
-                if (destinations != null) {
-                    console.log(destinations)
-                }
             } catch (error) {
                 console.error(error);
             }
