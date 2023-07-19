@@ -6,17 +6,19 @@
     margin: 0 auto;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 18px;
+    margin-left: 50px;
 }
 
-.title {
+.title h1{
     flex: 1;
-    font-size: 40px;
+    font-size: 100px;
     align-items: center;
 }
 
+
 .blurb {
-    flex: 1;
-    padding: 40px;
+    /* flex: 1; */
+    padding: 20px;
     /* display: flex; */
     align-items: center;
     font-size: 120%;
