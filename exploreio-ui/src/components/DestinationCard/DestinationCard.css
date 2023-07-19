@@ -13,7 +13,6 @@
   background-color: black;
   border-radius: 10px;
   object-fit: cover;
-  
 }
 
 .destinationCard img:hover{
@@ -23,6 +22,7 @@
 }
 
 .titleRating{
+  width: 250px;
   font-size: 16px;
   display: flex;
   flex-direction: row;
@@ -39,9 +39,20 @@ a:hover{
 
 h3{
   margin-top: 5px;
+  font-size: 20px;
+}
+
+.destinationTitle {
+  padding-left: 10px;
+  width: 90%;
 }
 
 .rating{
-  margin-left: 30px;
-  margin-top: 10px;
+  width: 10%;
+}
+
+.rating p {
+  padding-top: 6px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }

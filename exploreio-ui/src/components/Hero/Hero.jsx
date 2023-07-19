@@ -2,7 +2,6 @@ import * as React from 'react';
 import "./Hero.css";
 import logo from "../../assets/logo.png"
 
-
 export default function Hero() {
   return (
     <div className="hero">
