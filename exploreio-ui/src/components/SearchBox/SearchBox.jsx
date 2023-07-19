@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function SearchBox({ data, onFilter }) {
+export default function SearchBox({ onFilter }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterOptions, setFilterOptions] = useState(''); // Add state for filtering options
 
@@ -23,33 +23,7 @@ export default function SearchBox({ data, onFilter }) {
         onChange={handleInputChange}
       />
 
-      <select value={filterOptions} onChange={handleFilterChange}>
-        <option value="">Filter by:</option>
-        <option value="rating">Rating</option>
-        <option value="region">Region</option>
-      </select>
     </div>
   );
 }
 
-// import React, { useState } from 'react';
-
-// export default function SearchBox({ data, onFilter }) {
-//   const [searchTerm, setSearchTerm] = useState('');
-
-//   const handleInputChange = (event) => {
-//     setSearchTerm(event.target.value);
-//     onFilter(event.target.value);
-//   };
-
-//   return (
-//     <div className='search'>
-//       <input
-//         type="text"
-//         placeholder="Search..."
-//         value={searchTerm}
-//         onChange={handleInputChange}
-//       />
-//     </div>
-//   );
-// }
