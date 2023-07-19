@@ -11,7 +11,7 @@ export default function Destinations({ destinations }) {
     setFilteredData(destinations);
   }, [destinations]);
 
-  const handleFilter = (searchTerm, filterOptions) => {
+  const handleFilter = (searchTerm) => {
     let filteredResults = destinations.filter((item) => {
       // Filter by name (search term)
       const nameMatch = item.name.toLowerCase().includes(searchTerm.toLowerCase());

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function SearchBox({ data, onFilter }) {
+export default function SearchBox({ onFilter }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterOptions, setFilterOptions] = useState(''); // Add state for filtering options
 
