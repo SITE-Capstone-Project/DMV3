@@ -5,7 +5,7 @@ import logo from "../../assets/logo.png";
 import FlightForm from "../FlightForm/FlightForm.jsx";
 import Hotels from "../Hotels/Hotels";
 
-const apiKEY = "";
+const apiKEY = "AIzaSyCB-kma-hpj9XAX-cSDoecd36eiABcPGEw";
 const string = "Located in California, it is the second-largest city in the United States and is renowned for the entertainment industry, including Hollywood, as well as its pleasant climate and beautiful beaches."
 
 export default function InfoCard(){
