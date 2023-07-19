@@ -16,13 +16,7 @@ export default function Destinations({ destinations }) {
       // Filter by name (search term)
       const nameMatch = item.name.toLowerCase().includes(searchTerm.toLowerCase());
       
-      // If no filter option selected or filter option is 'rating', include the item in the results
-      const ratingMatch = !filterOptions || filterOptions === "rating";
-      
-      // If filter option is 'region', include the item in the results only if it has a region property
-      const regionMatch = filterOptions === "region" && item.region;
-
-      return nameMatch && (ratingMatch || regionMatch);
+      return nameMatch;
     });
 
     setFilteredData(filteredResults);
