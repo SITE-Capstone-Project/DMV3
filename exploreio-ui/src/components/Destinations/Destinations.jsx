@@ -1,3 +1,4 @@
+import "./Destinations.css";
 import React, { useState, useEffect } from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import DestinationContainer from "../DestinationContainer/DestinationContainer";
@@ -23,7 +24,7 @@ export default function Destinations({ destinations }) {
   };
 
   return (
-    <div>
+    <div className = "clearing">
       <h1>Destinations</h1>
       <SearchBox data={filteredData} onFilter={handleFilter} />
 
