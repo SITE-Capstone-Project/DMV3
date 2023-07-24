@@ -13,6 +13,7 @@ export default function Home() {
                 <img id="background-image" src=
                     "https://images.pexels.com/photos/10559103/pexels-photo-10559103.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     alt="front" />
+
                 <div className="topPage">
                     <Hero />
                 </div>
