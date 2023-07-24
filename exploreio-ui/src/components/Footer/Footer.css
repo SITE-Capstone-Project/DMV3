@@ -1,31 +1,24 @@
 .footer {
-    display: flex;
     flex-direction: row;
-}
-
-.content {
-    display: flex;
-    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.699);
+    color:white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: small;
+    justify-content: center;
+    width: 100%;
 }
 
 .about-us,
 .contact-us {
     flex: 1;
-    padding: 0px;
     align-items: center;
     font-size: 120%;
-}
-
-.about-us {
-    margin-right: 50px;
-}
-
-.contact-us {
-    margin-left: 50px;
+    margin-top: 20px;
+    padding: 50px;
 }

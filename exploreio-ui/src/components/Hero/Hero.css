@@ -1,27 +1,34 @@
 .content {
     display: flex;
     align-items: center;
+    width: 100%;
     max-width: 1200px;
     /* Limit the content width */
     margin: 0 auto;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
+    margin-left: 70px;
 }
 
-.title {
+.title h1{
     flex: 1;
-    font-size: 40px;
+    width: 50%;
+    font-size: 100px;
     align-items: center;
 }
 
 .blurb {
-    flex: 1;
-    padding: 40px;
-    /* display: flex; */
+    /* flex: 1; */
+    padding: 20px;
+    width: 50%;
     align-items: center;
     font-size: 120%;
 }
 
 #start {
     margin-bottom: 50px;
+}
+
+.title p {
+    padding-right: 105px;
 }

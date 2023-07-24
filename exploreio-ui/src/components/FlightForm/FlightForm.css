@@ -1,0 +1,28 @@
+.flight-form {
+    position: relative;
+    animation: slideInAnimation ease 2s;
+    animation-iteration-count: 1;
+    background-color: rgb(226, 226, 226);
+    border-radius: 20px;
+    border: 10px solid rgb(255, 255, 255);
+    height: 600px;
+    width: 475px;
+    margin-right: 50px;
+}
+
+.flights-title {
+    padding-left: 20px;
+    padding-top: 13px;
+    margin-bottom: 19px;
+}
+
+@keyframes slideInAnimation {
+    0% {
+        bottom: -100px;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0px;
+        opacity: 1;
+    }
+}

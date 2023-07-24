@@ -9,7 +9,7 @@ export default function DestinationCard({ id, name, rating, image }) {
       <div className="destinationCard">
         <img id= "destimage" src={image} />
         <div className="titleRating">
-          <div className="title">
+          <div className="destinationTitle">
             <h3>{name}</h3>
           </div>
           <div className="rating">
