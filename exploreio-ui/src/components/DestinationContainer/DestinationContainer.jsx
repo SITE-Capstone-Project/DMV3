@@ -17,14 +17,10 @@ export default function DestinationContainer({destinations}) {
   const [showMore, setShowMore] = useState(false);
 
   const destinationsByRegion = {};
-  // Loop through each destination in the 'destinations' array
   for (const destination of destinations) {
-  // Check region property of current destination exists 
     if (!destinationsByRegion[destination.region]) {
-  // If the region doesn't exist, initialize it as an empty array
       destinationsByRegion[destination.region] = [];
     }
-  // Push the current destination into the array
     destinationsByRegion[destination.region].push(destination);
   }
 
@@ -47,13 +43,7 @@ export default function DestinationContainer({destinations}) {
           </div>
         </div>
       ))}
-        {/* <div className="container2">
-          <DestinationCard />
-          <DestinationCard />
-          <DestinationCard />
-          <DestinationCard />
-          <DestinationCard />
-        </div> */}
+
       <div className="showMoreButton">
         <button onClick={() => setShowMore(!showMore)}>Show More</button>
       </div>
