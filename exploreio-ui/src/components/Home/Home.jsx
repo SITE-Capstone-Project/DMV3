@@ -10,13 +10,14 @@ export default function Home() {
     return (
         <div>
             <div className="home">
-                <img id = "background-image" src=
-                "https://pixabay.com/get/g64a912660b8b8ba9331b01a9b9aba18ad033a6acf8a20a7740309a2401d9e8f67d026a1c44954503968bb048aa7a5fe33e7ae63feff9ea7c44eed49c44a799ce_1920.jpg" 
-                alt="front" />     
+                <img id="background-image" src=
+                    "https://images.pexels.com/photos/10559103/pexels-photo-10559103.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="front" />
+
                 <div className="topPage">
                     <Hero />
                 </div>
-      
+
                 <div className="midPage">
                     <SlideCard />
                     <br></br>
@@ -26,11 +27,11 @@ export default function Home() {
                     <br></br>
                     <SlideCard3 />
                 </div>
-      
+
                 <div className="bottomPage">
                     <Footer />
                 </div>
-      
+
             </div>
         </div>
     );

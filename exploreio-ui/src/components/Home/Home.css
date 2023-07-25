@@ -4,7 +4,7 @@
   object-fit: cover;
   object-position: 0px 0px;
   opacity: 1;
-  background-color: black;
+  /* background-color: black; */
   width: 100%;
   min-width: 90%;
   height: 1000px;
@@ -15,7 +15,7 @@
 .topPage {
   background-color: rgb(0, 0, 0);
   /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   /* Black w/opacity/see-through */
   color: white;
   display: flex;
@@ -31,7 +31,7 @@
 }
 
 .midPage {
-  margin-top: 30%;
+  margin-top: 150px;
 }
 
 .bottomPage {

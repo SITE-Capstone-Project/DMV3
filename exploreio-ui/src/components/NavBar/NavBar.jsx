@@ -23,7 +23,7 @@ export default function NavBar({isLoggedIn}){
                     </Link>
                 </div>
                 )}
-                <Link className = "link adjust" to = "/packages">Packages</Link>
+                <Link className = "link adjust" to = "/favorites">Favorites</Link>
                 <Link className = "link adjust" to = "/destinations">Destinations</Link>
                 <Link className = "link adjust" to = "/">Home</Link>
             </div>
