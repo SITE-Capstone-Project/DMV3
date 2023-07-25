@@ -29,7 +29,7 @@ class Destinations {
         const response = await openai.createCompletion({
             model: "text-davinci-003",
             prompt: `Give me a list of the top 5 tourist attractions in ${area}. 
-            For each item, give me a super short description of the attraction. 
+            For each item, give me a super short description (max 100 characters) of the attraction. 
             Give me only the list of items, with their descriptions. Nothing else.`,
             max_tokens: 500,
             temperature: 0,
