@@ -76,7 +76,7 @@ router.get("/destinations/:id", async (req, res, next) => {
 */
 router.post("/flights", async (req, res, next) => {
     try {
-        const response = await Flights.getFlights(req.body, 3)
+        const response = await Flights.getFlights(req.body, 5)
         res.status(200).json(response)
     } catch (error) {
         next(error);
