@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import Home from "../Home/Home";
 import Destinations from "../Destinations/Destinations";
@@ -31,7 +31,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/destinations" element={<Destinations destinations = {destinations}/>} />
-                    <Route path="/test" element = {<InfoCard/>}/>
+                    <Route path="/destinations/:id" element = {<InfoCard/>}/>
                 </Routes>
             </BrowserRouter>
         </div>

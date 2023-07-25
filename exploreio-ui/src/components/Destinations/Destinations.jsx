@@ -2,6 +2,7 @@ import "./Destinations.css";
 import React, { useState, useEffect } from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import DestinationContainer from "../DestinationContainer/DestinationContainer";
+import Footer from "../Footer/Footer";
 
 export default function Destinations({ destinations }) {
   const [filteredData, setFilteredData] = useState(destinations);
@@ -21,11 +22,14 @@ export default function Destinations({ destinations }) {
   };
 
   return (
-    <div className="clearing">
-        <h1>Destinations</h1>
-      <SearchBox data={filteredData} onFilter={handleFilter} />
+    <div>
+      <div className="clearing">
+          <h1>Destinations</h1>
+        <SearchBox data={filteredData} onFilter={handleFilter} />
 
-      <DestinationContainer destinations={filteredData} />
+        <DestinationContainer destinations={filteredData} />
+      </div>
+      <Footer/>
     </div>
   );
 }

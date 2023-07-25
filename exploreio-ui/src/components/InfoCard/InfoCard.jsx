@@ -1,10 +1,11 @@
 import "./InfoCard.css";
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect} from "react";
+import { useParams, Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import FlightForm from "../FlightForm/FlightForm.jsx";
 import Hotels from "../Hotels/Hotels";
 import Activities from "../Activities/Activities";
+import Footer from "../Footer/Footer";
 
 const apiKey = "AIzaSyDtniF-184Xg1wRRhQwY4xVXdjH8cW4dqI";
 
@@ -12,21 +13,26 @@ export default function InfoCard(){
     const[map, setMap] = useState(false)
     const[destination, setDestination] = useState([])
 
+    const params = useParams()
+    const id = params.id
+
     const findInfo = async () => {
-        const response = await fetch("http://localhost:3001/exploreio/destinations/1");
+        const response = await fetch(`http://localhost:3001/exploreio/destinations/${id}`);
         const responseJson = await response.json();
         setDestination(responseJson)
     }
 
     useEffect(() => {
+        window.scrollTo(0,0)
         findInfo()
+        setTimeout(loadMap, 3000)
     }, [])
 
     const loadMap = async () => {
         setMap(true)
     }
 
-    setTimeout(loadMap, 2000)
+    setTimeout(loadMap, 3000)
 
     return(
         <div className="infocard">
@@ -66,6 +72,10 @@ export default function InfoCard(){
                         <FlightForm area = {destination?.destinationInfo?.name}/>
                     </div>
                 </div>
+            </div>
+
+            <div>
+                <Footer/>
             </div>
 
         </div>
