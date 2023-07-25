@@ -10,10 +10,133 @@
     margin-right: 50px;
 }
 
+.loading-flights {
+    position: relative;
+    animation: fadeIn ease 2s;
+    animation-iteration-count: 1;
+    position: absolute;
+    z-index: 100;
+    width: 455px;
+    height: 510px;
+    background-color: rgb(255, 255, 255);
+}
+
+.loading-flights p {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 180px;
+}
+
+#request-form {
+    position: relative;
+    padding: 15px;
+    margin: 10px;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+#request-form label {
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+#request-form input {
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.age-add {
+    position: relative;
+    animation: slideInAnimation ease 0.4s;
+    animation-iteration-count: 1;
+}
+
+.age-add input {
+    width: 80px;
+    height: 27px;
+}
+
+.ages {
+    display: flex;
+}
+
 .flights-title {
     padding-left: 20px;
     padding-top: 13px;
     margin-bottom: 19px;
+}
+
+.flight-card {
+    display: flex;
+    animation: slideInAnimation ease 1s;
+    animation-iteration-count: 1;
+    position: relative;
+    border: 3px solid rgb(255, 255, 255);
+    margin: 10px;
+    height: 90px;
+    border-radius: 8px;
+    background-color: rgb(148, 252, 188);
+}
+
+.airline-image {
+    width: 25%;
+}
+
+#a-image {
+    width: 100px;
+    height: 84px;
+    margin-left: 10px;
+}
+
+.airline-info {
+    display: block;
+    text-align: center;
+    width: 75%;
+}
+
+.airline-name p {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+.airline-price p {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+#submit-form {
+    background-color: green;
+    color: white;
+    border: none;
+    width: 200px;
+    font-size: 18px;
+}
+
+.flight-dates {
+    display: flex;
+}
+
+#depart-date {
+    height: 80px;
+    width: 50%;
+    display: block;
+}
+
+#depart-date label {
+    margin-bottom: 3px;
+}
+
+#return-date {
+    width: 50%;
+    height: 80px;
+    display: block;
+}
+
+#return-date label {
+    margin-bottom: 3px;
 }
 
 @keyframes slideInAnimation {
@@ -23,6 +146,15 @@
     }
     100% {
         bottom: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
         opacity: 1;
     }
 }

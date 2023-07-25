@@ -13,7 +13,7 @@ export default function InfoCard(){
     const[destination, setDestination] = useState([])
 
     const findInfo = async () => {
-        const response = await fetch("http://localhost:3001/exploreio/destinations/2");
+        const response = await fetch("http://localhost:3001/exploreio/destinations/10");
         const responseJson = await response.json();
         setDestination(responseJson)
     }
@@ -63,7 +63,7 @@ export default function InfoCard(){
                         <Hotels hotels = {destination?.hotels?.data}/>
                     </div>
                     <div className="flights">
-                        <FlightForm/>
+                        <FlightForm area = {destination?.destinationInfo?.name}/>
                     </div>
                 </div>
             </div>
