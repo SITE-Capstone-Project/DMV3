@@ -40,10 +40,14 @@ export default function InfoCard(){
 
             <div className = "intro-info">
                 <div className = "dest-info">
-                    <h1 className = "destination-title"> {destination?.destinationInfo?.name} </h1>
+                    <h1 className = "destination-title"> {destination?.destinationInfo?.name} <span id="cost-level"> {destination?.destinationInfo?.cost_level} </span> </h1>
                     <div className="loc-info">
                         <p>{destination?.destinationInfo?.description}</p>
                     </div>
+                    <button className = "favorite-button"> 
+                        <img id="favorite-image" src = "https://png.pngtree.com/png-vector/20220428/ourmid/pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png"/>
+                        <p>Favorite</p>
+                    </button>
                 </div>
                 <div className="map">
                     {!map || destination?.length == 0 ? ( 
