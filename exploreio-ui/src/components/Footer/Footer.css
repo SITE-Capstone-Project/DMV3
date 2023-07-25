@@ -1,6 +1,7 @@
 .footer {
     flex-direction: row;
-    background-color: rgba(0, 0, 0, 0.699);
+    /* background-color: rgba(0, 0, 0, 0.699); */
+    background-color: #6b9080;
     color:white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

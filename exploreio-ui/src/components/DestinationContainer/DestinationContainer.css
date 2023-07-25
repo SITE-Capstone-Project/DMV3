@@ -3,6 +3,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.destinationContainer h2{
+    color: #568203;
+}
+
 .container1{
     display: flex;
     flex-direction: row;

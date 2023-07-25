@@ -1,7 +1,11 @@
 .navbar {
     display: flex;
     padding-top: 0px;
-    background-color: rgba(0, 0, 0, 0.699);
+    /* background-color: rgba(0, 0, 0, 0.699); */
+    /* background-color: rgba(170, 222, 246, 0.699); */
+    /* background-color: rgba(161, 220, 219, 0.699); */
+    /* background-color: rgba(170, 222, 246, 0.699); */
+    background-color: #004225be;
     overflow: hidden;
     flex-direction: row;
     align-items: center;
@@ -25,7 +29,8 @@
   /* Change the color of links on hover */
 .navbar .link:hover {
     /* background-color: #F8FAFC; */
-    color: rgb(77, 79, 186);
+    /* color: rgb(77, 79, 186); */
+    color: #a4c3b2;
 }
 
   /* Add a color to the active/current link */
