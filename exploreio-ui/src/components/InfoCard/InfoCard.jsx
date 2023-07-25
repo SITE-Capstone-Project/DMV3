@@ -6,14 +6,14 @@ import FlightForm from "../FlightForm/FlightForm.jsx";
 import Hotels from "../Hotels/Hotels";
 import Activities from "../Activities/Activities";
 
-const apiKEY = "";
+const apiKey = "AIzaSyDtniF-184Xg1wRRhQwY4xVXdjH8cW4dqI";
 
 export default function InfoCard(){
     const[map, setMap] = useState(false)
     const[destination, setDestination] = useState([])
 
     const findInfo = async () => {
-        const response = await fetch("http://localhost:3001/exploreio/destinations/2");
+        const response = await fetch("http://localhost:3001/exploreio/destinations/1");
         const responseJson = await response.json();
         setDestination(responseJson)
     }
@@ -49,7 +49,7 @@ export default function InfoCard(){
                             width="550"
                             height="500"
                             referrerPolicy="no-referrer-when-downgrade"
-                            src={`https://www.google.com/maps/embed/v1/place?key=${apiKEY}&q=${destination?.destinationInfo?.name}`}>
+                            src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${destination?.destinationInfo?.name}`}>
                     </iframe>
                 </div>
             </div>
@@ -63,7 +63,7 @@ export default function InfoCard(){
                         <Hotels hotels = {destination?.hotels?.data}/>
                     </div>
                     <div className="flights">
-                        <FlightForm/>
+                        <FlightForm area = {destination?.destinationInfo?.name}/>
                     </div>
                 </div>
             </div>
