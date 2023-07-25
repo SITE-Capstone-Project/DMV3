@@ -8,6 +8,7 @@ import SearchBox from "../SearchBox/SearchBox";
 import InfoCard from "../InfoCard/InfoCard";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
+import Favorites from "../Favorites/Favorites";
 
 export default function App() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -36,6 +37,7 @@ export default function App() {
                     <Route path="/destinations/:id" element = {<InfoCard/>}/>
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/favorites" element={<Favorites />} />
                 </Routes>
             </BrowserRouter>
         </div>

@@ -1,0 +1,11 @@
+h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 50px;
+    color: #a4c3b2;
+}
+
+.favorites{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
