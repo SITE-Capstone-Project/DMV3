@@ -13,7 +13,7 @@ export default function InfoCard(){
     const[destination, setDestination] = useState([])
 
     const findInfo = async () => {
-        const response = await fetch("http://localhost:3001/exploreio/destinations/10");
+        const response = await fetch("http://localhost:3001/exploreio/destinations/1");
         const responseJson = await response.json();
         setDestination(responseJson)
     }
