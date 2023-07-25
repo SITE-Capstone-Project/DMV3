@@ -1,4 +1,5 @@
 /* Position text in the middle of the page/image */
+
 #background-image {
   position: absolute;
   object-fit: cover;
@@ -7,7 +8,7 @@
   /* background-color: black; */
   width: 100%;
   min-width: 90%;
-  height: 1000px;
+  height: 800px;
   top: 0px;
   z-index: -10;
 }
@@ -27,13 +28,17 @@
   text-align: center;
   margin: 0 auto;
   margin-top: 120px;
-  margin-bottom: 260px;
+  margin-bottom: 110px;
 }
 
 .midPage {
-  margin-top: 150px;
+  background-color: #eaf4f4;
+  padding-top: 50px;
+  /* margin-top: 100px; */
 }
 
 .bottomPage {
-  margin-top: 5%;
+  background-color: #eaf4f4;
+  padding-top: 50px;
+  /* margin-top: 5%; */
 }
