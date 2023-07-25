@@ -13,7 +13,7 @@ export default function Destinations({ destinations }) {
   const handleFilter = (searchTerm) => {
     let filteredResults = destinations.filter((item) => {
       const nameMatch = item.name.toLowerCase().includes(searchTerm.toLowerCase());
-      
+
       return nameMatch;
     });
 
@@ -21,8 +21,8 @@ export default function Destinations({ destinations }) {
   };
 
   return (
-    <div className = "clearing">
-      <h1>Destinations</h1>
+    <div className="clearing">
+        <h1>Destinations</h1>
       <SearchBox data={filteredData} onFilter={handleFilter} />
 
       <DestinationContainer destinations={filteredData} />
