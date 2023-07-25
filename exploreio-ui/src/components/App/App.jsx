@@ -36,6 +36,7 @@ export default function App() {
                     <Route path="/test" element = {<InfoCard/>}/>
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    {/* <Route path="/favorites" element={<Favorite />} /> */}
                 </Routes>
             </BrowserRouter>
         </div>
