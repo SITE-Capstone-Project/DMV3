@@ -1,10 +1,10 @@
 import React from "react"
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
-import axios from "axios"
+import { register, logIn, fixToken } from "../../utilities/apiClient"
 import "./Register.css"
 
-export default function Register({setAppState, setLoggedIn}) {
+export default function Register({ setAppState, setLoggedIn }) {
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState({})
@@ -57,19 +57,40 @@ export default function Register({setAppState, setLoggedIn}) {
     }
 
     try {
-      const res = await axios.post("http://localhost:3001/auth/register", {
-        firstName: form.firstName,
-        lastName: form.lastName,
+      // Setting up appropriate credentials
+      const body = {
+        first_name: form.firstName,
+        last_name: form.lastName,
         email: form.email,
         username: form.username,
         password: form.password,
-      })
+      }
 
-      if (res?.data?.user) {
-        setAppState(res.data)
+      // Register
+      const res = await register(body)
+
+      // Now, attempt to log in after registering is complete
+      if (res?.username) {
+        const loginBody = {
+          email: form.email,
+          password: form.password,
+        }
+
+        try {
+          const logInRes = await logIn(loginBody)
+
+          if (logInRes) {
+            navigate("/")
+            localStorage.setItem("exploreio-token", fixToken(logInRes?.token))
+            setAppState(logInRes?.user)
+            setLoggedIn(true)
+          }
+
+        } catch (error) {
+          setErrors((e) => ({ ...e, form: "Error Logging In" }))
+        }
+
         setIsLoading(false)
-        navigate("/activity")
-        setLoggedIn(true)
       } else {
         setErrors((e) => ({ ...e, form: "Something went wrong with registration" }))
         setIsLoading(false)
