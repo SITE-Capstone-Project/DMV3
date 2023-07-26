@@ -6,8 +6,8 @@
     border-radius: 20px;
     border: 10px solid rgb(255, 255, 255);
     height: 600px;
-    width: 475px;
-    margin-right: 50px;
+    width: 480px;
+    margin: 0 auto;
 }
 
 .loading-flights {
@@ -16,7 +16,7 @@
     animation-iteration-count: 1;
     position: absolute;
     z-index: 100;
-    width: 455px;
+    width: 470px;
     height: 510px;
     background-color: rgb(255, 255, 255);
 }
