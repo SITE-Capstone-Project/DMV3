@@ -2,7 +2,8 @@
     animation: slideInAnimation ease 2s;
     animation-iteration-count: 1;
     position: relative;
-    width: 350px;
+    margin: 0 auto;
+    width: 370px;
     height: 600px;
     background-color: #a4c3b2;
     border: 10px solid rgb(255, 255, 255);
@@ -30,7 +31,7 @@
     padding-right: 5px;
     height: 300px;
     width: 335px;
-    right: 305px;
+    right: 327px;
     overflow-y: scroll;
     top: -60px;    
     border-radius: 10px;
