@@ -6,11 +6,14 @@
     border-radius: 20px;
     border: 10px solid rgb(255, 255, 255);
     height: 600px;
-    width: 95%;
+    width: 350px;
     margin-right: 50px;
+    margin: 0 auto;
 }
 
 .activities-title {
+    color: black;
+    margin: 0px;
     padding-left: 20px;
     padding-top: 13px;
     margin-bottom: 19px;
