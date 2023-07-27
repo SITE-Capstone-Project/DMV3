@@ -44,7 +44,7 @@ const register = async function(body) {
     return response
   } catch(error) {
     return null
-  }  
+  }
 }
 
 const logIn = async function(body) {
@@ -92,6 +92,42 @@ const getUser = async function() {
   }
 }
 
+const addFavorites = async function(body) {
+  try {
+    const response = await request('POST', `${apiBaseURL}/exploreio/favorites`, body)
+    return response
+  } catch(error) {
+    return null
+  }
+}
+
+const deleteFavorites = async function(body) {
+  try {
+    const response = await request('DELETE', `${apiBaseURL}/exploreio/favorites`, body)
+    return response
+  } catch(error) {
+    return null
+  }  
+}
+
+const getFavorites = async function() {
+  try {
+    const response = await request('GET', `${apiBaseURL}/exploreio/favorites`)
+    return response
+  } catch(error) {
+    return null
+  }
+}
+
+const canFavorite = async function(body) {
+  try {
+    const response = await request('POST', `${apiBaseURL}/exploreio/favorites/check`, body)
+    return response
+  } catch(error) {
+    return null
+  }  
+}
+
 const fixToken = function (token) {
   const fixedToken = "Bearer " + token
   return fixedToken
@@ -109,5 +145,9 @@ export {
   getFlight,
   getUser,
   getDestinations,
-  getDestination
+  getDestination,
+  addFavorites,
+  deleteFavorites,
+  getFavorites,
+  canFavorite
 }

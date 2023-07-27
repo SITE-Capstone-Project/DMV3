@@ -1,4 +1,4 @@
-h2{
+h1{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 50px;
     color: #a4c3b2;
@@ -6,6 +6,31 @@ h2{
 
 .favorites{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    border: solid black 2px;
+    margin: 20px;
+}
+
+.item{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.item img{
+    width: 150px;
+    height: 200px;
+}
+
+.titleanddescription{
+    margin-left: 60px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.deletebutton button{
+    background-color: rgb(213, 45, 45);
+    color: white;
+    margin: 50px;
 }
