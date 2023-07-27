@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import axios from "axios"
+import { logIn, fixToken } from "../../utilities/apiClient"
 import "./Login.css"
 
 export default function Login({ setAppState, setLoggedIn }) {
@@ -31,11 +31,12 @@ export default function Login({ setAppState, setLoggedIn }) {
     setErrors((e) => ({ ...e, form: null }))
 
     try {
-      const res = await axios.post(`http://localhost:3001/auth/login`, form)
-      if (res?.data) {
-        setAppState(res.data)
+      const res = await logIn(form)
+      if (res?.user) {
+        setAppState(res?.user)
+        localStorage.setItem("exploreio-token", fixToken(res?.token))
         setIsLoading(false)
-        navigate("/activity")
+        navigate("/")
         setLoggedIn(true)
       } else {
         setErrors((e) => ({ ...e, form: "Invalid username/password combination" }))
