@@ -36,7 +36,7 @@ export default function Login({ setAppState, setLoggedIn }) {
         setAppState(res?.user)
         localStorage.setItem("exploreio-token", fixToken(res?.token))
         setIsLoading(false)
-        navigate("/")
+        window.location.replace("/")
         setLoggedIn(true)
       } else {
         setErrors((e) => ({ ...e, form: "Invalid username/password combination" }))

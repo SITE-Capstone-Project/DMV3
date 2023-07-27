@@ -10,7 +10,6 @@ class Favorites {
         return rows
     }
 
-    /* Adding a favorite */
     static addFavorites = async function(destination, id) {
         /* Searching to see if the favorite already exists for that person in the database. */
         const searchQuery = `SELECT * FROM favorites WHERE (UserID = $1 AND name = $2)`
@@ -37,7 +36,7 @@ class Favorites {
         const {rows} = await db.query(searchQuery, [id, destination.name])
 
         /* If the favorite exists in the table, then remove it. */
-        if (rows.length != 0) {
+        if (rows.length > 0) {
             const query = `DELETE FROM favorites WHERE (UserID = $1 AND name = $2)`
             const {rows} = await db.query(query, [id, destination.name])
 
