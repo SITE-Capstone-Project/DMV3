@@ -28,3 +28,9 @@ h1{
     justify-content: center;
     margin-top: 30px;
 }
+
+.deletebutton button{
+    background-color: rgb(213, 45, 45);
+    color: white;
+    margin: 50px;
+}

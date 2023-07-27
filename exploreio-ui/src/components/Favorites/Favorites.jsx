@@ -6,6 +6,10 @@ import "./Favorites.css"
 import DestinationCard from "../DestinationCard/DestinationCard"
 
 export default function Favorites() {
+  const deleteFavorite = async() => {
+    //call the api call 
+  }
+
   return (
     <div className="favoritesContainer">
         <h1>Favorites</h1>
@@ -28,6 +32,9 @@ export default function Favorites() {
               <h2>New York</h2>
               <p>This is NY.</p>
             </div>
+            <div className="deletebutton">
+              <button onClick ={deleteFavorite}>X</button>
+            </div>
           </div>
 
           <div className="item">
@@ -37,6 +44,9 @@ export default function Favorites() {
             <div className="titleanddescription">
               <h2>Toronto</h2>
               <p>This is Toronto.</p>
+            </div>
+            <div className="deletebutton">
+              <button onClick ={deleteFavorite}>X</button>
             </div>
           </div>
         </div>
