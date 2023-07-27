@@ -16,7 +16,7 @@ function SlideCard() {
         { name: 'Houston', imageUrl: 'https://www.travelandleisure.com/thmb/ZD2GzTtBeCzcsqk6RcrnmAZZNGA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/houston-texas_HOUSTON1222-1aa2b78360be48e5ab3ee4a6fe3459b8.jpg' },
         { name: 'Mexico City', imageUrl: 'https://i.natgeofe.com/n/73d9e4e3-4884-4e93-ac41-6be6a90079f5/mexico-city-travel%20(1).jpg?w=2880&h=1920' },
         { name: 'Paris', imageUrl: 'https://www.aparisguide.com/paris-top.jpg' },
-        { name: 'Toronto', imageUrl: 'https://media.radissonhotelsamericas.com/image/destination-pagesus/localattraction/20828-139885-f72599578_3xl.jpg?impolicy=HomeHero&gravity=South' },
+        { name: 'Toronto', imageUrl: 'https://images.adsttc.com/media/images/63e4/ae99/6e85/1900/0140/82fc/large_jpg/229_Richmond_Toronto_competition2small.jpg?1675931296' },
         { name: 'Rome', imageUrl: 'https://www.thediaryofanomad.com/wp-content/uploads/2020/11/rome-for-3-days-in-rome-itinerary-vatican-dome-view.jpg' },
     ];
 
