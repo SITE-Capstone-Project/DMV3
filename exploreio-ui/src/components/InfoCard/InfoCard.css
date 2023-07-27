@@ -16,9 +16,17 @@
 }
 
 #cost-level {
-  margin-left: 10px;
+  display: flex;
+  margin-left: 55px;
   font-weight: bold;
   color:gold;
+}
+
+#cost-level p {
+  margin: 0px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  color: white;
 }
 
 .favorite-button {

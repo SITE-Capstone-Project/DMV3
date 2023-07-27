@@ -5,39 +5,58 @@ import FlightForm from "../FlightForm/FlightForm.jsx";
 import Hotels from "../Hotels/Hotels";
 import Activities from "../Activities/Activities";
 import Footer from "../Footer/Footer";
-import { getDestination } from "../../utilities/apiClient";
+import { getDestination, canFavorite } from "../../utilities/apiClient";
 
 const apiKey = "AIzaSyDtniF-184Xg1wRRhQwY4xVXdjH8cW4dqI";
 
-export default function InfoCard(){
+export default function InfoCard({ isLoggedIn }){
     const[map, setMap] = useState(false)
     const[isFetching, setIsFetching] = useState(false)
     const[destination, setDestination] = useState([])
+    const[favorite, setFavorite] = useState(false)
 
     const params = useParams()
     const id = params.id
-
-    const findInfo = async () => {
-        try {
-            setIsFetching(true)
-            const response = await getDestination(id);
-            setDestination(response)
-        } catch (error) {
-            console.log(error)
-        } finally {
-            setIsFetching(false)
-        }
-    }
 
     const loadMap = async () => {
         setMap(true)
     }
 
     useEffect(() => {
+        const findInfo = async () => {
+            try {
+                setIsFetching(true)
+                await getDestination(id).then((res) => {
+                    setDestination(res)
+                })
+            } catch (error) {
+                console.log(error)
+            } finally {
+                setIsFetching(false)
+            }
+        }
         window.scrollTo(0,0)
         findInfo()
         setTimeout(loadMap, 3000)
     }, [])
+
+    const canFavoriteDest = async (destination) => {
+        try {
+            const body = {name: destination}
+            const response = await canFavorite(body)
+            if (response?.favorited == false) {
+                setFavorite(true)
+            } else {
+                setFavorite(false)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        canFavoriteDest(destination?.destinationInfo?.name)
+    }, [destination])
 
     setTimeout(loadMap, 3000)
 
@@ -49,20 +68,43 @@ export default function InfoCard(){
                 <div className = "dest-info">
                     <h1 className = "destination-title"> 
                         {destination?.destinationInfo?.name} 
-                        <span id="cost-level"> 
-                            {destination?.destinationInfo?.cost_level} 
-                        </span> 
                     </h1>
                     <div className="loc-info">
                         <p>{destination?.destinationInfo?.description}</p>
                     </div>
                     {!isFetching ? (
-                        <button className = "favorite-button"> 
-                            <img 
-                                id="favorite-image" 
-                                src = "https://png.pngtree.com/png-vector/20220428/ourmid/pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png"/>
-                            <p>Favorite</p>
-                        </button>
+                        <div>
+                            <span id="cost-level"> 
+                                <p> Price Level: </p> {destination?.destinationInfo?.cost_level} 
+                            </span>
+
+                            {isLoggedIn ? (
+                                favorite ? (
+                                    <button className = "favorite-button"> 
+                                        <img 
+                                            id="favorite-image" 
+                                            src = "https://png.pngtree.com/png-vector/20220428/ourmid/pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png"/>
+                                        <p>Favorite</p>
+                                    </button>
+                                ) : (
+                                    <button className = "favorite-button"> 
+                                        <img
+                                            id="favorite-image" 
+                                            src = "https://png.pngtree.com/png-vector/20220428/ourmid/pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png"/>
+                                        <p>Favorited</p>
+                                    </button>
+                                )
+                            ) : (
+                                <button className = "favorite-button" disabled> 
+                                    <img 
+                                        id="favorite-image" 
+                                        src = "https://png.pngtree.com/png-vector/20220428/ourmid/pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png"/>
+                                    <p>Log In to Favorite</p>
+                                </button>
+                            )}
+
+                        </div>
+
                     ) : (
                         <div></div>
                     )}
