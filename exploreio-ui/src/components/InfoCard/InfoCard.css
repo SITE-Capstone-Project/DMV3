@@ -8,7 +8,6 @@
   min-width: 1236px;
   height: 1300px;
   margin: 0 auto;
-  
 }
 
 .intro-info {
@@ -102,7 +101,7 @@
 .infoAndActivities {
   position: relative;
   display: block;
-  width: 25%;
+  width: 24.5%;
   margin: 0 auto;
   padding-top: 50px;
 }

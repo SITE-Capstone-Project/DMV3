@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { getFlight } from "../../utilities/apiClient"
 import "./FlightForm.css"
 
-export default function FlightForm({area}) {
+export default function FlightForm({area, isFetching}) {
     const[flights, setFlights] = new useState(undefined)
     const[fetching, setFetching] = new useState(false)
     const[startDate, setStartDate] = new useState(new Date().toLocaleDateString('fr-ca'))
@@ -83,103 +83,108 @@ export default function FlightForm({area}) {
     return (
         <div className = "flight-form">
             <h2 className = "flights-title">Flights</h2>
-
-            {fetching ? (
-                <div className = "loading-flights"> <p>Loading...</p> </div>
-            ):(
+            {isFetching ? (
                 <div></div>
-            )}
-
-            {flights ? (
+            ) : (
                 <div>
-                    {flights.map((flight, index) => {
-                        return <FlightCard key = {flight + index} flight = {flight}/>
-                    })}
-                </div>
-            ):(
-                <form id = "request-form">
-                    <div>
-                        <label> Origin airport IATA: </label>
-                        <input type = "text"
-                        name = "IATA"
-                        placeholder = "Enter 3-letter IATA code"
-                        value = {form.IATA}
-                        onChange = {handleFormChange}/>
 
-                        <div className = "flight-dates">
-                            <div id = "depart-date">
-                                <label>Departure Date:</label>
-                                <input type = "date" 
-                                min = {startDate} 
-                                name ="departDate"
-                                value = {form.departDate}
-                                onChange = {handleChange}/>
+                {fetching ? (
+                    <div className = "loading-flights"> <p>Loading...</p> </div>
+                ):(
+                    <div></div>
+                )}
+
+                {flights ? (
+                    <div>
+                        {flights.map((flight, index) => {
+                            return <FlightCard key = {flight + index} flight = {flight}/>
+                        })}
+                    </div>
+                ):(
+                    <form id = "request-form">
+                        <div>
+                            <label> Origin airport IATA: </label>
+                            <input type = "text"
+                            name = "IATA"
+                            placeholder = "Enter 3-letter IATA code"
+                            value = {form.IATA}
+                            onChange = {handleFormChange}/>
+
+                            <div className = "flight-dates">
+                                <div id = "depart-date">
+                                    <label>Departure Date:</label>
+                                    <input type = "date" 
+                                    min = {startDate} 
+                                    name ="departDate"
+                                    value = {form.departDate}
+                                    onChange = {handleChange}/>
+                                </div>
+                                <div id = "return-date">
+                                    <label>Return Date:</label>
+                                    <input type = "date" 
+                                    min = {endDate} 
+                                    name = "returnDate"
+                                    value = {form.returnDate}
+                                    onChange = {handleFormChange}/>
+                                </div>
                             </div>
-                            <div id = "return-date">
-                                <label>Return Date:</label>
-                                <input type = "date" 
-                                min = {endDate} 
-                                name = "returnDate"
-                                value = {form.returnDate}
+
+                            <div>
+                                <label>Adults:</label>
+                                <input type = "number" 
+                                min = {0} 
+                                step = {1}
+                                name = "numAdults"
+                                value = {form.numAdults}
                                 onChange = {handleFormChange}/>
                             </div>
+
+                            <div>
+                                <label>Children (Max 5):</label>
+                                <input type = "number" 
+                                min = {0} 
+                                step = {1}
+                                max = {5}
+                                name = "children"
+                                value = {form.children}
+                                onChange = {handleFormChange}/>
+
+                                {(parseInt(form.children) > 0 && parseInt(form.children) <= 5 && Number.isInteger(parseInt(form.children))) ? (
+                                    <div className = "age-add">
+                                        {kids?.map((child, index) => {
+                                            return <div className = "ages" key = {index}>
+                                                <label> Enter the age of child (years): </label>
+                                                <input key = {child + index} 
+                                                type="number"
+                                                name = {index} 
+                                                value = {kids[index]} 
+                                                autoFocus = "autoFocus"
+                                                onChange = {updateKidsArray}/>
+                                            </div>
+                                        })}
+                                    </div>) : (<div></div>)}
+                            </div>
+
+                            <div>
+                                <label>Cabin:</label>
+                                <select name = "cabin_class" onChange={handleFormChange}>
+                                    <option value = "economy"> Economy </option>
+                                    <option value = "first"> First Class </option>
+                                    <option value = "business"> Business Class </option>
+                                    <option value = "premium_economy"> Premium Economy </option>
+                                </select>
+                            </div>
+
+                            <input id = "submit-form" 
+                            type = "submit" 
+                            onClick = {submitForm}
+                            value = {"Find the best flights!"}/>
+
                         </div>
-
-                        <div>
-                            <label>Adults:</label>
-                            <input type = "number" 
-                            min = {0} 
-                            step = {1}
-                            name = "numAdults"
-                            value = {form.numAdults}
-                            onChange = {handleFormChange}/>
-                        </div>
-
-                        <div>
-                            <label>Children (Max 5):</label>
-                            <input type = "number" 
-                            min = {0} 
-                            step = {1}
-                            max = {5}
-                            name = "children"
-                            value = {form.children}
-                            onChange = {handleFormChange}/>
-
-                            {(parseInt(form.children) > 0 && parseInt(form.children) <= 5 && Number.isInteger(parseInt(form.children))) ? (
-                                <div className = "age-add">
-                                    {kids?.map((child, index) => {
-                                        return <div className = "ages" key = {index}>
-                                            <label> Enter the age of child (years): </label>
-                                            <input key = {child + index} 
-                                            type="number"
-                                            name = {index} 
-                                            value = {kids[index]} 
-                                            autoFocus = "autoFocus"
-                                            onChange = {updateKidsArray}/>
-                                        </div>
-                                    })}
-                                </div>) : (<div></div>)}
-                        </div>
-
-                        <div>
-                            <label>Cabin:</label>
-                            <select name = "cabin_class" onChange={handleFormChange}>
-                                <option value = "economy"> Economy </option>
-                                <option value = "first"> First Class </option>
-                                <option value = "business"> Business Class </option>
-                                <option value = "premium_economy"> Premium Economy </option>
-                            </select>
-                        </div>
-
-                        <input id = "submit-form" 
-                        type = "submit" 
-                        onClick = {submitForm}
-                        value = {"Find the best flights!"}/>
-
-                    </div>
-                </form>
+                    </form>
+                )}
+                </div>
             )}
-
         </div>
     )
 }

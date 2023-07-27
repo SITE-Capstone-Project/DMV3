@@ -29,3 +29,17 @@ CREATE TABLE destination_info (
         FOREIGN KEY(DestinationID)
             REFERENCES destinations(DestinationID)
 );
+
+CREATE TABLE favorites (
+    FavoriteID SERIAL PRIMARY KEY,
+    UserID INT,
+    name VARCHAR(50) NOT NULL,
+    image TEXT NOT NULL,
+    description TEXT NOT NULL,
+    rating FLOAT,
+    region VARCHAR(2),
+    country VARCHAR(25),
+    CONSTRAINT fk_users
+        FOREIGN KEY(UserID)
+            REFERENCES users(id)
+);
