@@ -80,7 +80,7 @@ export default function Register({ setAppState, setLoggedIn }) {
           const logInRes = await logIn(loginBody)
 
           if (logInRes) {
-            navigate("/")
+            window.location.replace("/")
             localStorage.setItem("exploreio-token", fixToken(logInRes?.token))
             setAppState(logInRes?.user)
             setLoggedIn(true)

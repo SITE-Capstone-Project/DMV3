@@ -47,7 +47,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/destinations" element={<Destinations destinations = {destinations}/>} />
-                    <Route path="/destinations/:id" element = {<InfoCard/>}/>
+                    <Route path="/destinations/:id" element = {<InfoCard isLoggedIn={loggedIn}/>}/>
                     <Route path="/login" element={<Login 
                     setLoggedIn = {setLoggedIn}
                     setAppState= {setAppState}/>} />

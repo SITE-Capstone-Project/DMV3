@@ -10,7 +10,7 @@ export default function NavBar({ isLoggedIn, setLoggedIn, setAppState }){
         setLoggedIn(false)
         localStorage.setItem("exploreio-token", null)
         setAppState({})
-        navigate("/")
+        window.location.replace("/")
     }
 
     return(
