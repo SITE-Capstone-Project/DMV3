@@ -93,7 +93,7 @@ export default function InfoCard(){
                 </div>
                 <div className = "flights-section">
                     <div className="flights">
-                        <FlightForm area = {destination?.destinationInfo?.name}/>
+                        <FlightForm area = {destination?.destinationInfo?.name} isFetching = {isFetching}/>
                     </div>
                 </div>
             </div>
