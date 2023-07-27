@@ -2,7 +2,7 @@ const db = require("../config/database")
 const { BadRequestError } = require("../utils/errors")
 
 class Favorites {
-    
+
     /* Grabbing all of the favorites of one user. */
     static grabFavoritesByID = async function(id) {
         const query = `SELECT * FROM favorites WHERE UserID = $1`
@@ -52,6 +52,7 @@ class Favorites {
         const searchQuery = `SELECT * FROM favorites WHERE (UserID = $1 AND name = $2)`
         const {rows} = await db.query(searchQuery, [id, destination.name])
 
+        /* Return true if the query isn't empty */
         if (rows.length != 0) {
             return true
         }
