@@ -11,6 +11,8 @@ const regionAbbreviationsToFullNames = {
   EU: "Europe",
   AS: "Asia",
   AF: "Africa",
+  OC: "Oceania",
+  CA: "Caribbean"
 };
 
 export default function DestinationContainer({destinations}) {
