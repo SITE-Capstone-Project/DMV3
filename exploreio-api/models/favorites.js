@@ -13,14 +13,15 @@ class Favorites {
     static addFavorites = async function(destination, id) {
         /* Searching to see if the favorite already exists for that person in the database. */
         const searchQuery = `SELECT * FROM favorites WHERE (UserID = $1 AND name = $2)`
+        console.log(destination)
         const {rows} = await db.query(searchQuery, [id, destination.name])
 
         if (rows.length == 0) {
             /* Inserting the new destination into favorites. */
-            const query = `INSERT INTO favorites (UserID, name, image, description, rating, region, country)
-            VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;`
+            const query = `INSERT INTO favorites (UserID, destinationid, name, image, description, rating, region, country)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *;`
 
-            const {rows} = await db.query(query, [id, destination.name, destination.image_url, destination.description,
+            const {rows} = await db.query(query, [id, destination.destinationid, destination.name, destination.image_url, destination.description,
             destination.rating, destination.region, destination.country])
 
             /* Returning the favorite. */
