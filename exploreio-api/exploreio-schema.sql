@@ -33,6 +33,7 @@ CREATE TABLE destination_info (
 CREATE TABLE favorites (
     FavoriteID SERIAL PRIMARY KEY,
     UserID INT,
+    destinationid INT,
     name VARCHAR(50) NOT NULL,
     image TEXT NOT NULL,
     description TEXT NOT NULL,
