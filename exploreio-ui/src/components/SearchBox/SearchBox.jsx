@@ -1,3 +1,4 @@
+import "./SearchBox.css"
 import React, { useState } from "react";
 
 export default function SearchBox({ data, onFilter }) {
@@ -23,13 +24,14 @@ export default function SearchBox({ data, onFilter }) {
   return (
     <div className="search">
       <input
+        id="search-box"
         type="text"
-        placeholder="Search..."
+        placeholder="Search"
         value={searchTerm}
         onChange={handleInputChange}
       />
 
-      <select value={filterRating} onChange={handleFilterRatingChange}>
+      <select id = "filter-rating" value={filterRating} onChange={handleFilterRatingChange}>
         <option value="">Filter by rating</option>
         <option value="1">1+</option>
         <option value="2">2+</option>
@@ -38,7 +40,7 @@ export default function SearchBox({ data, onFilter }) {
         <option value="5">5</option>
       </select>
 
-      <select value={filterCost} onChange={handleFilterCostChange}>
+      <select id="filter-cost" value={filterCost} onChange={handleFilterCostChange}>
         <option value="">Filter by cost</option>
         <option value="$">$</option>
         <option value="$$">$$</option>
