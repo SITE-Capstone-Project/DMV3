@@ -31,7 +31,7 @@ export default function DestinationContainer({destinations}) {
       {Object.entries(destinationsByRegion).map(([region, destinations]) => (
         <div key={region} className="regionContainer">
           {/* Display full region name based on region abbreviation */}
-          <h2>{regionAbbreviationsToFullNames[region]}</h2>
+          <h2 id = "region-split">{regionAbbreviationsToFullNames[region]}</h2>
           <div className="container1">
             {destinations.map((element, index) => (
               <DestinationCard

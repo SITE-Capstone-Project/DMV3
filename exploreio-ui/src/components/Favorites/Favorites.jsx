@@ -23,7 +23,6 @@ export default function Favorites({ isLoggedIn }) {
     try {
       const response = await getFavorites()
       setFavorites(response)
-      console.log(response)
     } catch (error) {
       console.log(error)
     }
