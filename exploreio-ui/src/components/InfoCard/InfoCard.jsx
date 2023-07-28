@@ -5,7 +5,7 @@ import FlightForm from "../FlightForm/FlightForm.jsx";
 import Hotels from "../Hotels/Hotels";
 import Activities from "../Activities/Activities";
 import Footer from "../Footer/Footer";
-import { getDestination, canFavorite } from "../../utilities/apiClient";
+import { getDestination, canFavorite, addFavorites, deleteFavorites } from "../../utilities/apiClient";
 
 const apiKey = "AIzaSyDtniF-184Xg1wRRhQwY4xVXdjH8cW4dqI";
 
@@ -54,6 +54,28 @@ export default function InfoCard({ isLoggedIn }){
         }
     }
 
+    const favoriteDestination = async () => {
+        try {
+            const body = destination?.destinationInfo
+            const response = await addFavorites(body)
+            setFavorite(false)
+            return response
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const deleteFavoriteDestination = async () => {
+        try {
+            const body = {name: destination?.destinationInfo?.name}
+            const response = await deleteFavorites(body)
+            setFavorite(true)
+            return response
+        } catch (error) {
+            console.log(error)
+        }       
+    }
+
     useEffect(() => {
         canFavoriteDest(destination?.destinationInfo?.name)
     }, [destination])
@@ -80,14 +102,14 @@ export default function InfoCard({ isLoggedIn }){
 
                             {isLoggedIn ? (
                                 favorite ? (
-                                    <button className = "favorite-button"> 
+                                    <button className = "favorite-button" onClick={favoriteDestination}> 
                                         <img 
                                             id="favorite-image" 
                                             src = "https://png.pngtree.com/png-vector/20220428/ourmid/pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png"/>
                                         <p>Favorite</p>
                                     </button>
                                 ) : (
-                                    <button className = "favorite-button"> 
+                                    <button className = "favorite-button" onClick={deleteFavoriteDestination}> 
                                         <img
                                             id="favorite-image" 
                                             src = "https://png.pngtree.com/png-vector/20220428/ourmid/pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png"/>

@@ -1,36 +1,60 @@
-h1{
+.favoritesContainer h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 50px;
     color: #a4c3b2;
 }
 
-.favorites{
+.no-favorites {
+    margin-left: 30px;
+}
+
+.favorites {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: solid black 2px;
-    margin: 20px;
+    background-color: white;
+    border-radius: 13px;
+    min-width: 550px;
+    margin: 30px;
+    padding: 20px;
 }
 
-.item{
+.item {
     display: flex;
     flex-direction: row;
     margin: 20px;
 }
 
-.item img{
+.item img {
     width: 150px;
     height: 200px;
+    object-fit: cover;
 }
 
-.titleanddescription{
+.titleanddescription {
     margin-left: 60px;
     justify-content: center;
     margin-top: 30px;
 }
 
-.deletebutton button{
+.deletebutton {
+    padding-top: 80px;
+    padding-left: 50px;
+    width: 250px;
+    height: 200px;
+}
+
+.deletebutton button {
     background-color: rgb(213, 45, 45);
     color: white;
-    margin: 50px;
+    width: 100px;
+    height: 35px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;    
+}
+
+.not-logged {
+    margin-top: 50px;
+    text-align: center;
 }
