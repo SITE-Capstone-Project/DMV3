@@ -55,7 +55,8 @@ export default function App() {
                     setLoggedIn = {setLoggedIn}
                     setAppState= {setAppState}/>} />
                     <Route path="/favorites" element={<Favorites
-                    appState = {appState}/>} />
+                    appState = {appState}
+                    isLoggedIn={loggedIn}/>} />
                 </Routes>
             </BrowserRouter>
         </div>

@@ -1,56 +1,77 @@
-import React from "react"
-import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import axios from "axios"
 import "./Favorites.css"
-import DestinationCard from "../DestinationCard/DestinationCard"
+import React from "react"
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import { getFavorites, deleteFavorites } from "../../utilities/apiClient"
 
-export default function Favorites() {
-  const deleteFavorite = async() => {
-    //call the api call 
+export default function Favorites({ isLoggedIn }) {
+  const[favorites, setFavorites] = useState([])
+
+  const deleteFavorite = async(event) => {
+    try {
+      const body = {name: event.target.id}
+      const response = await deleteFavorites(body)
+      getFavoritesList()
+      setFavorites([...favorites])
+      return response
+    } catch (error) {
+      console.log(error)
+    }
   }
 
+  const getFavoritesList = async function() {
+    try {
+      const response = await getFavorites()
+      setFavorites(response)
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getFavoritesList()
+  }, [])
+
   return (
-    <div className="favoritesContainer">
+    <div>
+    {!isLoggedIn ? (
+      <div>
+        <h1 className = "not-logged"> You must be logged in to view your favorites. </h1>
+      </div>
+    ) : (
+    <div>
+      <div className="favoritesContainer">
         <h1>Favorites</h1>
         <div className="favorites">
-          <div className="item">
-            <div className="media">
-              <img src = "https://i.pinimg.com/736x/d6/86/00/d686006cd73a4402eaa5ccf42eb070d9.jpg"/>
-            </div>
-            <div className="titleanddescription">
-              <h2>Los Angeles</h2>
-              <p>This is LA.</p>
-            </div>
-          </div>
 
-          <div className="item">
-            <div className="media">
-              <img src = "https://i.pinimg.com/736x/d6/86/00/d686006cd73a4402eaa5ccf42eb070d9.jpg"/>
+          {favorites?.length == 0 ? (
+            <h2 className = "no-favorites"> You currently do not have any favorites. </h2>
+          ) : (
+            <div>
+              {favorites?.map((element, index) => {
+              return <div className="item" key = {index}>
+                  <div className="media">
+                    <img src = {element?.image}/>
+                  </div>
+                  <div className="titleanddescription">
+                    <Link to = {`/destinations/${element?.destinationid}`}>
+                      <h2>{element?.name}</h2>
+                    </Link>
+                    <p>{element?.description}</p>
+                  </div>
+                  <div className="deletebutton">
+                    <button onClick ={deleteFavorite} id = {element.name}>X</button>
+                  </div>
+                </div>
+              })}
             </div>
-            <div className="titleanddescription">
-              <h2>New York</h2>
-              <p>This is NY.</p>
-            </div>
-            <div className="deletebutton">
-              <button onClick ={deleteFavorite}>X</button>
-            </div>
-          </div>
-
-          <div className="item">
-            <div className="media">
-              <img src = "https://i.pinimg.com/736x/d6/86/00/d686006cd73a4402eaa5ccf42eb070d9.jpg"/>
-            </div>
-            <div className="titleanddescription">
-              <h2>Toronto</h2>
-              <p>This is Toronto.</p>
-            </div>
-            <div className="deletebutton">
-              <button onClick ={deleteFavorite}>X</button>
-            </div>
-          </div>
+          )}
         </div>
+      </div>
     </div>
+    )}
+</div>
   )
 }
 
