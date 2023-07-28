@@ -14,7 +14,7 @@ const regionAbbreviationsToFullNames = {
 };
 
 export default function DestinationContainer({destinations}) {
-  const [showMore, setShowMore] = useState(false);
+  // const [showMore, setShowMore] = useState(false);
 
   const destinationsByRegion = {};
   for (const destination of destinations) {
@@ -44,9 +44,9 @@ export default function DestinationContainer({destinations}) {
         </div>
       ))}
 
-      <div className="showMoreButton">
+      {/* <div className="showMoreButton">
         <button onClick={() => setShowMore(!showMore)}>Show More</button>
-      </div>
+      </div> */}
     </div>
   );
 }
