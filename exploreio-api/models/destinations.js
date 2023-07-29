@@ -28,10 +28,12 @@ class Destinations {
     static async getActivities(area) {
         const response = await openai.createCompletion({
             model: "text-davinci-003",
-            prompt: `Give me a list of the top 5 tourist attractions in ${area}. 
-            For each item, give me a super short description (max 100 characters) of the attraction. 
-            Give me only the list of items, with their descriptions. Nothing else.`,
-            max_tokens: 500,
+            prompt: `Give me a list of the top 16 tourist attractions in ${area}. For each item,
+            after giving the item's name, separate the description with a colon,
+            then give me a super short description (max 100 characters) of the attraction.
+            Give me only the list of items, with their descriptions. Nothing else.
+            Start immediately with the list of items. Do not list them by number.`,
+            max_tokens: 1000,
             temperature: 0,
         })
 
@@ -45,7 +47,7 @@ class Destinations {
         let finalInfo = normalized.split("\n");
 
         finalInfo.forEach((element, index) => {
-            finalInfo[index] = element.substring(3, element.length);
+            finalInfo[index] = element
         })
 
         return finalInfo
