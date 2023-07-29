@@ -82,17 +82,18 @@ export default function FlightForm({area, isFetching}) {
 
     return (
         <div className = "flight-form">
+            <div className = "flight-top-part">
             <h2 className = "flights-title">Flights</h2>
+            {fetching ? (
+                <img className = "loading-flights" src="https://thumbs.gfycat.com/ImprobablePertinentGraysquirrel-size_restricted.gif"/>
+            ):(
+                    <div></div>
+            )}
+            </div>
             {isFetching ? (
                 <div></div>
             ) : (
                 <div>
-
-                {fetching ? (
-                    <div className = "loading-flights"> <p>Loading...</p> </div>
-                ):(
-                    <div></div>
-                )}
 
                 {flights ? (
                     <div>

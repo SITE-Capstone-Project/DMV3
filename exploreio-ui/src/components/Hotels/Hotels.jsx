@@ -1,5 +1,6 @@
 import React from "react"
 import { useState } from "react"
+import Carousel from 'react-bootstrap/Carousel'
 import "./Hotels.css"
 
 export default function Hotels({hotels}) {
@@ -15,7 +16,8 @@ export default function Hotels({hotels}) {
                     rating = {element.rating}
                     priceLevel = {element.price_level}
                     description = {element.description}
-                    web_url = {element.web_url}/>
+                    web_url = {element.web_url}
+                    images = {element.images}/>
                 })}
             </div>)}
 
@@ -23,8 +25,9 @@ export default function Hotels({hotels}) {
     )
 }
 
-export function HotelCard({name, priceLevel, rating, description, web_url}) {
+export function HotelCard({name, priceLevel, rating, description, web_url, images}) {
     const[isHover, setIsHover] = useState(false)
+    const [index, setIndex] = useState(0)
 
     const formatString = (string, num) => {
         let formatted = string
@@ -40,8 +43,20 @@ export function HotelCard({name, priceLevel, rating, description, web_url}) {
         return formatted
     }
 
+    const handleSelect = (selectedIndex) => {
+        setIndex(selectedIndex);
+    }
+
     return (
         <div className = "hotel-card" onMouseEnter = {() => { setIsHover(true)}} onMouseLeave={() => {setIsHover(false)}}>
+            <Carousel activeIndex = {index} onSelect = {handleSelect} indicators={false} slide={false}>
+                {images?.map((element, index) => {
+                    return <Carousel.Item key={element + index} interval={1000000}>
+                        <img id = "hotel-image" src = {element}/>
+                    </Carousel.Item> 
+                })}
+            </Carousel>
+
             {isHover && (
                 <div className = "popup-description">
                     <p id = "hotel-title-popup"> {name} </p>

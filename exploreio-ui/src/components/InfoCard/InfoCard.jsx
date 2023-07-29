@@ -156,13 +156,15 @@ export default function InfoCard({ isLoggedIn }){
                     </div>
                 </div>
                 <div className = "flights-section">
+                    <div>
                     <div className="flights">
                         <FlightForm area = {destination?.destinationInfo?.name} isFetching = {isFetching}/>
+                    </div>
                     </div>
                 </div>
             </div>
 
-            <div>
+            <div className="footer">
                 <Footer/>
             </div>
 

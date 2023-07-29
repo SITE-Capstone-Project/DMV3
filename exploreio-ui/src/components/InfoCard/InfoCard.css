@@ -3,10 +3,10 @@
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   display: block;
-  background-color: #004225be;
+  background-color: #004225a2;
   width: 65%;
   min-width: 1236px;
-  height: 1300px;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -102,8 +102,8 @@
 .full-container {
   position: relative;
   display: flex;
+  margin-bottom: 25px;
   color: rgb(0, 0, 0);
-  height: 700px;
 }
 
 .infoAndActivities {
@@ -111,18 +111,18 @@
   display: block;
   width: 24.5%;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 25px;
 }
 
 .flights-section {
-  padding-top: 50px;
+  padding-top: 25px;
   position: relative;
   margin: 0 auto;
   width: 39%;
 }
 
 .hotels-section {
-  padding-top: 50px;
+  padding-top: 25px;
   position: relative;
   justify-content: center;
   margin: 0 auto;

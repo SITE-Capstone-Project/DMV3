@@ -3,28 +3,31 @@
     animation: slideInAnimation ease 2s;
     animation-iteration-count: 1;
     background-color: #a4c3b2;
-    border-radius: 20px;
-    border: 10px solid rgb(255, 255, 255);
-    height: 600px;
+    border-radius: 1px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 15px;
+    border: 5px solid rgb(255, 255, 255);
+    height: auto;
     width: 480px;
     margin: 0 auto;
 }
 
+.flight-top-part {
+    display: flex;
+}
+
 .loading-flights {
-    position: relative;
     animation: fadeIn ease 2s;
     animation-iteration-count: 1;
-    position: absolute;
-    z-index: 100;
-    width: 470px;
-    height: 510px;
-    background-color: rgb(255, 255, 255);
+    width: 65px;
+    height: 65px;
+    padding-top: 4px;
 }
 
 .loading-flights p {
     font-size: 50px;
     text-align: center;
-    padding-top: 180px;
+    padding-top: 90px;
 }
 
 #request-form {
@@ -33,9 +36,10 @@
     position: relative;
     padding: 15px;
     margin: 10px;
+    margin-top: 0px;
     background-color: rgb(248, 255, 255);
     border: 2px solid rgb(255, 255, 255);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 #request-form label {
@@ -79,6 +83,7 @@
     position: relative;
     border: 3px solid rgb(255, 255, 255);
     margin: 10px;
+    margin-top: 0px;
     height: 90px;
     border-radius: 8px;
     background-color: rgb(148, 252, 188);
