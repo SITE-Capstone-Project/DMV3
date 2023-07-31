@@ -1,5 +1,6 @@
 import "./SlideCard.css";
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import Images from './Images';
 
@@ -21,31 +22,40 @@ function SlideCard() {
     ];
 
     const handleSelect = (selectedIndex) => setIndex(selectedIndex);
-    const totalSlides = (cities.length + itemsPerSlide - 1) / itemsPerSlide;
+    const totalSlides = Math.ceil(cities.length / itemsPerSlide);
+
+    const handleClick = (destinationId) => {
+        // Find the selected destination based on the ID
+        const selectedDestination = cities.find((city, index) => index + 1 === destinationId);
+
+        // Pass the selected destination data to the URL
+        window.location.href = `/destinations/${destinationId}?name=${selectedDestination.name}&rating=${selectedDestination.rating}&description=${selectedDestination.description}&image_url=${selectedDestination.image_url}&back_url=${selectedDestination.back_url}&region=${selectedDestination.region}&country=${selectedDestination.country}&airlines=${selectedDestination.airlines}&cost_level=${selectedDestination.cost_level}`;
+    };
 
     return (
-        <div className = "sliding">
+        <div className="sliding">
             <h1>Trending</h1>
-        <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
-            {Array.from({ length: totalSlides }, (_, slideIndex) => (
-                <Carousel.Item key={slideIndex}>
-                    <div className="carousel-row">
-                        {cities
-                            .slice(
-                                slideIndex * itemsPerSlide,
-                                (slideIndex + 1) * itemsPerSlide
-                            )
-                            .map((city) => (
-                                <Images
-                                    key={city.name}
-                                    text={city.name}
-                                    imageUrl={city.imageUrl}
-                                />
-                            ))}
-                    </div>
-                </Carousel.Item>
-            ))}
-        </Carousel>
+            <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
+                {Array.from({ length: totalSlides }, (_, slideIndex) => (
+                    <Carousel.Item key={slideIndex}>
+                        <div className="carousel-row">
+                            {cities
+                                .slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide)
+                                .map((city, index) => (
+                                    <div key={city.name}>
+                                        <Link to={`/destinations/${index + 1}`}>
+                                            <Images
+                                                text={city.name}
+                                                imageUrl={city.imageUrl}
+                                                onClick={() => handleClick(index + 1)}
+                                            />
+                                        </Link>
+                                    </div>
+                                ))}
+                        </div>
+                    </Carousel.Item>
+                ))}
+            </Carousel>
         </div>
     );
 }
