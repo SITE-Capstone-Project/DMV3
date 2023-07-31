@@ -54,7 +54,7 @@ export default function Login({ setAppState, setLoggedIn }) {
     <div className="Login">
 
       <div className="logincard">
-        <h2>Welcome</h2>
+        <h1>Welcome</h1>
 
         {Boolean(errors.form) && <span className="error">{errors.form}</span>}
 

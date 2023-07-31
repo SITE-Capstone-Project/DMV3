@@ -106,7 +106,7 @@ export default function Register({ setAppState, setLoggedIn }) {
   return (
     <div className="Register">
       <div className="registercard">
-        <h2>Create an Account</h2>
+        <h2>Get Started!</h2>
 
         {errors.form && <span className="error">{errors.form}</span>}
 

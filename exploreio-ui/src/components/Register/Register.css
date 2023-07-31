@@ -8,15 +8,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url(https://images.pexels.com/photos/4602279/pexels-photo-4602279.jpeg?auto=compress&cs=tinysrgb&w=1000);
+    background-size: 100% auto;
+    height: 100%;
 }
 .Register .registercard {
+    /* border: 5px;
+    border-color: black; */
+    border-radius: 30px;
+    border: solid white 5px;
+    background-color: rgb(241, 237, 228);
     max-width: 520px;
-    /* padding: 24px 36px 0 36px; */
-    background: transparent;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
+    /* flex: 1; */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .Register .registercard .error {
@@ -83,12 +92,11 @@
     margin-top: 20px;
 }
 .Register .registercard .footer {
-    border-top: solid 1px #ababb7;
-    margin-top: auto;
+    color: rgb(22, 80, 37);
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 50px;
     width: 100%;
-    transform: translateY(42px);
 }
