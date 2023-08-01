@@ -39,7 +39,7 @@ class Hotels {
                                 const photoData = await fetch(photosURL, options)
                                 const photoDataJSON = await photoData.json()
 
-                                photoDataJSON?.data.forEach((element) => {
+                                photoDataJSON?.data?.forEach((element) => {
                                     location.images.push(element?.images?.large?.url)
                                 })
 

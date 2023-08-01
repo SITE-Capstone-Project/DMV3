@@ -9,7 +9,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE destinations (
-    DestinationID SERIAL PRIMARY KEY,
+    destinationid SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     rating FLOAT,
     description TEXT NOT NULL,
@@ -22,17 +22,17 @@ CREATE TABLE destinations (
 );
 
 CREATE TABLE destination_info (
-    DestinationInfoID SERIAL PRIMARY KEY,
-    DestinationID INT,
+    destinationinfoid SERIAL PRIMARY KEY,
+    destinationid INT,
     information TEXT NOT NULL,
     CONSTRAINT fk_destinations
-        FOREIGN KEY(DestinationID)
-            REFERENCES destinations(DestinationID)
+        FOREIGN KEY(destinationid)
+            REFERENCES destinations(destinationid)
 );
 
 CREATE TABLE favorites (
-    FavoriteID SERIAL PRIMARY KEY,
-    UserID INT,
+    favoriteid SERIAL PRIMARY KEY,
+    userid INT,
     destinationid INT,
     name VARCHAR(50) NOT NULL,
     image TEXT NOT NULL,
@@ -41,6 +41,15 @@ CREATE TABLE favorites (
     region VARCHAR(2),
     country VARCHAR(25),
     CONSTRAINT fk_users
-        FOREIGN KEY(UserID)
+        FOREIGN KEY(userid)
             REFERENCES users(id)
+);
+
+CREATE TABLE activities (
+    activityid SERIAL PRIMARY KEY,
+    favoriteid INT,
+    activityinfo TEXT NOT NULL,
+    CONSTRAINT fk_activities
+        FOREIGN KEY(favoriteid)
+            REFERENCES favorites(favoriteid)
 );

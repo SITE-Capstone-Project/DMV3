@@ -16,7 +16,7 @@ class Destinations {
     }
 
     static async getDestinationById(id) {
-        const query = `SELECT * FROM destinations WHERE DestinationID = $1;`
+        const query = `SELECT * FROM destinations WHERE destinationid = $1;`
         const {rows} = await db.query(query, [id])
         if (rows.length == 0) {
             throw new BadRequestError("Destination does not exist")
@@ -28,7 +28,7 @@ class Destinations {
     static async getActivities(area) {
         const response = await openai.createCompletion({
             model: "text-davinci-003",
-            prompt: `Give me a list of the top 16 tourist attractions in ${area}. For each item,
+            prompt: `Give me a list of the top 14 tourist attractions in ${area}. For each item,
             after giving the item's name, separate the description with a colon,
             then give me a super short description (max 100 characters) of the attraction.
             Give me only the list of items, with their descriptions. Nothing else.
@@ -54,13 +54,13 @@ class Destinations {
     }
 
     static async getCachedInfo(id) {
-        const query = `SELECT * FROM destination_info WHERE DestinationID = $1;`
+        const query = `SELECT * FROM destination_info WHERE destinationid = $1;`
         const {rows} = await db.query(query, [id])
         return (rows.length != 0 ? rows[0].information: undefined)
     }
 
     static async addIntoCache(dest) {
-        const query = `INSERT INTO destination_info (DestinationID, information) VALUES ($1,$2) RETURNING *;`
+        const query = `INSERT INTO destination_info (destinationid, information) VALUES ($1,$2) RETURNING *;`
         const {rows} = await db.query(query, [dest.destinationInfo.destinationid, JSON.stringify(dest)])
         return rows[0]
     }

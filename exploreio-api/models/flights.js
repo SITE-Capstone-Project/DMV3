@@ -58,7 +58,8 @@ class Flights {
         let flightInfo = {
             slices: [], 
             passengers: [], 
-            cabin_class:"", 
+            cabin_class:"",
+            max_connections: 0, 
             return_offers:true,
         }
 
@@ -112,7 +113,18 @@ class Flights {
         */
 
         list["data"].forEach((flight) => {
-            let oneFlight = {name: flight.owner.name, logo: flight.owner.logo_symbol_url, total_amount: flight.total_amount}
+            let depDate = new Date(flight?.slices[0]?.segments[0]?.departing_at)
+            let arrDate = new Date(flight?.slices[0]?.segments[0]?.arriving_at)
+            let finalTime = (Math.abs(arrDate.getTime() - depDate.getTime()) / 1000) / 60
+            let oneFlight = {name: flight.owner.name,
+                logo: flight.owner.logo_symbol_url,
+                totalAmount: flight.total_amount,
+                depIATA: flight?.slices[0]?.segments[0]?.origin.iata_code,
+                arrIATA: flight?.slices[0]?.segments[0]?.destination.iata_code,
+                depTime: flight?.slices[0]?.segments[0]?.departing_at,
+                arrTime: flight?.slices[0]?.segments[0]?.arriving_at,
+                totalTime: finalTime
+            }
             allFlights.push(oneFlight)
         })
 

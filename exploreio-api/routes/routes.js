@@ -110,7 +110,7 @@ router.post("/hotels", async (req, res, next) => {
 router.get("/favorites", authenticateJWT, async (req, res, next) => {
     try {
         const userID = req.user.id
-        const response = await Favorites.grabFavoritesByID(userID)
+        const response = await Favorites.getFavoritesByID(userID)
         res.status(200).json(response)
     } catch (error) {
         next(error)
@@ -180,6 +180,50 @@ router.post("/favorites/check", authenticateJWT, async (req, res, next) => {
         const destination = req.body
         const response = await Favorites.checkFavorited(destination, userID)
         res.status(200).json({favorited: response})
+    } catch (error) {
+        next(error)
+    }
+})
+
+/*
+
+POST
+
+Example body:
+{
+    "id": 2,
+    "activityinfo": "Empire State Building..."
+}
+*/
+router.post("/activities", authenticateJWT, async (req, res, next) => {
+    try {
+        const userID = req.user.id
+        const destination = req.body
+        const favoriteid = await Favorites.getFavoriteID(userID, destination?.id)
+        const response = await Favorites.addActivityToFavorite(favoriteid, destination?.activityinfo)
+        res.status(200).json(response)
+    } catch (error) {
+        next(error)
+    }
+})
+
+/*
+
+DELETE
+
+Example body:
+{
+    "id": 2,
+    "activityinfo": "Empire State Building..."
+}
+*/
+router.delete("/activities", authenticateJWT, async (req, res, next) => {
+    try {
+        const userID = req.user.id
+        const destination = req.body
+        const favoriteid = await Favorites.getFavoriteID(userID, destination?.id)
+        const response = await Favorites.removeActivityFromFavorite(favoriteid, destination?.activityinfo)
+        res.status(200).json(response)
     } catch (error) {
         next(error)
     }
