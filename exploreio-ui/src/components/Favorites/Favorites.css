@@ -2,27 +2,44 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 50px;
     color: #a4c3b2;
+    perspective: 700px;
+    transform-style: preserve-3d;
+    transition: all 0.7s ease;
 }
 
 .no-favorites {
     margin-bottom: 0px;
+    margin-left: 30px;
 }
 
 .favorites {
-    display: flex;
-    flex-direction: column;
+    display: grid; grid-template: 1fr/1fr;
+    grid-template-areas: "frontAndBack";
+    transform-style: preserve-3d;
+    transition: all 0.7s ease;
+
+    /* display: flex;
+    flex-direction: column; */
     justify-content: center;
     background-color: white;
     border-radius: 13px;
     min-width: 550px;
     margin: 30px;
     padding: 20px;
+    transform-style: preserve-3d;
+    transition: all 0.7s ease;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
 }
 
 .item {
     display: flex;
     flex-direction: row;
     margin: 20px;
+    border: dotted rgb(101, 162, 185) 4px;
+    padding: 10px;
+    backface-visibility: hidden;
+    grid-area: frontAndBack;
 }
 
 .item img {
@@ -37,24 +54,85 @@
     margin-top: 30px;
 }
 
+.titleanddescription h2{
+    color: rgb(65, 88, 65);
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stamp button{
+    background: transparent;
+    border: transparent;
+    margin-bottom: 30px;
+    padding-left: 30px;
+}
+
+.stamp button img{
+    width: 80px;
+    height: 95px;
+}
+
 .deletebutton {
-    padding-top: 80px;
-    padding-left: 50px;
-    width: 250px;
-    height: 200px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
 }
 
 .deletebutton button {
     background-color: rgb(213, 45, 45);
     color: white;
-    width: 100px;
+    width: 50px;
     height: 35px;
     font-size: 20px;
     border: none;
-    border-radius: 8px;    
+    border-radius: 8px;
 }
 
 .not-logged {
     margin-top: 50px;
     text-align: center;
+}
+
+.itemback{
+    /* display: flex;
+    flex-direction: row; */
+    /* justify-content: center; */
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    grid-area: frontAndBack;
+}
+
+/* .activitiesanddescription{
+    display: flex;
+    flex-direction: row;
+} */
+
+/* .flipcard{
+    transform: rotateY(-180deg);
+} */
+
+.backstamp{
+    position: absolute;
+    bottom: 400px;
+    left: 1183px;
+}
+.backstamp button{
+    /* background: transparent;
+    border: transparent; */
+    position: relative;
+    z-index: 10;
+    margin-bottom: 30px;
+}
+.backstamp button:active{
+    background-color: red;
+}
+.backstamp button img{
+    width: 80px;
+    height: 95px;
 }
