@@ -23,6 +23,7 @@ export default function Favorites({ isLoggedIn }) {
     try {
       const response = await getFavorites()
       setFavorites(response)
+      console.log(response)
     } catch (error) {
       console.log(error)
     }
@@ -49,6 +50,7 @@ export default function Favorites({ isLoggedIn }) {
           ) : (
             <div>
               {favorites?.map((element, index) => {
+              element = element.destination
               return <div className="item" key = {index}>
                   <div className="media">
                     <img src = {element?.image}/>
