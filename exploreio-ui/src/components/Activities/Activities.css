@@ -46,6 +46,31 @@
     padding-right: 5px;
 }
 
+#add-activity {
+    position: absolute;
+    border: none;
+    font-size: 14px;
+    left: 227px;
+    bottom: 0px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
+#remove-activity {
+    position: absolute;
+    border: none;
+    width: 125px;
+    font-size: 14px;
+    left: 189px;
+    bottom: 0px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
 @keyframes slideInAnimation {
     0% {
         bottom: -100px;

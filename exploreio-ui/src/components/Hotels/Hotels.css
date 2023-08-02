@@ -141,6 +141,31 @@
     border-radius: 5px;
 }
 
+#add-hotel {
+    position: absolute;
+    border: none;
+    font-size: 14px;
+    left: 259px;
+    bottom: 55.5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
+#remove-hotel {
+    position: absolute;
+    border: none;
+    width: 125px;
+    font-size: 14px;
+    left: 209px;
+    bottom: 55.5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
 @keyframes fadeInAnimation {
     0% {
         left: 0px;

@@ -5,7 +5,7 @@ import FlightForm from "../FlightForm/FlightForm.jsx";
 import Hotels from "../Hotels/Hotels";
 import Activities from "../Activities/Activities";
 import Footer from "../Footer/Footer";
-import { getDestination, canFavorite, addFavorites, deleteFavorites } from "../../utilities/apiClient";
+import { getDestination, addFavorites, deleteFavorites, getFavorites } from "../../utilities/apiClient";
 
 const apiKey = "AIzaSyDtniF-184Xg1wRRhQwY4xVXdjH8cW4dqI";
 
@@ -14,6 +14,7 @@ export default function InfoCard({ isLoggedIn }){
     const[isFetching, setIsFetching] = useState(false)
     const[destination, setDestination] = useState([])
     const[favorite, setFavorite] = useState(false)
+    const[loadedFavorites, setLoadedFavorites] = useState([])
 
     const params = useParams()
     const id = params.id
@@ -42,13 +43,21 @@ export default function InfoCard({ isLoggedIn }){
 
     const canFavoriteDest = async (destination) => {
         try {
-            const body = {name: destination}
-            const response = await canFavorite(body)
-            if (response?.favorited == false) {
-                setFavorite(true)
-            } else {
-                setFavorite(false)
+            let favorited = true
+            const response = await getFavorites()
+
+            for (let i = 0; i < response?.length; i++) {
+                if (response[i].destination?.destinationid === destination) {
+                    setFavorite(false)
+                    favorited = false
+                    break;
+                }                
             }
+
+            if (favorited) {
+                setFavorite(true)
+            }
+
         } catch (error) {
             console.log(error)
         }
@@ -59,6 +68,7 @@ export default function InfoCard({ isLoggedIn }){
             const body = destination?.destinationInfo
             const response = await addFavorites(body)
             setFavorite(false)
+            window.location.reload()
             return response
         } catch (error) {
             console.log(error)
@@ -70,14 +80,26 @@ export default function InfoCard({ isLoggedIn }){
             const body = {name: destination?.destinationInfo?.name}
             const response = await deleteFavorites(body)
             setFavorite(true)
+            window.location.reload()
             return response
         } catch (error) {
             console.log(error)
         }       
     }
 
+
     useEffect(() => {
-        canFavoriteDest(destination?.destinationInfo?.name)
+        canFavoriteDest(destination?.destinationInfo?.destinationid)
+
+        /* Loading the user's favorites */
+        let favorites = undefined
+        const loadFavorites = async () => {
+            favorites = await getFavorites()
+            setLoadedFavorites(favorites)
+            return favorites
+        }
+        loadFavorites()
+
     }, [destination])
 
     setTimeout(loadMap, 3000)
@@ -148,11 +170,22 @@ export default function InfoCard({ isLoggedIn }){
 
             <div className ="full-container">
                 <div className="infoAndActivities">
-                    <Activities activities = {destination?.destinationActivities}/>
+                    <Activities
+                    destinationid = {destination?.destinationInfo?.destinationid} 
+                    activities = {destination?.destinationActivities}
+                    favorite = {favorite}
+                    isLoggedIn = {isLoggedIn}
+                    loadedFavorites = {loadedFavorites}/>
                 </div>
                 <div className="hotels-section">
                     <div className="hotels">
-                        <Hotels hotels = {destination?.hotels?.data}/>
+                        <Hotels
+                        hotels = {destination?.hotels?.data}
+                        destinationid = {destination?.destinationInfo?.destinationid} 
+                        favorite = {favorite}
+                        isLoggedIn = {isLoggedIn}
+                        loadedFavorites = {loadedFavorites}
+                        />
                     </div>
                 </div>
                 <div className = "flights-section">

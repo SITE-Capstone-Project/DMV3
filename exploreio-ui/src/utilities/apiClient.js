@@ -128,6 +128,24 @@ const canFavorite = async function(body) {
   }  
 }
 
+const addActivity = async function(body) {
+  try {
+    const response = await request('POST', `${apiBaseURL}/exploreio/activities`, body)
+    return response
+  } catch(error) {
+    return null
+  }
+}
+
+const deleteActivity = async function(body) {
+  try {
+    const response = await request('DELETE', `${apiBaseURL}/exploreio/activities`, body)
+    return response
+  } catch(error) {
+    return null
+  }
+}
+
 const fixToken = function (token) {
   const fixedToken = "Bearer " + token
   return fixedToken
@@ -149,5 +167,7 @@ export {
   addFavorites,
   deleteFavorites,
   getFavorites,
-  canFavorite
+  canFavorite,
+  addActivity,
+  deleteActivity
 }
