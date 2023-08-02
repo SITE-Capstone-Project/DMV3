@@ -111,7 +111,7 @@ export function Postcard({ element, deleteFavorite }) {
         <div className="activitiesanddescription">
           <h2>Favorite Activities</h2>
           <p>[List of favorite activities goes here]</p>
-          <button className = "backstamp" onClick={flipOver}>
+          <button className = "backstamp" onClick={flipBack}>
             {/* <img src={backstamp}/> */}
             This is a Button.
           </button>
