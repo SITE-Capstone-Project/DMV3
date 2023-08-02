@@ -33,7 +33,15 @@ class Hotels {
                         if (locDataJSON["category"].name.toLowerCase() === "hotel") {
                             /* Creating a location object to fill in with relevant information. */
                             if (count < numAmount) {
-                                let location = {name: "", rating: "", price_level: "", description: "", web_url: ""}
+                                let location = {name: "", rating: "", price_level: "", description: "", web_url: "", images: []}
+
+                                const photosURL = `https://api.content.tripadvisor.com/api/v1/location/${locationIDs[i]}/photos?language=en&key=${TRAV_ADVISOR_KEY}`
+                                const photoData = await fetch(photosURL, options)
+                                const photoDataJSON = await photoData.json()
+
+                                photoDataJSON?.data?.forEach((element) => {
+                                    location.images.push(element?.images?.large?.url)
+                                })
 
                                 /* Setting appropriate information */
                                 location.name = locDataJSON["name"]

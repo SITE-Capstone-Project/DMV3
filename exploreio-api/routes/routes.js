@@ -85,32 +85,13 @@ router.post("/flights", async (req, res, next) => {
     }
 })
 
-/*
-    /hotels will return a single hotel from a destination area.
-
-    EXAMPLE REQUEST BODY:
-
-    {
-        area: "New York City"
-    }
-*/
-router.post("/hotels", async (req, res, next) => {
-    try {
-        const area = req.body.area
-        const response = await Hotels.grabHotels(area, 1)
-        res.status(200).json(response)
-    } catch (error) {
-        next(error)
-    }
-})
-
 /* 
     GET /favorites will grab a user's favorites if the user exists.
 */
 router.get("/favorites", authenticateJWT, async (req, res, next) => {
     try {
         const userID = req.user.id
-        const response = await Favorites.grabFavoritesByID(userID)
+        const response = await Favorites.getFavoritesByID(userID)
         res.status(200).json(response)
     } catch (error) {
         next(error)
@@ -166,20 +147,45 @@ router.delete("/favorites", authenticateJWT, async (req, res, next) => {
     }
 })
 
-/* 
-    POST /favorites/check will determine if a user has favorited a destination or not.
+/*
 
-    Example body:
-    {
-        "name": "Los Angeles"
-    }
+POST /activities adds an activity to a Favorite
+
+Example body:
+{
+    "id": 2, <- DESTINATION ID
+    "activityinfo": JSON STRING (to be parsed), '{"type": activity/hotel, "info": information}'
+}
 */
-router.post("/favorites/check", authenticateJWT, async (req, res, next) => {
+router.post("/activities", authenticateJWT, async (req, res, next) => {
     try {
         const userID = req.user.id
         const destination = req.body
-        const response = await Favorites.checkFavorited(destination, userID)
-        res.status(200).json({favorited: response})
+        const favoriteid = await Favorites.getFavoriteID(userID, destination?.id)
+        const response = await Favorites.addActivityToFavorite(favoriteid, destination?.activityinfo)
+        res.status(200).json(response)
+    } catch (error) {
+        next(error)
+    }
+})
+
+/*
+
+DELETE /activities removes an activity from a Favorite
+
+Example body:
+{
+    "id": 2, <- DESTINATION ID
+    "activityinfo": JSON STRING (to be parsed), '{"type": activity/hotel, "info": information}'
+}
+*/
+router.delete("/activities", authenticateJWT, async (req, res, next) => {
+    try {
+        const userID = req.user.id
+        const destination = req.body
+        const favoriteid = await Favorites.getFavoriteID(userID, destination?.id)
+        const response = await Favorites.removeActivityFromFavorite(favoriteid, destination?.activityinfo)
+        res.status(200).json(response)
     } catch (error) {
         next(error)
     }
