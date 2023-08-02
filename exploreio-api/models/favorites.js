@@ -19,17 +19,6 @@ class Favorites {
         return fullResponse
     }
 
-    static getFavoriteID = async function(id, destinationid) {
-        const searchQuery = `SELECT * FROM favorites WHERE (userid = $1 AND destinationid = $2)`
-        const {rows} = await db.query(searchQuery, [id, destinationid])
-
-        if (rows[0]) {
-            return rows[0]?.favoriteid
-        }
-        
-        throw new BadRequestError("Favorite doesn't exist")
-    }
-
     static addFavorites = async function(destination, id) {
         /* Searching to see if the favorite already exists for that person in the database. */
         const searchQuery = `SELECT * FROM favorites WHERE (userid = $1 AND name = $2)`
@@ -57,6 +46,13 @@ class Favorites {
 
         /* If the favorite exists in the table, then remove it. */
         if (rows.length > 0) {
+            const activityQuery = `SELECT favoriteid FROM favorites WHERE (userid = $1 AND name = $2)`
+            const favoriteids = await db.query(activityQuery, [id, destination.name])
+
+            let favoriteid = favoriteids?.rows[0]?.favoriteid
+            const deleteActivitiesQuery = `DELETE FROM activities WHERE (favoriteid = $1)`
+            const response = await db.query(deleteActivitiesQuery, [favoriteid])
+
             const query = `DELETE FROM favorites WHERE (userid = $1 AND name = $2)`
             const {rows} = await db.query(query, [id, destination.name])
 
@@ -66,20 +62,20 @@ class Favorites {
         }
     }
 
-    /* Checking if a user has already favorited a destination */
-    static checkFavorited = async function(destination, id) {
-        const searchQuery = `SELECT * FROM favorites WHERE (userid = $1 AND name = $2)`
-        const {rows} = await db.query(searchQuery, [id, destination.name])
+    /* Helper function that grabs a favorite id by destinationid */
+    static getFavoriteID = async function(id, destinationid) {
+        const searchQuery = `SELECT * FROM favorites WHERE (userid = $1 AND destinationid = $2)`
+        const {rows} = await db.query(searchQuery, [id, destinationid])
 
-        /* Return true if the query isn't empty */
-        if (rows.length > 0) {
-            return true
+        if (rows[0]) {
+            return rows[0]?.favoriteid
         }
-
-        return false
+        
+        throw new BadRequestError("Favorite doesn't exist")
     }
 
     static getFavoriteActivities = async function(favoriteid) {
+        /* Searching from the activities table by favoriteid */
         const searchQuery = `SELECT * FROM activities WHERE (favoriteid = $1)`
         const {rows} = await db.query(searchQuery, [favoriteid])
         
@@ -87,6 +83,7 @@ class Favorites {
     }
 
     static addActivityToFavorite = async function(favoriteid, activity) {
+        /* Checking to see if the activity exists */
         const searchQuery = `SELECT * FROM activities WHERE (favoriteid = $1)`
         const search_rows = await db.query(searchQuery, [favoriteid])
 
