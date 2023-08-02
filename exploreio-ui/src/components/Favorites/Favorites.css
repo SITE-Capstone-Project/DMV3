@@ -24,11 +24,11 @@
     background-color: white;
     border-radius: 13px;
     min-width: 550px;
+    height: auto;
     margin: 30px;
     padding: 20px;
     transform-style: preserve-3d;
     transition: all 0.7s ease;
-    backface-visibility: hidden;
     transform-style: preserve-3d;
 }
 
@@ -65,11 +65,14 @@
     align-items: center;
 }
 
+.stamp {
+    margin-bottom: 30px;
+    padding-left: 30px;   
+}
+
 .stamp button{
     background: transparent;
     border: transparent;
-    margin-bottom: 30px;
-    padding-left: 30px;
 }
 
 .stamp button img{
@@ -106,6 +109,14 @@
     transform: rotateY(-180deg);
     backface-visibility: hidden;
     grid-area: frontAndBack;
+}
+
+.itemback-flex {
+    display: flex;
+}
+
+.flipped {
+    transform: rotateY(-180deg);
 }
 
 /* .activitiesanddescription{

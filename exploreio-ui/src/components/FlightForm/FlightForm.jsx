@@ -80,17 +80,6 @@ export default function FlightForm({area, isFetching}) {
         }
     }
 
-    let object = {
-        name: 'Duffel Airways',
-        logo: 'https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg',
-        totalAmount: '65.50',
-        depIATA: 'BWI',
-        arrIATA: 'JFK',
-        depTime: '2023-07-31T23:13:00',
-        arrTime: '2023-08-01T00:11:00',
-        totalTime: 58
-    }
-
     return (
         <div className = "flight-form">
             <div className = "flight-top-part">
@@ -101,7 +90,6 @@ export default function FlightForm({area, isFetching}) {
                     <div></div>
             )}
             </div>
-            {/* <FlightCard flight = {object}/> */}
             {isFetching ? (
                 <div></div>
             ) : (
@@ -203,25 +191,45 @@ export default function FlightForm({area, isFetching}) {
 }
 
 export function FlightCard({ flight }) {
-    const departTime = new Date(flight?.depTime)
-    const arriveTime = new Date(flight?.arrTime)
-    const start = (departTime.getMonth()+1) + 
-    "-" + departTime.getDate() + 
-    "-" + departTime.getFullYear() + 
-    ", " + String(departTime.getHours()).padStart(2,0) + 
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"]
+
+    const departTime = new Date(flight?.depTime1)
+    const arriveTime = new Date(flight?.arrTime1)
+
+    const start = (monthNames[departTime.getMonth()+1]) +
+    " " + departTime.getDate() +
+    ", " + departTime.getFullYear() +
+    ", " + String(departTime.getHours()).padStart(2,0) +
     ":" + String(departTime.getMinutes()).padStart(2,0)
-    const end = (arriveTime.getMonth()+1) + 
-    "-" + arriveTime.getDate() + 
-    "-" + arriveTime.getFullYear() + 
-    ", " + String(arriveTime.getHours()).padStart(2,0) + 
+
+    const end = (monthNames[arriveTime.getMonth()+1]) +
+    " " + arriveTime.getDate() +
+    ", " + arriveTime.getFullYear() +
+    ", " + String(arriveTime.getHours()).padStart(2,0) +
     ":" + String(arriveTime.getMinutes()).padStart(2,0)
+
+    const departTime2 = new Date(flight?.depTime2)
+    const arriveTime2 = new Date(flight?.arrTime2)
+
+    const start2 = (monthNames[departTime2.getMonth()+1]) +
+    " " + departTime2.getDate() +
+    ", " + departTime2.getFullYear() +
+    ", " + String(departTime2.getHours()).padStart(2,0) +
+    ":" + String(departTime2.getMinutes()).padStart(2,0)
+
+    const end2 = (monthNames[arriveTime2.getMonth()+1]) +
+    " " + arriveTime2.getDate() +
+    ", " + arriveTime2.getFullYear() +
+    ", " + String(arriveTime2.getHours()).padStart(2,0) +
+    ":" + String(arriveTime2.getMinutes()).padStart(2,0)
 
     return (
         <div className = "flight-card">
-            <div className = "airline-image">
-                <img id = "a-image" src = {flight?.logo}/>
-            </div>
             <div className = "airline-info">
+                <div className = "airline-image">
+                    <img id = "a-image" src = {flight?.logo}/>
+                </div>
                 <div className = "airline-name">
                     <p> {flight?.name} </p>
                     <div className = "airline-price">
@@ -231,17 +239,34 @@ export function FlightCard({ flight }) {
                 <div className ="flight-information">
                     <div className = "depart-start">
                         <img id="airplane-logo" src="https://www.freeiconspng.com/thumbs/airplane-icon-png/plane-icon-png-images--pictures--becuo-8.png"/>
-                        <p> {`${flight?.depIATA}`} </p>
+                        <p> {`${flight?.depIATA1}`} </p>
                         <p id = "departing-time"> {`${start}`} </p>
                     </div>
                     <img id = "arrow-indicator" src="https://static.thenounproject.com/png/1337191-200.png"/>
                     <div className = "flight-time">
-                        <p> {`${flight?.totalTime} min`} </p>
+                        <p> {`${flight?.totalTimeDepart} min`} </p>
                     </div>
                     <div className = "arrive-end">
                         <img id="airplane-logo-end" src="https://www.freeiconspng.com/thumbs/airplane-icon-png/plane-icon-png-images--pictures--becuo-8.png"/>
-                        <p> {`${flight?.arrIATA}`} </p>
+                        <p> {`${flight?.arrIATA1}`} </p>
                         <p id = "arriving-time"> {`${end}`} </p>
+                    </div>
+                </div>
+
+                <div className ="flight-information">
+                    <div className = "depart-start2">
+                        <img id="airplane-logo" src="https://www.freeiconspng.com/thumbs/airplane-icon-png/plane-icon-png-images--pictures--becuo-8.png"/>
+                        <p> {`${flight?.depIATA2}`} </p>
+                        <p id = "departing-time2"> {`${start2}`} </p>
+                    </div>
+                    <img id = "arrow-indicator2" src="https://static.thenounproject.com/png/1337191-200.png"/>
+                    <div className = "flight-time2">
+                        <p> {`${flight?.totalTimeReturn} min`} </p>
+                    </div>
+                    <div className = "arrive-end2">
+                        <img id="airplane-logo-end" src="https://www.freeiconspng.com/thumbs/airplane-icon-png/plane-icon-png-images--pictures--becuo-8.png"/>
+                        <p> {`${flight?.arrIATA2}`} </p>
+                        <p id = "arriving-time2"> {`${end2}`} </p>
                     </div>
                 </div>
             </div>

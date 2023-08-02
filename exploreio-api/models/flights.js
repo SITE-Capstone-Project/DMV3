@@ -115,15 +115,25 @@ class Flights {
         list["data"].forEach((flight) => {
             let depDate = new Date(flight?.slices[0]?.segments[0]?.departing_at)
             let arrDate = new Date(flight?.slices[0]?.segments[0]?.arriving_at)
-            let finalTime = (Math.abs(arrDate.getTime() - depDate.getTime()) / 1000) / 60
+            let finalTimeDepart = (Math.abs(arrDate.getTime() - depDate.getTime()) / 1000) / 60
+
+            let depDate2 = new Date(flight?.slices[1]?.segments[0]?.departing_at)
+            let arrDate2 = new Date(flight?.slices[1]?.segments[0]?.arriving_at)
+            let finalTimeReturn = (Math.abs(arrDate2.getTime() - depDate2.getTime()) / 1000) / 60
+
             let oneFlight = {name: flight.owner.name,
                 logo: flight.owner.logo_symbol_url,
                 totalAmount: flight.total_amount,
-                depIATA: flight?.slices[0]?.segments[0]?.origin.iata_code,
-                arrIATA: flight?.slices[0]?.segments[0]?.destination.iata_code,
-                depTime: flight?.slices[0]?.segments[0]?.departing_at,
-                arrTime: flight?.slices[0]?.segments[0]?.arriving_at,
-                totalTime: finalTime
+                depIATA1: flight?.slices[0]?.segments[0]?.origin.iata_code,
+                arrIATA1: flight?.slices[0]?.segments[0]?.destination.iata_code,
+                depTime1: flight?.slices[0]?.segments[0]?.departing_at,
+                arrTime1: flight?.slices[0]?.segments[0]?.arriving_at,
+                depIATA2: flight?.slices[1]?.segments[0]?.origin.iata_code,
+                arrIATA2: flight?.slices[1]?.segments[0]?.destination.iata_code,
+                depTime2: flight?.slices[1]?.segments[0]?.departing_at,
+                arrTime2: flight?.slices[1]?.segments[0]?.arriving_at,
+                totalTimeDepart: finalTimeDepart,
+                totalTimeReturn: finalTimeReturn
             }
             allFlights.push(oneFlight)
         })
