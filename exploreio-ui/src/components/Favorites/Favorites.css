@@ -1,10 +1,18 @@
 .favoritesContainer h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
     color: #a4c3b2;
     perspective: 700px;
     transform-style: preserve-3d;
     transition: all 0.7s ease;
+}
+
+.pushinP p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(65, 88, 65);
+    margin-left: 50px;
+    margin-bottom: 50px;
 }
 
 .no-favorites {
