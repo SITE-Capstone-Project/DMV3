@@ -46,6 +46,9 @@ export default function Favorites({ isLoggedIn }) {
         <div>
           <div className="favoritesContainer">
             <h1>Favorites</h1>
+            <div className="pushinP">
+              <p>Click the stamp to flip over the card!</p>
+            </div>
             {/* <div className="favorites"> */}
 
             {favorites?.length == 0 ? (
