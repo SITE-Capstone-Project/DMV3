@@ -4,10 +4,43 @@
     position: relative;
     margin: 0 auto;
     width: 370px;
-    height: 600px;
+    height: auto;
     background-color: #a4c3b2;
-    border: 10px solid rgb(255, 255, 255);
-    border-radius: 20px;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 1px;
+    border-bottom-right-radius: 15px;
+}
+
+.carousel-control-prev {
+    background-color: rgba(255, 255, 255, 0.425);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-top: 98px;
+    margin-bottom: 95px;
+    margin-left: 0px;
+    width: 75px;
+    color: rgb(0, 0, 0);
+    opacity: 100%;
+}
+
+.carousel-control-next {
+    background-color: rgba(255, 255, 255, 0.425);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-top: 98px;
+    margin-bottom: 95px;
+    margin-right: 0px;
+    width: 65px;
+    color: rgb(0, 0, 0);
+    opacity: 100%;
+}
+
+.carousel-control-next-icon {
+    display: none;
+}
+
+.carousel-control-prev-icon {
+    display: none;
 }
 
 .hotels-title {
@@ -26,17 +59,17 @@
 }
 
 .popup-description {
-    animation: fadeInAnimation ease 0.5s;
+    animation: fadeInAnimation ease-in-out 0.5s;
     animation-iteration-count: 1;
     position: absolute;
     background-color: white;
     padding-left: 15px;
     padding-right: 5px;
-    height: 300px;
+    height: 320px;
     width: 335px;
-    right: 327px;
+    right: 336px;
     overflow-y: scroll;
-    top: -60px;    
+    top: -3px;    
     border-radius: 10px;
     font-size: 13px;
 }
@@ -47,8 +80,8 @@
     position: relative;
     border: 3px solid rgb(255, 255, 255);
     margin: 10px;
-    height: 90px;
-    border-radius: 8px;
+    height: auto;
+    border-radius: 4px;
     background-color: rgb(248, 255, 255);
 }
 
@@ -99,6 +132,39 @@
 #description {
     padding-top: 6px;
     font-size: 13px;
+}
+
+#hotel-image {
+    width: 334px;
+    height: 222.86px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+#add-hotel {
+    position: absolute;
+    border: none;
+    font-size: 14px;
+    width: 100px;
+    left: 234px;
+    bottom: 55.5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
+#remove-hotel {
+    position: absolute;
+    border: none;
+    width: 125px;
+    font-size: 14px;
+    left: 209px;
+    bottom: 55.5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: green;
+    color: white;
 }
 
 @keyframes fadeInAnimation {

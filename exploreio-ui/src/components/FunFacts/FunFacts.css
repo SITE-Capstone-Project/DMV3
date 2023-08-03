@@ -1,0 +1,21 @@
+.fun-facts {
+    position: relative;
+    animation: slideInAnimation ease 2s;
+    animation-iteration-count: 1;
+    background-color: #a4c3b2;
+    border-radius: 1px;
+    border-bottom-right-radius: 15px;
+    border: 5px solid rgb(255, 255, 255);
+    height: auto;
+    width: 480px;
+    margin: 0 auto;
+}
+
+.facts-title {
+    color: black;
+    margin: 0px;
+    padding-left: 20px;
+    padding-top: 13px;
+    margin-bottom: 19px;
+    font-weight: bold;
+}
