@@ -53,6 +53,31 @@ class Destinations {
         return finalInfo
     }
 
+    static async getFunFacts(area) {
+        const response = await openai.createCompletion({
+            model: "text-davinci-003",
+            prompt: `Give me 5 fun facts about ${area}. Just give each item,
+            separated by a new line. Make each fact brief. Do not say anything else but the fun facts.`,
+            max_tokens: 1000,
+            temperature: 0,
+        })
+
+        /* Grabbing the response string from ChatGPT */
+        let responseString = response.data.choices[0].text
+
+        /* Formatting the string to remove the first two new line characters (\n) */
+        let normalized = responseString.substring(2, responseString.length)
+
+        /* Do more string manipulation to retrieve and format into a list */
+        let finalInfo = normalized.split("\n");
+
+        finalInfo.forEach((element, index) => {
+            finalInfo[index] = element
+        })
+
+        return finalInfo
+    }
+
     static async getCachedInfo(id) {
         const query = `SELECT * FROM destination_info WHERE destinationid = $1;`
         const {rows} = await db.query(query, [id])

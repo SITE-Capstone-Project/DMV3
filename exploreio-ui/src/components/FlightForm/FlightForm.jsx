@@ -224,6 +224,12 @@ export function FlightCard({ flight }) {
     ", " + String(arriveTime2.getHours()).padStart(2,0) +
     ":" + String(arriveTime2.getMinutes()).padStart(2,0)
 
+    let hours1 = Math.floor(flight?.totalTimeDepart / 60)
+    let minutes1 = flight?.totalTimeDepart % 60
+
+    let hours2 = Math.floor(flight?.totalTimeReturn / 60)
+    let minutes2 = flight?.totalTimeReturn % 60
+
     return (
         <div className = "flight-card">
             <div className = "airline-info">
@@ -244,7 +250,7 @@ export function FlightCard({ flight }) {
                     </div>
                     <img id = "arrow-indicator" src="https://static.thenounproject.com/png/1337191-200.png"/>
                     <div className = "flight-time">
-                        <p> {`${flight?.totalTimeDepart} min`} </p>
+                        <p> {`${hours1}hr, ${minutes1}min`} </p>
                     </div>
                     <div className = "arrive-end">
                         <img id="airplane-logo-end" src="https://www.freeiconspng.com/thumbs/airplane-icon-png/plane-icon-png-images--pictures--becuo-8.png"/>
@@ -261,7 +267,7 @@ export function FlightCard({ flight }) {
                     </div>
                     <img id = "arrow-indicator2" src="https://static.thenounproject.com/png/1337191-200.png"/>
                     <div className = "flight-time2">
-                        <p> {`${flight?.totalTimeReturn} min`} </p>
+                        <p> {`${hours2}hr, ${minutes2}min`} </p>
                     </div>
                     <div className = "arrive-end2">
                         <img id="airplane-logo-end" src="https://www.freeiconspng.com/thumbs/airplane-icon-png/plane-icon-png-images--pictures--becuo-8.png"/>

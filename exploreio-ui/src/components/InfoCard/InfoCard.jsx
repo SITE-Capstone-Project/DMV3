@@ -6,6 +6,7 @@ import Hotels from "../Hotels/Hotels";
 import Activities from "../Activities/Activities";
 import Footer from "../Footer/Footer";
 import { getDestination, addFavorites, deleteFavorites, getFavorites } from "../../utilities/apiClient";
+import FunFacts from "../FunFacts/FunFacts";
 
 const apiKey = "AIzaSyDtniF-184Xg1wRRhQwY4xVXdjH8cW4dqI";
 
@@ -192,6 +193,9 @@ export default function InfoCard({ isLoggedIn }){
                     <div>
                     <div className="flights">
                         <FlightForm area = {destination?.destinationInfo?.name} isFetching = {isFetching}/>
+                    </div>
+                    <div className="flights">
+                        <FunFacts facts = {destination?.funFacts}/>
                     </div>
                     </div>
                 </div>
