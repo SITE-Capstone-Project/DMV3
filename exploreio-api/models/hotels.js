@@ -1,5 +1,5 @@
 const { TRAV_ADVISOR_KEY } = require("../config/config")
-const fetch = require("node-fetch")
+import fetch from "node-fetch"
 
 class Hotels {
     static async grabHotels(area, numAmount) {
