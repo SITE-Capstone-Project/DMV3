@@ -71,9 +71,9 @@ export default function FlightForm({area, isFetching}) {
     }
 
     const submitForm = async function(event) {
+        event.preventDefault()
         let valid = true
 
-        event.preventDefault()
         let request = {
             IATA:form.IATA,
             destination: area,

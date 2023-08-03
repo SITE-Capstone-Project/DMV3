@@ -1,4 +1,5 @@
 const { TRAV_ADVISOR_KEY } = require("../config/config")
+const fetch = require("node-fetch")
 
 class Hotels {
     static async grabHotels(area, numAmount) {
@@ -63,6 +64,8 @@ class Hotels {
             return locations
         } catch (error) {
             console.log(error)
+        } finally {
+            return locations
         }
     }
 
