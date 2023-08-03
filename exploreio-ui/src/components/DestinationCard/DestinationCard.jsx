@@ -3,6 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
+// ... (imports and other code)
+
 export default function DestinationCard({ id, name, rating, image }) {
   const formattedRating = rating.toFixed(1);
 
@@ -15,7 +17,12 @@ export default function DestinationCard({ id, name, rating, image }) {
             <h3>{name}</h3>
           </div>
           <div className="rating">
-            <p>{formattedRating}</p>
+            <div className="star-rating-container">
+              {formattedRating >= 1 && <span className="star">★</span>}
+              <div className="ratingValue">
+                <p>{formattedRating}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

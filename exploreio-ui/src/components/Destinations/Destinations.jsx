@@ -9,6 +9,7 @@ export default function Destinations({ destinations }) {
   const [filteredData, setFilteredData] = useState(destinations);
   const [filterRating, setFilterRating] = useState("");
   const [filterCost, setFilterCost] = useState(""); // Add state for filtering by cost
+  const [showNoResultsMessage, setShowNoResultsMessage] = useState(false); // State for displaying no results message
 
   useEffect(() => {
     setFilteredData(destinations);
@@ -28,19 +29,25 @@ export default function Destinations({ destinations }) {
     });
 
     setFilteredData(filteredResults);
+    setShowNoResultsMessage(filteredResults.length === 0); // Update no results message state
+
   };
 
   return (
     <div>
       <Container>
-        <h1 className = "clearing"> Destinations </h1>
+        <h1 className="clearing"> Destinations </h1>
         <SearchBox
           data={filteredData}
           onFilter={(searchTerm, filterRating, filterCost) =>
             handleFilter(searchTerm, filterRating, filterCost)
-          } // Pass search term, filter rating, and filter cost to handleFilter
+          }
         />
-        <DestinationContainer destinations={filteredData} />
+        {filteredData.length === 0 && showNoResultsMessage ? (
+          <p className="no-results-message">Oops - please try again!</p>
+        ) : (
+          <DestinationContainer destinations={filteredData} />
+        )}
         <Footer />
       </Container>
     </div>

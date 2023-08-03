@@ -47,12 +47,23 @@ h3{
   width: 90%;
 }
 
-.rating{
-  width: 10%;
-}
-
 .rating p {
   padding-top: 6px;
   padding-bottom: 0px;
   margin-bottom: 0px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.star-rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  /* color: #f1c40f; */
+  margin-right: 3px; /* Adjust the margin to create spacing between star and rating */
 }
