@@ -8,6 +8,7 @@ export default function FlightForm({area, isFetching}) {
     const[fetching, setFetching] = new useState(false)
     const[startDate, setStartDate] = new useState(new Date().toLocaleDateString('fr-ca'))
     const[endDate, setEndDate] = new useState(undefined)
+    const[error, setError] = new useState(undefined)
     const[kids, setKids] = new useState([])
 
     const[form, setForm] = new useState({
@@ -25,9 +26,13 @@ export default function FlightForm({area, isFetching}) {
     }, [startDate])
 
     useEffect(() => {
-        let array = new Array(form.children != "" ? parseInt(form.children) : 0)
-        array.fill(0)
-        setKids(array)
+        if (form.children && parseInt(form.children) >= 0) {
+            let array = new Array(form.children != "" ? parseInt(form.children) : 0)
+            array.fill(0)
+            setKids(array)
+        } else {
+            setKids([])
+        }
     }, [form.children])
 
     const handleChange = async function(event) {
@@ -44,6 +49,20 @@ export default function FlightForm({area, isFetching}) {
         }
     }
 
+    const resetForm = async function() {
+        setError(undefined)
+        setFlights(undefined)
+        setForm({...form, 
+            IATA:"",
+            destination:"",
+            departDate:"",
+            returnDate:"",
+            numAdults:0,
+            children:0,
+            cabin_class:"economy"
+        })
+    }
+
     const updateKidsArray = async function(event) {
         event.preventDefault()
         let current = [...kids]
@@ -52,6 +71,8 @@ export default function FlightForm({area, isFetching}) {
     }
 
     const submitForm = async function(event) {
+        let valid = true
+
         event.preventDefault()
         let request = {
             IATA:form.IATA,
@@ -63,7 +84,42 @@ export default function FlightForm({area, isFetching}) {
             cabin_class:form.cabin_class            
         }
 
-        const response = await sendFlightRequest(request)
+        if (request?.IATA?.length != 3) {
+            setError("ERROR: Invalid IATA code.")
+            valid = false
+        } else if (request?.departDate === "" || request?.returnDate === "") {
+            setError("ERROR: Enter a valid date.")
+            valid = false
+        } else if (request?.departDate === request?.returnDate) {
+            setError("ERROR: Cannot book same day departure/return.")
+            valid = false
+        } else if (Number.parseInt(request?.numAdults) === 0) {
+            setError("ERROR: You must have an adult.")
+            valid = false
+        } else if (Number.parseInt(form?.children) < 0) {
+            setError("ERROR: Enter a valid number of children.")
+            valid = false           
+        }
+
+        if (request?.children?.length > 0) {
+            console.log(request?.children)
+            request?.children?.forEach((kid) => {
+                if (kid <= 0 || kid > 18) {
+                    setError("ERROR: Children are between 1 and 17 years of age.")
+                    valid = false
+                }
+            })
+        }
+
+        if (valid) {
+            let response = undefined
+
+            response = await sendFlightRequest(request)
+            if (!response) {
+                setError("ERROR: Ensure that departing IATA code is valid or numerical inputs are valid.")
+            }
+        }
+
         return response
     }
 
@@ -94,15 +150,16 @@ export default function FlightForm({area, isFetching}) {
                 <div></div>
             ) : (
                 <div>
-                    
                 {flights ? (
                     <div>
                         {flights.map((flight, index) => {
                             return <FlightCard key = {flight + index} flight = {flight}/>
                         })}
+                        <button id = "reset-button" onClick = {resetForm}> Reset Form </button>
                     </div>
                 ):(
                     <form id = "request-form">
+                        {error && <div className = "error-message"> <p>{error}</p> </div>}
                         <div>
                             <label> Origin airport IATA: </label>
                             <input type = "text"
@@ -131,10 +188,11 @@ export default function FlightForm({area, isFetching}) {
                             </div>
 
                             <div>
-                                <label>Adults:</label>
+                                <label>Adults (Max 4):</label>
                                 <input type = "number" 
                                 min = {0} 
                                 step = {1}
+                                max = {4}
                                 name = "numAdults"
                                 value = {form.numAdults}
                                 onChange = {handleFormChange}/>
@@ -197,13 +255,13 @@ export function FlightCard({ flight }) {
     const departTime = new Date(flight?.depTime1)
     const arriveTime = new Date(flight?.arrTime1)
 
-    const start = (monthNames[departTime.getMonth()+1]) +
+    const start = (monthNames[departTime.getMonth()]) +
     " " + departTime.getDate() +
     ", " + departTime.getFullYear() +
     ", " + String(departTime.getHours()).padStart(2,0) +
     ":" + String(departTime.getMinutes()).padStart(2,0)
 
-    const end = (monthNames[arriveTime.getMonth()+1]) +
+    const end = (monthNames[arriveTime.getMonth()]) +
     " " + arriveTime.getDate() +
     ", " + arriveTime.getFullYear() +
     ", " + String(arriveTime.getHours()).padStart(2,0) +
@@ -212,13 +270,13 @@ export function FlightCard({ flight }) {
     const departTime2 = new Date(flight?.depTime2)
     const arriveTime2 = new Date(flight?.arrTime2)
 
-    const start2 = (monthNames[departTime2.getMonth()+1]) +
+    const start2 = (monthNames[departTime2.getMonth()]) +
     " " + departTime2.getDate() +
     ", " + departTime2.getFullYear() +
     ", " + String(departTime2.getHours()).padStart(2,0) +
     ":" + String(departTime2.getMinutes()).padStart(2,0)
 
-    const end2 = (monthNames[arriveTime2.getMonth()+1]) +
+    const end2 = (monthNames[arriveTime2.getMonth()]) +
     " " + arriveTime2.getDate() +
     ", " + arriveTime2.getFullYear() +
     ", " + String(arriveTime2.getHours()).padStart(2,0) +
