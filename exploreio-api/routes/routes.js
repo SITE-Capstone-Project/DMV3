@@ -37,7 +37,7 @@ router.get("/destinations/:id", async (req, res, next) => {
     try {
         const id = req.params.id
         const fullResponse = {destinationInfo: [], 
-            destinationActivities: [], hotels: []}
+            destinationActivities: [], hotels: [], funFacts: []}
 
         if (!id) {
             throw new BadRequestError("ID not provided")
@@ -61,6 +61,10 @@ router.get("/destinations/:id", async (req, res, next) => {
             /* Grabbing hotels */
             const hotels = await Hotels.grabHotels(response.name, 5);
             fullResponse.hotels = hotels 
+
+            /* Fun Facts by ChatGPT */
+            const facts = await Destinations.getFunFacts(response.name)
+            fullResponse.funFacts = facts
 
             /* Now, add into cache */
             Destinations.addIntoCache(fullResponse)
