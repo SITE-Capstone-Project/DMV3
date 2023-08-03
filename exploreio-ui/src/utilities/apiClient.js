@@ -1,4 +1,4 @@
-const apiBaseURL = "http://localhost:3001"
+const apiBaseURL = "https://exploreio-backend.onrender.com/"
 const apiLogInURL = "/auth/login"
 const apiRegisterURL = "/auth/register"
 
