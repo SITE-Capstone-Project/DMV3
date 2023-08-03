@@ -304,6 +304,22 @@
     margin-bottom: 3px;
 }
 
+#reset-button {
+    border: none;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 450px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: rgb(224, 224, 224);
+}
+
+.error-message p {
+    color: red;
+    margin: 0px;
+    margin-bottom: 9px;
+}
+
 @keyframes slideInAnimation {
     0% {
         bottom: -100px;
