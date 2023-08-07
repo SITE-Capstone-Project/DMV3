@@ -11,10 +11,21 @@ export default function Footer() {
                     <p>Travel is about more than just sightseeing – it's about immersing yourself in different cultures, embracing diversity, and creating unforgettable memories. Whether you're yearning for breathtaking landscapes, iconic landmarks, or hidden gems off the beaten path, we are here to guide you every step of the way.</p>
                 </div>
                 <div className="contact-us">
-                    <h4>Contact Us: </h4>
+                    <h4>Contact Us:</h4>
                     <p>We value your feedback, inquiries, and suggestions. Feel free to reach out to us with any questions or comments you may have. Our dedicated support team is here to assist you on your travel journey.</p>
-                    <p>For any assistance or support-related queries, please email us at support@exploreio.com or give us a call at +1-800-EXPLOREIO. We are available to help you Monday through Friday from 9:00 AM to 6:00 PM (EST).</p>
-                    <p>We appreciate your interest in Exploreio, and we look forward to assisting you in your travel adventures!</p>
+                    <div className="namesandemails">
+                        <div className="names">
+                            <p>Abbas Islaw</p>
+                            <p>Dina Cazun-Moreno</p>
+                            <p>Emanda Seifu</p>
+                        </div>
+
+                        <div className="emails">
+                            <p>abbas.islaw.site@codepath.org</p>
+                            <p>dina.cazun-moreno.site@codepath.org</p>
+                            <p>emanda.seifu.site@codepath.org</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
