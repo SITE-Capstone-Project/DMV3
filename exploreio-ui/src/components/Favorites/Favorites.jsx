@@ -120,7 +120,7 @@ export function Postcard({ element, deleteFavorite, information }) {
               }
             })}
 
-            <h2>Hotels</h2>
+            <h2 className="hotelheading">Hotels</h2>
             {information?.map((element, index) => {
               let packageinfo = JSON.parse(element?.activityinfo)
               if (packageinfo?.type === "hotel") {
@@ -133,7 +133,7 @@ export function Postcard({ element, deleteFavorite, information }) {
             })}
           </div>
 
-          <div className="stamp">
+          <div className="backstamp">
             <button id ="flip-button" onClick={flipOver}>
               <img src={finalstamp}/>
             </button>
