@@ -5,7 +5,8 @@
     margin: 0 auto;
     width: 370px;
     height: auto;
-    background-color: #a4c3b2;
+    /* background-color: #a4c3b2; */
+    background-color: #a0c4cf;
     border: 5px solid rgb(255, 255, 255);
     border-radius: 1px;
     border-bottom-right-radius: 15px;
@@ -126,12 +127,12 @@
     padding-left: 5px;
     font-size: 17px;
     font-weight: bold;
-    margin-right: 20px;
 }
 
 #description {
     padding-top: 6px;
     font-size: 13px;
+    margin-left: 10px;
 }
 
 #hotel-image {

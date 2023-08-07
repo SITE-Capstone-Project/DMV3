@@ -102,30 +102,38 @@ export function HotelCard({ hotel, destinationid, favorite, isLoggedIn, loadedFa
 
     return (
         <div className = "hotel-card" onMouseEnter = {() => { setIsHover(true)}} onMouseLeave={() => {setIsHover(false)}}>
-            <Carousel activeIndex = {index} onSelect = {handleSelect} indicators={false} slide={false}>
-                {hotel?.images?.map((element, index) => {
-                    return <Carousel.Item key={element + index} interval={1000000}>
-                        <img id = "hotel-image" src = {element}/>
-                    </Carousel.Item> 
-                })}
-            </Carousel>
+            {hotel?.images?.length > 0 ? (<div>
+                <Carousel activeIndex = {index} onSelect = {handleSelect} indicators={false} slide={false}>
+                    {hotel?.images?.map((element, index) => {
+                        return <Carousel.Item key={element + index} interval={1000000}>
+                            <img id = "hotel-image" src = {element}/>
+                        </Carousel.Item> 
+                    })}
+                </Carousel>
+            </div> ) : (<div></div>)}
 
-            {isHover && (
+            {hotel?.description ? 
+            (<div>
+                {isHover && (
                 <div className = "popup-description">
                     <p id = "hotel-title-popup"> {hotel?.name} </p>
                     <p> {hotel?.description} </p>
                 </div>
-            )}
+                )}
+            </div>) : (<div></div>) }
             <div className = "hotel-intro">
                 <p id = "hotel-title"> 
                 <a href={hotel?.web_url}> {formatString(hotel?.name, 17)} </a>
                 </p>
             </div>
             <div className = "hotel-details">
-                <p id = "hotel-pricerange"> {hotel?.price_level} </p>
-                <img id = "rating-star" src={`https://purepng.com/public/uploads/large/purepng.com-green-starstargeometricallydecagonconcavestardomclipartgreen-1421526503700o6cix.png`}/>
-                <p id = "hotel-rating"> {hotel?.rating} </p>
-                <p id = "description"> {formatString(hotel?.description, 20)}</p>
+                
+                {hotel?.price_level ? (<div><p id = "hotel-pricerange"> {hotel?.price_level} </p></div>) : (<div></div>)}
+                {hotel?.rating ? (
+                    <div className = "hotel-details"> <img id = "rating-star" src={`https://purepng.com/public/uploads/large/purepng.com-green-starstargeometricallydecagonconcavestardomclipartgreen-1421526503700o6cix.png`}/>
+                    <p id = "hotel-rating"> {hotel?.rating} </p> </div>
+                ) : (<div></div>)}
+                {hotel?.description ? (<div><p id = "description"> {formatString(hotel?.description, 20)}</p></div>) : (<div> </div>)}
             </div>
             {isLoggedIn ? (
                 <div>

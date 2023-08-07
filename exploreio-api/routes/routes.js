@@ -63,7 +63,7 @@ router.get("/destinations/:id", async (req, res, next) => {
             fullResponse.hotels = hotels 
 
             /* Fun Facts by ChatGPT */
-            const facts = await Destinations.getFunFacts(response.name)
+            const facts = await Destinations.getFunFacts(response.name + ", " + response.country)
             fullResponse.funFacts = facts
 
             /* Now, add into cache */

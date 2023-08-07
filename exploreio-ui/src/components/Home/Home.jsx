@@ -11,7 +11,8 @@ export default function Home() {
         <div>
             <div className="home">
                 <img id="background-image" src=
-                    "https://images.pexels.com/photos/2734521/pexels-photo-2734521.jpeg?auto=compress&cs=tinysrgb&w=1500"/>
+                "https://images.pexels.com/photos/2734521/pexels-photo-2734521.jpeg?auto=compress&cs=tinysrgb&w=1500"/>
+
                 <div className="topPage">
                     <Hero />
                 </div>

@@ -46,9 +46,6 @@ export default function Favorites({ isLoggedIn }) {
         <div>
           <div className="favoritesContainer">
             <h1>Favorites</h1>
-            <div className="pushinP">
-              <p>Click the stamp to flip over the card!</p>
-            </div>
             {/* <div className="favorites"> */}
 
             {favorites?.length == 0 ? (
@@ -58,6 +55,9 @@ export default function Favorites({ isLoggedIn }) {
               </h2>
             ) : (
               <div className="test">
+                <div className="instruction">
+                  <p>Click the <span> <img id="instruction-stamp" src={finalstamp}/> </span> to view your saved activities and hotels!</p>
+                </div>
                 {favorites?.map((element, index) => {
                   return <Postcard 
                   element={element?.destination} 
@@ -112,26 +112,29 @@ export function Postcard({ element, deleteFavorite, information }) {
         <div className="itemback-flex">
           <div className="activitiesanddescription">
 
-            <h2>Activities</h2>
-            {information?.map((element, index) => {
-              let packageinfo = JSON.parse(element?.activityinfo)
-              if (packageinfo?.type === "activity") {
-                return <div key = {element + index}> {packageinfo?.info} </div>
-              }
-            })}
-
-            <h2 className="hotelheading">Hotels</h2>
-            {information?.map((element, index) => {
-              let packageinfo = JSON.parse(element?.activityinfo)
-              if (packageinfo?.type === "hotel") {
-                return <div key = {element + index}> 
-                  <a href={packageinfo?.info?.web_url} target="_blank">
-                    {packageinfo?.info?.name}
-                  </a> 
-                </div>
-              }
-            })}
-          </div>
+            <div className = "fav-activities">
+              <h2>Activities</h2>
+              {information?.map((element, index) => {
+                let packageinfo = JSON.parse(element?.activityinfo)
+                if (packageinfo?.type === "activity") {
+                  return <div key = {element + index} id="activity-chosen"> {packageinfo?.info} </div>
+                }
+              })}
+            </div>
+            
+            <div className = "fav-hotels">
+              <h2>Hotels</h2>
+              {information?.map((element, index) => {
+                let packageinfo = JSON.parse(element?.activityinfo)
+                if (packageinfo?.type === "hotel") {
+                  return <div key = {element + index}> 
+                    <a href={packageinfo?.info?.web_url} target="_blank">
+                      {packageinfo?.info?.name}
+                    </a> 
+                  </div>
+                }
+              })}
+            </div>
 
           <div className="backstamp">
             <button id ="flip-button" onClick={flipOver}>
@@ -139,6 +142,7 @@ export function Postcard({ element, deleteFavorite, information }) {
             </button>
           </div>
 
+          </div>
         </div>
       </div>
     </div>
