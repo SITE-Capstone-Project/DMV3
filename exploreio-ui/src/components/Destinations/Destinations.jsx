@@ -48,8 +48,8 @@ export default function Destinations({ destinations }) {
         ) : (
           <DestinationContainer destinations={filteredData} />
         )}
-        <Footer />
       </Container>
+      <Footer />
     </div>
   );
 }

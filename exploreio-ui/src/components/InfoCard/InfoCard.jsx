@@ -106,6 +106,7 @@ export default function InfoCard({ isLoggedIn }){
     setTimeout(loadMap, 3000)
 
     return(
+        <div>
         <div className="infocard">
             <img id = "background" src = {destination?.destinationInfo?.back_url}/>
 
@@ -164,7 +165,7 @@ export default function InfoCard({ isLoggedIn }){
                         width="550"
                         height="500"
                         referrerPolicy="no-referrer-when-downgrade"
-                        src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${destination?.destinationInfo?.name}`}>
+                        src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${destination?.destinationInfo?.name}, ${destination?.destinationInfo?.country}`}>
                     </iframe>
                 </div>
             </div>
@@ -192,7 +193,9 @@ export default function InfoCard({ isLoggedIn }){
                 <div className = "flights-section">
                     <div>
                     <div className="flights">
-                        <FlightForm area = {destination?.destinationInfo?.name} isFetching = {isFetching}/>
+                        <FlightForm area = {destination?.destinationInfo?.name} 
+                        isFetching = {isFetching}
+                        destinationIATA = {destination?.destinationInfo?.airlines}/>
                     </div>
                     <div className="flights">
                         <FunFacts facts = {destination?.funFacts}/>
@@ -200,11 +203,8 @@ export default function InfoCard({ isLoggedIn }){
                     </div>
                 </div>
             </div>
-
-            <div className="footer">
-                <Footer/>
-            </div>
-
+        </div>
+            <Footer/>
         </div>
     );
 }

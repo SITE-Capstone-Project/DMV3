@@ -2,7 +2,8 @@
     position: relative;
     animation: slideInAnimation ease 2s;
     animation-iteration-count: 1;
-    background-color: #a4c3b2;
+    /* background-color: #a4c3b2; */
+    background-color: #a0c4cf;
     border-radius: 1px;
     border-top-right-radius: 5px;
     border: 5px solid rgb(255, 255, 255);
@@ -318,6 +319,14 @@
     color: red;
     margin: 0px;
     margin-bottom: 9px;
+}
+
+#instructions {
+    font-size: 15px;
+}
+
+#instructions-bold {
+    font-weight: bold;
 }
 
 @keyframes slideInAnimation {

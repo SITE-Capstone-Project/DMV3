@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { getFlight } from "../../utilities/apiClient"
 import "./FlightForm.css"
 
-export default function FlightForm({area, isFetching}) {
+export default function FlightForm({area, isFetching, destinationIATA}) {
     const[flights, setFlights] = new useState(undefined)
     const[fetching, setFetching] = new useState(false)
     const[startDate, setStartDate] = new useState(new Date().toLocaleDateString('fr-ca'))
@@ -99,6 +99,9 @@ export default function FlightForm({area, isFetching}) {
         } else if (Number.parseInt(form?.children) < 0) {
             setError("ERROR: Enter a valid number of children.")
             valid = false           
+        } else if (request?.IATA === destinationIATA) {
+            setError("ERROR: Cannot depart from the airport you will arrive in.")
+            valid = false
         }
 
         if (request?.children?.length > 0) {
@@ -159,6 +162,13 @@ export default function FlightForm({area, isFetching}) {
                     </div>
                 ):(
                     <form id = "request-form">
+                        <p id = "instructions"> Instructions: <span id="instructions-bold">Enter an IATA code of an airport nearby to you. </span> 
+                        This is the airport in which you will depart from. 
+                        If you are having trouble locating and IATA code, <a href ="https://www.ccra.com/airport-codes/" target="_blank"> here </a>  
+                        is a list of IATA codes linked to cities.</p>
+
+                        <p id = "instructions"> Then, <span id="instructions-bold">enter the dates which you will depart and return from/to the airport. </span>
+                        Enter the number of adults and children flying, select your cabin type, and start searching! </p>
                         {error && <div className = "error-message"> <p>{error}</p> </div>}
                         <div>
                             <label> Origin airport IATA: </label>

@@ -48,9 +48,12 @@ h3{
 }
 
 .rating p {
-  padding-top: 6px;
+  padding-top: 1px;
   padding-bottom: 0px;
   margin-bottom: 0px;
+  margin-right: 3px;
+  margin-left: 3px;
+  font-size: 20px;
 }
 
 .rating {
@@ -60,10 +63,11 @@ h3{
 
 .star-rating-container {
   display: flex;
-  align-items: center;
 }
 
 .star {
-  /* color: #f1c40f; */
-  margin-right: 3px; 
+  position: relative;
+  color: #d3ab0d;
+  font-size: 25px;
+  top: -3px;
 }

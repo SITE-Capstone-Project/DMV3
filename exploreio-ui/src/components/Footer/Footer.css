@@ -1,13 +1,15 @@
 .footer {
     flex-direction: row;
     /* background-color: rgba(0, 0, 0, 0.699); */
-    background-color: #41797bbe;
+    background-color: #41797b;
     color:white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
 }
 
 .info {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     font-size: small;
@@ -21,7 +23,7 @@
     align-items: center;
     font-size: 120%;
     margin-top: 20px;
-    padding: 50px;
+    padding: 50px 19px;
 }
 
 .namesandemails{

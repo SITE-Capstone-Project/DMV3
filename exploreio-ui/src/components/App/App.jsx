@@ -48,10 +48,12 @@ export default function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/destinations" element={<Destinations destinations = {destinations}/>} />
                     <Route path="/destinations/:id" element = {<InfoCard isLoggedIn={loggedIn}/>}/>
-                    <Route path="/login" element={<Login 
+                    <Route path="/login" element={<Login
+                    isLoggedIn = {loggedIn}
                     setLoggedIn = {setLoggedIn}
                     setAppState= {setAppState}/>} />
-                    <Route path="/register" element={<Register 
+                    <Route path="/register" element={<Register
+                    isLoggedIn = {loggedIn} 
                     setLoggedIn = {setLoggedIn}
                     setAppState= {setAppState}/>} />
                     <Route path="/favorites" element={<Favorites

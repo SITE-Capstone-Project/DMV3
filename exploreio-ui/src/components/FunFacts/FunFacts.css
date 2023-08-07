@@ -2,7 +2,8 @@
     position: relative;
     animation: slideInAnimation ease 2s;
     animation-iteration-count: 1;
-    background-color: #a4c3b2;
+    /* background-color: #a4c3b2; */
+    background-color: #a0c4cf;
     border-radius: 1px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -37,7 +38,7 @@
 
 #fact {
     margin-top: 10px;
-    color: rgb(0, 54, 172);
+    color: rgb(35, 127, 231);
     font-weight: bold;
     font-size: 15px;
     text-align: center;
