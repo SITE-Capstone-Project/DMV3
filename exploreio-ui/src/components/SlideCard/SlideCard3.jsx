@@ -15,7 +15,7 @@ function SlideCard3() {
         { name: 'Tokyo', imageUrl: 'https://a.cdn-hotels.com/gdcs/production172/d1381/8efd3f69-63bb-4398-a595-095cea25fc37.jpg' },
         { name: 'Johannesburg', imageUrl: 'https://media.timeout.com/images/105237782/image.jpg' },
         { name: 'Rio de Janeiro', imageUrl: 'https://i.natgeofe.com/n/560b293d-80b2-4449-ad6c-036a249d46f8/rio-de-janeiro-travel_3x4.jpg' },
-        { name: 'Shanghai', imageUrl: 'https://www.chinadiscovery.com/assets/images/shanghai/things-to-do/lujiazui-skyline-day.jpg' },
+        { name: 'Osaka', imageUrl: 'https://images.pexels.com/photos/4058519/pexels-photo-4058519.jpeg?auto=compress&cs=tinysrgb&w=800' },
         { name: 'Marrakech', imageUrl: 'https://www.groovymashedpotatoes.com/content/images/2023/01/5-Days-in-Morocco.jpg' },
         { name: 'Sydney', imageUrl: 'https://media.tatler.com/photos/6141d37b9ce9874a3e40107d/16:9/w_2560%2Cc_limit/social_crop_sydney_opera_house_gettyimages-869714270.jpg' },
         { name: 'Taipei', imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/220815062659-05-taipei-performing-arts-center-oma.jpg?c=original' },
