@@ -320,6 +320,14 @@
     margin-bottom: 9px;
 }
 
+#instructions {
+    font-size: 15px;
+}
+
+#instructions-bold {
+    font-weight: bold;
+}
+
 @keyframes slideInAnimation {
     0% {
         bottom: -100px;

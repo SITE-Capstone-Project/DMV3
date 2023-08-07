@@ -1,3 +1,13 @@
+#register-background {
+    position: absolute;
+    z-index: -2;
+    min-width: 625px;
+    width: 100%;
+    height: 1000px;
+    object-fit: cover;
+    top: 0px;
+}
+
 .Register {
     /* height: 100%;
     max-height: 100vh;
@@ -7,7 +17,7 @@
     padding: 50px 100px;
     flex-direction: column;
     align-items: center;
-    background-image: url(https://images.pexels.com/photos/4602279/pexels-photo-4602279.jpeg?auto=compress&cs=tinysrgb&w=1000);
+    /* background-image: url(https://images.pexels.com/photos/4602279/pexels-photo-4602279.jpeg?auto=compress&cs=tinysrgb&w=1000); */
     background-size: 100% auto;
     height: 100%;
 }

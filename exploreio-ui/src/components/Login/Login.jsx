@@ -2,7 +2,9 @@ import React from "react"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { logIn, fixToken } from "../../utilities/apiClient"
+import loginpage from "../../assets/login-page.jpg"
 import "./Login.css"
+import Footer from "../Footer/Footer"
 
 export default function Login({ setAppState, setLoggedIn }) {
   const navigate = useNavigate()
@@ -51,7 +53,10 @@ export default function Login({ setAppState, setLoggedIn }) {
   }
 
   return (
+    <div>
     <div className="Login">
+
+      <img id="register-background" src={loginpage}/>
 
       <div className="logincard">
         <h1>Welcome</h1>
@@ -94,6 +99,8 @@ export default function Login({ setAppState, setLoggedIn }) {
           </p>
         </div>
       </div>
+    </div>
+      <Footer/>
     </div>
   )
 }

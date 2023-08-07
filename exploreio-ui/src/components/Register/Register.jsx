@@ -2,7 +2,9 @@ import React from "react"
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { register, logIn, fixToken } from "../../utilities/apiClient"
+import registrationpage from "../../assets/registration-page.jpg"
 import "./Register.css"
+import Footer from "../Footer/Footer"
 
 export default function Register({ setAppState, setLoggedIn }) {
   const navigate = useNavigate()
@@ -104,7 +106,11 @@ export default function Register({ setAppState, setLoggedIn }) {
   }
 
   return (
+    <div>
     <div className="Register">
+
+      <img id="register-background" src={registrationpage}/>
+
       <div className="registercard">
         <h2>Get Started!</h2>
 
@@ -197,6 +203,8 @@ export default function Register({ setAppState, setLoggedIn }) {
           </p>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   )
 }
