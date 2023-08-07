@@ -45,10 +45,6 @@ export default function DestinationContainer({destinations}) {
           </div>
         </div>
       ))}
-
-      {/* <div className="showMoreButton">
-        <button onClick={() => setShowMore(!showMore)}>Show More</button>
-      </div> */}
     </div>
   );
 }

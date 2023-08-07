@@ -33,3 +33,26 @@
     text-align: center;
     margin-bottom: 50px;
 }
+
+.regionContainer {
+    position: relative;
+    animation: slideIn ease 1.5s;
+    animation-iteration-count: 1;   
+}
+
+.container1 {
+    position: relative;
+    animation: slideIn ease 1.5s;
+    animation-iteration-count: 1;   
+}
+
+@keyframes slideIn {
+    0% {
+        bottom: -337px;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
