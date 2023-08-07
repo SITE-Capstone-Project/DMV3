@@ -8,6 +8,10 @@
     transition: all 0.7s ease;
 }
 
+.hotelheading{
+    margin-top: 20px;
+}
+
 .pushinP p{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(65, 88, 65);
@@ -111,47 +115,46 @@
 }
 
 .itemback{
-    /* display: flex;
-    flex-direction: row; */
-    /* justify-content: center; */
+    /* display: flex; */
+    /* flex-direction: row;
+    justify-content: center; */
     transform: rotateY(-180deg);
     backface-visibility: hidden;
     grid-area: frontAndBack;
 }
 
-.itemback-flex {
+.itemback-flex{
     display: flex;
+    flex-direction: row;
+    position: relative;
 }
 
 .flipped {
     transform: rotateY(-180deg);
 }
 
-/* .activitiesanddescription{
-    display: flex;
-    flex-direction: row;
-} */
-
-/* .flipcard{
-    transform: rotateY(-180deg);
-} */
-
-.backstamp{
-    position: absolute;
-    bottom: 400px;
-    left: 1183px;
-}
-.backstamp button{
-    /* background: transparent;
-    border: transparent; */
+/* .backstamp{
     position: relative;
+    right: 0;
+    /* right: -515px; 
+}*/
+
+.backstamp button{
+    background: transparent;
+    border: transparent;
+    /* float: right; */
+    position: absolute;
+    right: 0;
+    margin-right: 35px;
+    /* position: relative; */
     z-index: 10;
-    margin-bottom: 30px;
-}
-.backstamp button:active{
-    background-color: red;
+    /* margin-bottom: 30px; */
 }
 .backstamp button img{
     width: 80px;
     height: 95px;
+}
+
+activitiesanddescription{
+    width: 90%;
 }
