@@ -1,4 +1,4 @@
-.carousel-control-prev {
+.sliding .carousel-control-prev {
   background-color: rgba(255, 255, 255, 0.849) !important;
   border-top-right-radius: 15px !important;
   border-bottom-right-radius: 15px !important;
@@ -12,7 +12,7 @@
   opacity: 100%;
 }
 
-.carousel-control-next {
+.sliding .carousel-control-next {
   background-color: rgba(255, 255, 255, 0.849) !important;
   border-top-left-radius: 15px !important;
   border-bottom-left-radius: 15px !important;
