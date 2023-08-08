@@ -1,7 +1,5 @@
 import "./DestinationContainer.css";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import React from "react";
 import DestinationCard from "../DestinationCard/DestinationCard";
 
 // Mapping object to convert region abbreviations to full names
@@ -16,8 +14,6 @@ const regionAbbreviationsToFullNames = {
 };
 
 export default function DestinationContainer({destinations}) {
-  // const [showMore, setShowMore] = useState(false);
-
   const destinationsByRegion = {};
   for (const destination of destinations) {
     if (!destinationsByRegion[destination.region]) {

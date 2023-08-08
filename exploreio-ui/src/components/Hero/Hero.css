@@ -4,7 +4,6 @@
     align-items: center;
     width: 100%;
     max-width: 1200px;
-    /* Limit the content width */
     margin: 0 auto;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
@@ -15,9 +14,7 @@
 
 .hero-background {
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/opacity/see-through */
     color: white;
     border-radius: 25px;
     z-index: 2;
@@ -37,7 +34,6 @@
 }
 
 .blurb {
-    /* flex: 1; */
     width: 50%;
     align-items: center;
     font-size: 120%;
@@ -65,7 +61,6 @@
         align-items: center;
         width: 100%;
         max-width: 1200px;
-        /* Limit the content width */
         margin: 0 auto;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-size: 20px;
@@ -90,14 +85,12 @@
     }
 
     .blurb {
-        /* flex: 1; */
         width: 50%;
         align-items: center;
         font-size: 120%;
     }
 
     .blurb img {
-        /* flex: 1; */
         width: 100%;
         align-items: center;
         font-size: 120%;
