@@ -33,13 +33,13 @@
 }
 
 .favorites {
+    animation: bottomUpAnimation ease-in-out 0.5s;
+    animation-iteration-count: 1;
     display: grid; grid-template: 1fr/1fr;
+    position: relative;
     grid-template-areas: "frontAndBack";
     transform-style: preserve-3d;
     transition: all 0.7s ease;
-
-    /* display: flex;
-    flex-direction: column; */
     justify-content: center;
     background-color: white;
     border-radius: 13px;
@@ -60,6 +60,7 @@
     padding: 10px;
     backface-visibility: hidden;
     grid-area: frontAndBack;
+    transform: rotateX(0deg);
 }
 
 .item img {
@@ -124,9 +125,7 @@
 }
 
 .itemback{
-    /* display: flex; */
-    /* flex-direction: row;
-    justify-content: center; */
+    transform: rotateX(0deg);
     border: dotted rgb(101, 162, 185) 4px;
     transform: rotateY(-180deg);
     backface-visibility: hidden;
@@ -143,22 +142,12 @@
     transform: rotateY(-180deg);
 }
 
-/* .backstamp{
-    position: relative;
-    right: 0;
-    /* right: -515px; 
-}*/
-
 .backstamp button{
     background: transparent;
     border: transparent;
-    /* float: right; */
-    
     right: 0;
     margin-right: 19px;
-    /* position: relative; */
     z-index: 10;
-    /* margin-bottom: 30px; */
 }
 
 .backstamp button img{
@@ -185,4 +174,15 @@
 
 #activity-chosen {
     margin-bottom: 5px;
+}
+
+@keyframes bottomUpAnimation {
+    0% {
+        bottom: -337px;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0px;
+        opacity: 1;
+    }
 }

@@ -15,13 +15,6 @@
     flex-wrap: wrap;
 }
 
-/* .container2{s
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-} */
-
 .showMoreButton{
     display: flex;
     margin-top: 30px;
@@ -36,13 +29,13 @@
 
 .regionContainer {
     position: relative;
-    animation: slideIn ease 1.5s;
+    animation: slideIn ease 1s;
     animation-iteration-count: 1;   
 }
 
 .container1 {
     position: relative;
-    animation: slideIn ease 1.5s;
+    animation: slideIn ease 1s;
     animation-iteration-count: 1;   
 }
 

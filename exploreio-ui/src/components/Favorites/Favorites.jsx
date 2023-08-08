@@ -46,8 +46,6 @@ export default function Favorites({ isLoggedIn }) {
         <div>
           <div className="favoritesContainer">
             <h1>Favorites</h1>
-            {/* <div className="favorites"> */}
-
             {favorites?.length == 0 ? (
               <h2 className="no-favorites">
                 {" "}
@@ -56,14 +54,24 @@ export default function Favorites({ isLoggedIn }) {
             ) : (
               <div className="test">
                 <div className="instruction">
-                  <p>Click the <span> <img id="instruction-stamp" src={finalstamp}/> </span> to view your saved activities and hotels!</p>
+                  <p>
+                    Click the{" "}
+                    <span>
+                      {" "}
+                      <img id="instruction-stamp" src={finalstamp} />{" "}
+                    </span>{" "}
+                    to view your saved activities and hotels!
+                  </p>
                 </div>
                 {favorites?.map((element, index) => {
-                  return <Postcard 
-                  element={element?.destination} 
-                  key={element + index}
-                  deleteFavorite={deleteFavorite}
-                  information = {element?.activities}/>;
+                  return (
+                    <Postcard
+                      element={element?.destination}
+                      key={element + index}
+                      deleteFavorite={deleteFavorite}
+                      information={element?.activities}
+                    />
+                  );
                 })}
               </div>
             )}
@@ -83,7 +91,6 @@ export function Postcard({ element, deleteFavorite, information }) {
 
   return (
     <div className={flipped ? "favorites flipped" : "favorites"}>
-
       <div className="item">
         <div className="media">
           <img src={element?.image} />
@@ -111,37 +118,42 @@ export function Postcard({ element, deleteFavorite, information }) {
       <div className="itemback">
         <div className="itemback-flex">
           <div className="activitiesanddescription">
-
-            <div className = "fav-activities">
+            <div className="fav-activities">
               <h2>Activities</h2>
               {information?.map((element, index) => {
-                let packageinfo = JSON.parse(element?.activityinfo)
+                let packageinfo = JSON.parse(element?.activityinfo);
                 if (packageinfo?.type === "activity") {
-                  return <div key = {element + index} id="activity-chosen"> {packageinfo?.info} </div>
+                  return (
+                    <div key={element + index} id="activity-chosen">
+                      {" "}
+                      {packageinfo?.info}{" "}
+                    </div>
+                  );
                 }
               })}
             </div>
-            
-            <div className = "fav-hotels">
+
+            <div className="fav-hotels">
               <h2>Hotels</h2>
               {information?.map((element, index) => {
-                let packageinfo = JSON.parse(element?.activityinfo)
+                let packageinfo = JSON.parse(element?.activityinfo);
                 if (packageinfo?.type === "hotel") {
-                  return <div key = {element + index}> 
-                    <a href={packageinfo?.info?.web_url} target="_blank">
-                      {packageinfo?.info?.name}
-                    </a> 
-                  </div>
+                  return (
+                    <div key={element + index}>
+                      <a href={packageinfo?.info?.web_url} target="_blank">
+                        {packageinfo?.info?.name}
+                      </a>
+                    </div>
+                  );
                 }
               })}
             </div>
 
-          <div className="backstamp">
-            <button id ="flip-button" onClick={flipOver}>
-              <img src={finalstamp}/>
-            </button>
-          </div>
-
+            <div className="backstamp">
+              <button id="flip-button" onClick={flipOver}>
+                <img src={finalstamp} />
+              </button>
+            </div>
           </div>
         </div>
       </div>

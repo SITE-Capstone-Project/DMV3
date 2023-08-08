@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import Home from "../Home/Home";
 import Destinations from "../Destinations/Destinations";
@@ -59,6 +59,8 @@ export default function App() {
                     <Route path="/favorites" element={<Favorites
                     appState = {appState}
                     isLoggedIn={loggedIn}/>} />
+                    <Route path="*" element={<h2 className="not-logged"> 404 NOT FOUND. 
+                    To return back to the website, click <Link to="/"> here. </Link> </h2>} />
                 </Routes>
             </BrowserRouter>
         </div>

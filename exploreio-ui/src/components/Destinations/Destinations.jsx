@@ -36,13 +36,15 @@ export default function Destinations({ destinations }) {
   return (
     <div>
       <Container>
-        <h1 className="clearing"> Destinations </h1>
-        <SearchBox
-          data={filteredData}
-          onFilter={(searchTerm, filterRating, filterCost) =>
-            handleFilter(searchTerm, filterRating, filterCost)
-          }
-        />
+        <div className = "destinations-top">
+          <h1 className="clearing"> Destinations </h1>
+          <SearchBox
+            data={filteredData}
+            onFilter={(searchTerm, filterRating, filterCost) =>
+              handleFilter(searchTerm, filterRating, filterCost)
+            }
+          />
+        </div>
         {filteredData.length === 0 && showNoResultsMessage ? (
           <p className="no-results-message">Oops - please try again!</p>
         ) : (
