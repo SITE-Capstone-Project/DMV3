@@ -3,6 +3,12 @@ const auth = express.Router()
 const User = require("../models/user")
 const { authenticateJWT } = require("../middleware/security")
 
+/* 
+
+    For /me, quick check to see if the user is authenticated.
+
+*/
+
 auth.get("/me", authenticateJWT, async (req, res, next) => {
     try {
         res.status(200).json({message: "Successfully connected"})
@@ -15,10 +21,10 @@ auth.get("/me", authenticateJWT, async (req, res, next) => {
 
 For logging in, user body should follow this format:
 
-{
-    "email": "email@email.com",
-    "password": "password",
-}
+    {
+        "email": "email@email.com",
+        "password": "password",
+    }
 
 */
 
@@ -37,13 +43,13 @@ auth.post("/login", async (req, res, next) => {
 
 For registering, user body should follow this format:
 
-{
-    "username": "user",
-    "email": "email@email.com",
-    "password": "password",
-    "first_name": "first",
-    "last_name": "last"
-}
+    {
+        "username": "user",
+        "email": "email@email.com",
+        "password": "password",
+        "first_name": "first",
+        "last_name": "last"
+    }
 
 */
 

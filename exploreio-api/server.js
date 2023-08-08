@@ -7,7 +7,6 @@ const cors = require('cors')
 
 const auth = require('./routes/auth')
 const router = require('./routes/routes')
-const user = require('./routes/user')
 const {NotFoundError} = require("./utils/errors")
 
 // Parsing requests into JSON
@@ -21,8 +20,6 @@ app.use("/auth", auth)
 
 // Routes used for Exploreio
 app.use("/exploreio", router)
-
-app.use("/user", user)
 
 // Not Found Error
 app.use((req, res, next) => {
