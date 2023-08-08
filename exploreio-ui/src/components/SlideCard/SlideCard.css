@@ -1,3 +1,32 @@
+.carousel-control-prev {
+  background-color: rgba(255, 255, 255, 0.849) !important;
+  border-top-right-radius: 15px !important;
+  border-bottom-right-radius: 15px !important;
+  margin-top: 98px !important;
+  margin-bottom: 95px !important;
+  margin-left: 0px !important;
+  width: 75px !important;
+  height: 40px !important;
+  top: -16px;
+  color: rgb(7, 121, 102) !important;
+  opacity: 100%;
+}
+
+.carousel-control-next {
+  background-color: rgba(255, 255, 255, 0.849) !important;
+  border-top-left-radius: 15px !important;
+  border-bottom-left-radius: 15px !important;
+  margin-top: 98px !important;
+  margin-bottom: 95px !important;
+  margin-right: 0px !important;
+  width: 65px !important;
+  height: 40px !important;
+  top: -16px !important;
+  right: 10px !important;
+  color: rgb(7, 121, 102) !important;
+  opacity: 100%;
+}
+
 .carousel-row {
   display: flex;
   flex-direction: row;
@@ -20,7 +49,6 @@
   margin-right: 10px; /* Add margin to the right side of each image-container */
 }
 
-
 .image-container img {
   width: 100%;
   height: 100%;
@@ -42,14 +70,3 @@
 .carousel-indicators {
   bottom: 0; /* Position the indicators at the bottom of the carousel */
 }
-
-.carousel-control-prev,
-.carousel-control-next {
-  color: black; /* Change the color of the carousel controls */
-  background-color: white; /* Add a semi-transparent background to the carousel controls for better visibility */
-}
-
-
-/* .midPage h1 {
-  margin-left: 20px;
-} */
