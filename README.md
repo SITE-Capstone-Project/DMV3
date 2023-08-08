@@ -18,7 +18,7 @@ Backend Repo Link: https://github.com/SITE-Capstone-Project/DMV3/tree/main/explo
 
 Add a quick summary of what your project theme and objectives are. 
 
-Deployment Website: **[Add Link to Deployed Project](https://exploreio-ui.onrender.com/)**
+Deployment Website: **https://exploreio-ui.onrender.com/**
 
 ### Open-source libraries used
 
