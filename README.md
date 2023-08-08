@@ -21,5 +21,3 @@ Add a quick summary of what your project theme and objectives are.
 Deployment Website: **https://exploreio-ui.onrender.com/**
 
 ### Open-source libraries used
-
-- Add any links to open-source libraries used in your project.
