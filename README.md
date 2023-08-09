@@ -23,3 +23,6 @@ Deployment Website: **https://exploreio-ui.onrender.com/**
 ### Open-source libraries used
 
 https://getbootstrap.com/
+
+## Capstone Project Presentation
+https://www.canva.com/design/DAFq4GMUSaY/N5z5PiLHsSRL9nsOjtgAcA/edit#
